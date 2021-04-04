@@ -1,0 +1,13 @@
+.container {
+	height: 100vh;
+	object-fit: contain;
+	width: 100%;
+}
+
+.background {
+	height: 100vh;
+	object-fit: cover;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+}

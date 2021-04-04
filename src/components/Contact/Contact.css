@@ -1,0 +1,80 @@
+.section {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 15%;
+	top: 15%;
+}
+
+.text {
+	font-size: 56px;
+	text-align: center;
+	margin-bottom: 25px;
+	margin-top: -10px;
+}
+
+.icon-container {
+	border: 2px solid #1a1a1a;
+	display: flex;
+	flex-direction: row;
+	left: 5%;
+	margin-left: 3rem;
+	margin-bottom: 2rem;
+	padding: 1rem 0 0 1rem;
+	position: relative;
+	width: 80%;
+	background: #f7f7fe;
+}
+
+.input {
+	border: 1px solid #100f10;
+	height: 2.5rem;
+	margin: 10px;
+}
+
+.form {
+	background: #f7f7fe;
+	border: 2px solid #100f10;
+	left: 5%;
+	margin-left: 3rem;
+	padding: 1rem 0 0 1rem;
+	position: relative;
+	width: 80%;
+}
+
+#name {
+	margin-right: 20px;
+	width: 45%;
+}
+
+#surname {
+	width: 45%;
+}
+
+#email {
+	border: 1px solid #100f10;
+	width: 95%;
+}
+
+#message {
+	border: 1px solid #100f10;
+	width: 95%;
+}
+
+::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #100f10;
+	font-weight: 700;
+	padding-left: 20px;
+	opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #100f10;
+}
+
+::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: #100f10;
+}

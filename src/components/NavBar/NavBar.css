@@ -1,0 +1,22 @@
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #1a1919;
+	padding-bottom: 2px;
+}
+
+nav a {
+	margin-left: 3rem;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+nav a:first-child {
+	margin-left: 0;
+}
+
+nav a.active {
+	color: rgba(255, 255, 255, 1);
+	text-decoration: underline;
+	text-decoration-color: #37b9f1;
+}

@@ -1,0 +1,46 @@
+.section {
+	display: flex;
+	flex-direction: row;
+	padding: 25px;
+}
+
+.image-container {
+	margin: 10px 0 0 0;
+}
+
+.image {
+	border-radius: 8px;
+	box-shadow: 2px 2px 20px #100f10;
+	height: 220px;
+	margin-left: 40px;
+	width: 220px;
+}
+
+.container-flex {
+	display: flex;
+	flex-direction: row;
+}
+
+.description-container {
+	display: flex;
+	flex-direction: column;
+	height: 150px;
+	width: auto;
+	margin: 0 200px 0 50px;
+}
+
+.format {
+	font-size: 24px;
+}
+
+.flexible {
+	display: flex;
+	flex-direction: row;
+	font-size: 20px;
+	margin: 10px 0 10px 0;
+}
+
+.description-text {
+	font-size: 24px;
+	margin: 0px 0 0 5px;
+}
