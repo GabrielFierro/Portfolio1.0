@@ -2,6 +2,8 @@
 import "./Contact.css";
 import "../../assets/fonts/fonts.css";
 import Card from "../Card/Card";
+import { Button, ThemeProvider } from "@material-ui/core";
+import MyTheme from "../../MyTheme";
 
 function Contact() {
 	return (
@@ -49,8 +51,14 @@ function Contact() {
 						required
 						type="text"
 					/>
-					<button>A</button>
-					<button>B</button>
+					<ThemeProvider theme={MyTheme}>
+						<Button style={MyTheme.palette.accent} variant="contained">
+							<div style={{ color: "white" }}>Enviar</div>
+						</Button>
+						<Button variant="outlined">
+							<div style={{ color: "#100f10" }}>Cancelar</div>
+						</Button>
+					</ThemeProvider>
 				</form>
 			</section>
 		</div>
