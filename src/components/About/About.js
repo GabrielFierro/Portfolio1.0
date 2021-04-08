@@ -8,7 +8,7 @@ function About() {
 	return (
 		<div>
 			<Card />
-			<section className="section">
+			<section className="section-container">
 				<div class="container-flex">
 					<div class="image-container">
 						<img alt="profile" className="image" src={ProfilePicture} />
