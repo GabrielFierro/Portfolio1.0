@@ -1,7 +1,10 @@
-.section {
+.section-container {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	padding: 25px;
+	position: absolute;
+	left: 15%;
+	top: 15%;
 }
 
 .image-container {
