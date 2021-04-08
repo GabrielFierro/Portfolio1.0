@@ -16,7 +16,7 @@ function Contact() {
 		<div>
 			<Card />
 			<div class="section">
-				<Typography variant="h4" align="center" gutterBottom id="rubik">
+				<Typography class="text" align="center" gutterBottom id="rubik">
 					Contacto
 				</Typography>
 				<Grid container class="icon-container" fullWidth>
