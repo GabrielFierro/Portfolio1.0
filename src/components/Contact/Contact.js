@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
 			marginBottom: "0.5em",
 		},
 	},
+	marginButton: {
+		margin: "5px",
+	},
 }));
 
 function Contact() {
@@ -85,11 +88,19 @@ function Contact() {
 						variant="outlined"
 					/>
 					<ThemeProvider theme={MyTheme}>
-						<Button style={MyTheme.palette.accent} variant="contained">
-							<div style={{ color: "white" }}>Enviar</div>
+						<Button
+							className={classes.marginButton}
+							style={MyTheme.palette.buttonSend}
+							variant="contained"
+						>
+							<div id="rubik" style={{ color: "white", fontSize: "20px" }}>
+								Enviar
+							</div>
 						</Button>
-						<Button variant="outlined">
-							<div style={{ color: "#100f10" }}>Cancelar</div>
+						<Button style={MyTheme.palette.buttonCancel}>
+							<div id="karla" style={{ fontSize: "20px" }}>
+								Cancelar
+							</div>
 						</Button>
 					</ThemeProvider>
 				</form>
