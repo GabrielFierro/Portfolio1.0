@@ -9,9 +9,14 @@ export default createMuiTheme({
 		secondary: {
 			main: "#100f10",
 		},
-		accent: {
+		buttonCancel: {
+			backgroundColor: "#f7f7fe",
+			contrastText: "#37b9f1",
+			border: "1px solid #37b9f1",
+		},
+		buttonSend: {
 			backgroundColor: "#37b9f1",
-			constrastText: "#fff",
+			constrastText: "#f7f7fe",
 		},
 	},
 });
