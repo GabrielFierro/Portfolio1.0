@@ -54,7 +54,8 @@ function Contact() {
 						label="Nombre"
 						maxlength="30"
 						required
-						style={{ marginRight: "1.7em" }}
+						size="small"
+						style={{ marginRight: "2em" }}
 						type="text"
 						variant="outlined"
 					/>
@@ -64,6 +65,7 @@ function Contact() {
 						label="Apellido"
 						maxlength="30"
 						required
+						size="small"
 						type="text"
 						variant="outlined"
 					/>
@@ -73,6 +75,7 @@ function Contact() {
 						label="Email"
 						maxlength="50"
 						required
+						size="small"
 						style={{ marginBottom: "0.5em" }}
 						type="email"
 						variant="outlined"
@@ -81,7 +84,7 @@ function Contact() {
 						fullWidth
 						id="custom-message-field"
 						label="Mensaje"
-						maxlength="100"
+						maxlength="10"
 						required
 						style={{ marginBottom: "0.5em" }}
 						type="text"
