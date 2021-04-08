@@ -2,6 +2,7 @@
 import "./Contact.css";
 import "../../assets/fonts/fonts.css";
 import Card from "../Card/Card";
+import MyTheme from "../../MyTheme";
 import {
 	Button,
 	Grid,
@@ -9,9 +10,21 @@ import {
 	Typography,
 	ThemeProvider,
 } from "@material-ui/core";
-import MyTheme from "../../MyTheme";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+	textField: {
+		width: "48%",
+		marginBottom: "0.5em",
+		[theme.breakpoints.down("md")]: {
+			width: "100%",
+			marginBottom: "0.5em",
+		},
+	},
+}));
 
 function Contact() {
+	const classes = useStyles();
 	return (
 		<div>
 			<Card />
@@ -33,20 +46,21 @@ function Contact() {
 					justify="center"
 				>
 					<TextField
+						className={classes.textField}
 						id="custom-name-field"
 						label="Nombre"
 						maxlength="30"
 						required
-						style={{ marginRight: "1em", width: "48%" }}
+						style={{ marginRight: "1.7em" }}
 						type="text"
 						variant="outlined"
 					/>
 					<TextField
+						className={classes.textField}
 						id="custom-surname-field"
 						label="Apellido"
 						maxlength="30"
 						required
-						style={{ marginLeft: "0.7em", width: "48%" }}
 						type="text"
 						variant="outlined"
 					/>
@@ -56,7 +70,7 @@ function Contact() {
 						label="Email"
 						maxlength="50"
 						required
-						style={{ marginBottom: "0.5em", marginTop: "0.5em" }}
+						style={{ marginBottom: "0.5em" }}
 						type="email"
 						variant="outlined"
 					/>
