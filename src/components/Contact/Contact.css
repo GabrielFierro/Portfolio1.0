@@ -15,13 +15,14 @@
 }
 
 .icon-container {
-	border: 2px solid #1a1a1a;
+	border: 2px solid #100f10;
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 2rem;
 	position: relative;
 	width: 100%;
 	background: #f7f7fe;
+	height: 60px;
 }
 
 .input {
