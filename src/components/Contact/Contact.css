@@ -34,11 +34,7 @@
 .form {
 	background: #f7f7fe;
 	border: 2px solid #100f10;
-	left: 5%;
-	margin-left: 3rem;
-	padding: 1rem 0 0 1rem;
-	position: relative;
-	width: 80%;
+	padding: 1rem;
 }
 
 #custom-name-field,
@@ -47,4 +43,8 @@
 #custom-message-field {
 	background: #f7f7fe;
 	border: 1px solid #100f10;
+}
+
+.icon-hover:hover path {
+	stroke: #37b9f1;
 }
