@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 	icon: {
 		width: "55px",
 		height: "55px",
-		marginLeft: "80px",
+		marginLeft: "30px",
 		[theme.breakpoints.down("sm")]: {
 			width: "40px",
 			height: "40px",
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	gridMarginLeft: {
-		marginLeft: "80px",
+		marginLeft: "20px",
 		[theme.breakpoints.down("xs")]: {
 			marginLeft: "10px",
 		},
