@@ -11,6 +11,10 @@ import {
 	ThemeProvider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import linkIcon from "../../assets/images/icons/link-icon.svg";
+import linkLinkedIn from "../../assets/images/icons/linkedIn-icon.svg";
+import linkGitHub from "../../assets/images/icons/github-icon.svg";
+import linkTwitter from "../../assets/images/icons/twitter-icon.svg";
 
 const useStyles = makeStyles((theme) => ({
 	textField: {
@@ -24,6 +28,23 @@ const useStyles = makeStyles((theme) => ({
 	marginButton: {
 		margin: "5px",
 	},
+	icon: {
+		width: "55px",
+		height: "55px",
+		marginLeft: "80px",
+		[theme.breakpoints.down("sm")]: {
+			width: "40px",
+			height: "40px",
+			marginLeft: "25px",
+			marginTop: "5px",
+		},
+	},
+	gridMarginLeft: {
+		marginLeft: "80px",
+		[theme.breakpoints.down("xs")]: {
+			marginLeft: "10px",
+		},
+	},
 }));
 
 function Contact() {
@@ -35,11 +56,34 @@ function Contact() {
 				<Typography class="text" align="center" gutterBottom id="rubik">
 					Contacto
 				</Typography>
-				<Grid container class="icon-container" fullWidth>
-					<p>A</p>
-					<p>B</p>
-					<p>C</p>
-					<p>D</p>
+				<Grid class="icon-container">
+					<img
+						alt="link icon"
+						src={linkIcon}
+						style={{
+							width: "55px",
+							height: "55px",
+							marginLeft: "20px",
+							marginTop: "3px",
+						}}
+					/>
+					<Grid
+						className={classes.gridMarginLeft}
+						container
+						style={{ marginTop: "5px" }}
+					>
+						<img
+							alt="LinkedIn icon"
+							className={classes.icon}
+							src={linkLinkedIn}
+						/>
+						<img alt="GitHub icon" className={classes.icon} src={linkGitHub} />
+						<img
+							alt="Twitter icon"
+							className={classes.icon}
+							src={linkTwitter}
+						/>
+					</Grid>
 				</Grid>
 				<form
 					item
@@ -55,7 +99,7 @@ function Contact() {
 						maxlength="30"
 						required
 						size="small"
-						style={{ marginRight: "2em" }}
+						style={{ marginRight: "1.8em", border: "1px solid #100f10" }}
 						type="text"
 						variant="outlined"
 					/>
@@ -66,6 +110,7 @@ function Contact() {
 						maxlength="30"
 						required
 						size="small"
+						style={{ border: "1px solid #100f10" }}
 						type="text"
 						variant="outlined"
 					/>
@@ -76,7 +121,7 @@ function Contact() {
 						maxlength="50"
 						required
 						size="small"
-						style={{ marginBottom: "0.5em" }}
+						style={{ marginBottom: "0.5em", border: "1px solid #100f10" }}
 						type="email"
 						variant="outlined"
 					/>
@@ -86,7 +131,7 @@ function Contact() {
 						label="Mensaje"
 						maxlength="10"
 						required
-						style={{ marginBottom: "0.5em" }}
+						style={{ marginBottom: "0.5em", border: "1px solid #100f10" }}
 						type="text"
 						variant="outlined"
 					/>
