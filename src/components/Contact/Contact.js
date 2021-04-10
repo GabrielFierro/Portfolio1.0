@@ -282,18 +282,19 @@ function Contact() {
 					<TextField
 						className={classes.textFieldName}
 						id="custom-name-field"
-						label="Nombre"
+						placeholder="Nombre"
 						maxlength="30"
 						required
 						size="small"
 						style={{ marginRight: "0.7em", border: "1px solid #100f10" }}
+						testID="change-placeholder-color"
 						type="text"
 						variant="outlined"
 					/>
 					<TextField
 						className={classes.textFieldSurname}
 						id="custom-surname-field"
-						label="Apellido"
+						placeholder="Apellido"
 						maxlength="30"
 						required
 						size="small"
@@ -304,7 +305,7 @@ function Contact() {
 					<TextField
 						className={classes.textFieldInput}
 						id="custom-email-field"
-						label="Email"
+						placeholder="Email"
 						maxlength="50"
 						required
 						size="small"
@@ -314,7 +315,7 @@ function Contact() {
 					<TextField
 						className={classes.textFieldInput}
 						id="custom-message-field"
-						label="Mensaje"
+						placeholder="Mensaje"
 						maxlength="10"
 						required
 						type="text"
