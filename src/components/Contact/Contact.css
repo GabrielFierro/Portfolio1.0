@@ -48,3 +48,11 @@
 .icon-hover:hover path {
 	stroke: #37b9f1;
 }
+
+#custom-name-field::placeholder,
+#custom-surname-field::placeholder,
+#custom-email-field::placeholder,
+#custom-message-field::placeholder {
+	color: #100f10;
+	opacity: 1;
+}
