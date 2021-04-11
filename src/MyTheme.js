@@ -19,4 +19,12 @@ export default createMuiTheme({
 			constrastText: "#f7f7fe",
 		},
 	},
+	typographyRubik: {
+		fontFamily: "Rubik",
+		fontWeight: 700,
+	},
+	typographyKarla: {
+		fontFamily: "Karla",
+		fontWeight: 700,
+	},
 });
