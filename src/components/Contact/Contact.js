@@ -117,10 +117,15 @@ function Contact() {
 	const classes = useStyles();
 	const preventDefault = (event) => event.preventDefault();
 	return (
-		<div>
+		<ThemeProvider theme={MyTheme}>
 			<Card />
 			<div class="section">
-				<Typography class="text" align="center" gutterBottom id="rubik">
+				<Typography
+					class="text"
+					align="center"
+					gutterBottom
+					style={MyTheme.typographyRubik}
+				>
 					Contacto
 				</Typography>
 				<Grid class="icon-container">
@@ -274,10 +279,7 @@ function Contact() {
 					direction="column"
 					alignItems="center"
 					justify="center"
-					style={{
-						background: "#f7f7fe",
-						border: "2px solid #100f10",
-					}}
+					style={{ background: "#f7f7fe", border: "2px solid #100f10" }}
 				>
 					<TextField
 						className={classes.textFieldName}
@@ -321,28 +323,30 @@ function Contact() {
 						type="text"
 						variant="outlined"
 					/>
-					<ThemeProvider theme={MyTheme}>
-						<Button
-							className={classes.button}
-							style={MyTheme.palette.buttonSend}
-							variant="contained"
+					<Button
+						className={classes.button}
+						style={MyTheme.palette.buttonSend}
+						variant="contained"
+					>
+						<div
+							style={
+								(MyTheme.typographyRubik, { color: "white", fontSize: "20px" })
+							}
 						>
-							<div id="rubik" style={{ color: "white", fontSize: "20px" }}>
-								Enviar
-							</div>
-						</Button>
-						<Button
-							className={classes.button}
-							style={MyTheme.palette.buttonCancel}
-						>
-							<div id="karla" style={{ fontSize: "20px" }}>
-								Cancelar
-							</div>
-						</Button>
-					</ThemeProvider>
+							Enviar
+						</div>
+					</Button>
+					<Button
+						className={classes.button}
+						style={MyTheme.palette.buttonCancel}
+					>
+						<div style={(MyTheme.typographyKarla, { fontSize: "20px" })}>
+							Cancelar
+						</div>
+					</Button>
 				</form>
 			</div>
-		</div>
+		</ThemeProvider>
 	);
 }
 
