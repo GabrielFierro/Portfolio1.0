@@ -1,6 +1,5 @@
 /* Contact.js */
 import "./Contact.css";
-import "../../assets/fonts/fonts.css";
 import Card from "../Card/Card";
 import MyTheme from "../../MyTheme";
 import {

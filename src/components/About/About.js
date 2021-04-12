@@ -7,7 +7,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "../Card/Card";
 import ProfilePicture from "../../assets/images/profile/gabifierro.jpg";
 import "./About.css";
-import "../../assets/fonts/fonts.css";
 import theme from "../../MyTheme";
 
 const useStyles = makeStyles({

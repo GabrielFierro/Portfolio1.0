@@ -6,7 +6,6 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import "./NavBar.css";
-import "../../assets/fonts/fonts.css";
 
 function NavBar(props) {
 	return (

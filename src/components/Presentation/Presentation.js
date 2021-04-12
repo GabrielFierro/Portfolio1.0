@@ -1,4 +1,3 @@
-import "../../assets/fonts/fonts.css";
 import "./Presentation.css";
 
 function Presentation() {
