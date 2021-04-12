@@ -1,17 +1,21 @@
 import "./Presentation.css";
+import MyTheme from "../../MyTheme";
+import { ThemeProvider } from "@material-ui/core";
 
 function Presentation() {
 	return (
 		<article>
-			<div className="card">
-				<p className="title" id="rubik">
-					Hola, me llamo Gabriel Fierro.
-					<p style={{ margin: "0px" }}>
-						Soy un desarrollador
-						<span color="secondary.light"> front-end </span>creativo.
+			<ThemeProvider theme={MyTheme}>
+				<div className="card">
+					<p className="title" style={MyTheme.typographyRubik}>
+						Hola, me llamo Gabriel Fierro.
+						<p style={{ margin: "0px" }}>
+							Soy un desarrollador
+							<span color="secondary.light"> front-end </span>creativo.
+						</p>
 					</p>
-				</p>
-			</div>
+				</div>
+			</ThemeProvider>
 		</article>
 	);
 }
