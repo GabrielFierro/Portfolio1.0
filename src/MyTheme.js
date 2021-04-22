@@ -6,8 +6,8 @@ export default createMuiTheme({
 			main: "#f7f7fe",
 			dark: "#1a1919",
 		},
-		secondary: {
-			main: "#100f10",
+		accentColor: {
+			color: "#37b9f1",
 		},
 		buttonCancel: {
 			backgroundColor: "#f7f7fe",
