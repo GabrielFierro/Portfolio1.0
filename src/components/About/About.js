@@ -8,10 +8,18 @@ import Card from "../Card/Card";
 import ProfilePicture from "../../assets/images/profile/gabifierro.jpg";
 import "./About.css";
 import MyTheme from "../../MyTheme";
+import HtmlLogo from "../../assets/images/icons/html-logo.svg";
+import CssLogo from "../../assets/images/icons/css-logo.svg";
+import TailwindLogo from "../../assets/images/icons/tailwind-logo.svg";
+import BootstrapLogo from "../../assets/images/icons/bootstrap-logo.svg";
+import PythonLogo from "../../assets/images/icons/python-logo.svg";
+import FlaskLogo from "../../assets/images/icons/flask-logo.svg";
+import JavascriptLogo from "../../assets/images/icons/javascript-logo.svg";
+import GitLogo from "../../assets/images/icons/git-icon.svg";
 
 const useStyles = makeStyles((theme) => ({
 	section_container: {
-		left: "10%",
+		left: "12%",
 		paddingLeft: "10%",
 		position: "absolute",
 		top: "23%",
@@ -81,6 +89,26 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: "1.15rem",
 		marginTop: "5px",
 		marginLeft: "8px",
+	},
+	skills_container: {
+		left: "15%",
+		position: "absolute",
+		top: "55%",
+		width: "70%",
+		height: "35%",
+		marginTop: "5px",
+		fontSize: "2.25rem",
+	},
+	skills_text: {
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		fontSize: "3rem",
+	},
+	icons_container: {
+		position: "relative",
+		top: "60%",
+		left: "15%",
 	},
 }));
 
@@ -174,6 +202,48 @@ function About() {
 								Lic. en Ciencias de la Computación
 							</Typography>
 						</Grid>
+					</Grid>
+				</Grid>
+			</Grid>
+			<Grid
+				container
+				item
+				direction="column"
+				className={classes.skills_container}
+			>
+				<Grid container item direction="column">
+					<Typography
+						className={classes.skills_text}
+						gutterbottom
+						style={MyTheme.typographyRubik}
+					>
+						Habilidades
+					</Typography>
+				</Grid>
+				<Grid container xs={3} sm direction="row">
+					<Grid>
+						<img alt="logo html" src={HtmlLogo}></img>
+					</Grid>
+					<Grid>
+						<img alt="logo css" src={CssLogo}></img>
+					</Grid>
+					<Grid>
+						<img alt="logo tailwind" src={TailwindLogo}></img>
+					</Grid>
+					<Grid>
+						<img alt="logo tailwind" src={BootstrapLogo}></img>
+					</Grid>
+					<Grid>
+						<img alt="logo tailwind" src={PythonLogo}></img>
+					</Grid>
+					<Grid>
+						<img alt="logo tailwind" src={FlaskLogo}></img>
+					</Grid>
+					<Grid>
+						<img alt="logo tailwind" src={JavascriptLogo}></img>
+					</Grid>
+					<Grid>
+						<img alt="logo tailwind" src={GitLogo}></img>
 					</Grid>
 				</Grid>
 			</Grid>
