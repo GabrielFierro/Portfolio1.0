@@ -7,14 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "../Card/Card";
 import ProfilePicture from "../../assets/images/profile/gabifierro.jpg";
 import MyTheme from "../../MyTheme";
-import HtmlLogo from "../../assets/images/icons/html-logo.svg";
-import CssLogo from "../../assets/images/icons/css-logo.svg";
-import TailwindLogo from "../../assets/images/icons/tailwind-logo.svg";
-import BootstrapLogo from "../../assets/images/icons/bootstrap-logo.svg";
-import PythonLogo from "../../assets/images/icons/python-logo.svg";
-import FlaskLogo from "../../assets/images/icons/flask-logo.svg";
-import JavascriptLogo from "../../assets/images/icons/javascript-logo.svg";
-import GitLogo from "../../assets/images/icons/git-icon.svg";
+import Logo from "./Logo/Logo";
 
 const useStyles = makeStyles((theme) => ({
 	section_container: {
@@ -220,30 +213,7 @@ function About() {
 					</Typography>
 				</Grid>
 				<Grid container xs={3} sm direction="row">
-					<Grid>
-						<img alt="logo html" src={HtmlLogo}></img>
-					</Grid>
-					<Grid>
-						<img alt="logo css" src={CssLogo}></img>
-					</Grid>
-					<Grid>
-						<img alt="logo tailwind" src={TailwindLogo}></img>
-					</Grid>
-					<Grid>
-						<img alt="logo tailwind" src={BootstrapLogo}></img>
-					</Grid>
-					<Grid>
-						<img alt="logo tailwind" src={PythonLogo}></img>
-					</Grid>
-					<Grid>
-						<img alt="logo tailwind" src={FlaskLogo}></img>
-					</Grid>
-					<Grid>
-						<img alt="logo tailwind" src={JavascriptLogo}></img>
-					</Grid>
-					<Grid>
-						<img alt="logo tailwind" src={GitLogo}></img>
-					</Grid>
+					<Logo />
 				</Grid>
 			</Grid>
 		</ThemeProvider>
