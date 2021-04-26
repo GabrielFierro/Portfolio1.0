@@ -6,7 +6,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "../Card/Card";
 import ProfilePicture from "../../assets/images/profile/gabifierro.jpg";
-import "./About.css";
 import MyTheme from "../../MyTheme";
 import HtmlLogo from "../../assets/images/icons/html-logo.svg";
 import CssLogo from "../../assets/images/icons/css-logo.svg";
