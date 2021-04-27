@@ -12,7 +12,7 @@ import Logo from "./Logo/Logo";
 const useStyles = makeStyles((theme) => ({
 	section_container: {
 		left: "12%",
-		paddingLeft: "10%",
+		paddingLeft: "5%",
 		position: "absolute",
 		top: "23%",
 		width: "70%",
