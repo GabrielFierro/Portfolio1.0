@@ -10,6 +10,7 @@ import {
 } from "@material-ui/core";
 import Card from "../Card/Card";
 import MyTheme from "../../MyTheme";
+import Timeline from "../../assets/images/timeline/timeline.svg";
 
 const useStyles = makeStyles((theme) => ({
 	title: {
@@ -19,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 		width: "75%",
 	},
 	skills_text: {
-		alignItems: "center",
+		alignItems: "	",
 		display: "flex",
 		fontSize: "3rem",
 		justifyContent: "center",
@@ -36,10 +37,12 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		fontSize: "1rem",
 		justifyContent: "center",
+		width: "95%",
+		marginLeft: "-10px",
 	},
 	description_text: {
 		fontSize: "1rem",
-		margin: "0 50px 0 50px",
+		margin: "0 40px 0 40px",
 	},
 	description_container: {
 		height: "45%",
@@ -68,11 +71,15 @@ const useStyles = makeStyles((theme) => ({
 		width: "70%",
 	},
 	button: {
-		marginBottom: "15px",
+		marginBottom: "30px",
 		boxShadow: "2px 2px 5px #37b9f1",
 		"&:hover": {
 			boxShadow: "3px 3px 10px #37b9f1",
 		},
+	},
+	timeline: {
+		width: "5%",
+		marginTop: "20px",
 	},
 }));
 
@@ -99,9 +106,11 @@ function Experience() {
 						>
 							Code in magenta
 						</Typography>
-						<Grid direction="row">
-							<Grid direction="row">
-								<Typography>ASD</Typography>
+						<Grid container xs={2} sm direction="row">
+							<Grid direction="row" className={classes.timeline}>
+								<Box>
+									<img alt="timeline with circles" src={Timeline}></img>
+								</Box>
 							</Grid>
 							<Grid
 								direction="column"
