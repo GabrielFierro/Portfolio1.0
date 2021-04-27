@@ -1,5 +1,5 @@
 /* Home.js */
-import Presentation from "./Presentation/Presentation";
+import Presentation from "../Presentation/Presentation";
 
 function Home() {
 	return <Presentation />;
