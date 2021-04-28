@@ -11,6 +11,8 @@ import {
 	ThemeProvider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
+import ButtonSecondary from "../Buttons/ButtonSecondary";
 
 const useStyles = makeStyles((theme) => ({
 	textFieldName: {
@@ -50,9 +52,15 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: "0.5em",
 		},
 	},
-	button: {
+	cancel_button: {
+		marginLeft: "50px",
+		[theme.breakpoints.down("md")]: {
+			height: "35px",
+			marginBottom: "5px",
+		},
+	},
+	send_button: {
 		marginLeft: "20px",
-		marginBottom: "15px",
 		[theme.breakpoints.down("md")]: {
 			height: "35px",
 			marginBottom: "5px",
@@ -322,27 +330,8 @@ function Contact() {
 						type="text"
 						variant="outlined"
 					/>
-					<Button
-						className={classes.button}
-						style={MyTheme.palette.buttonSend}
-						variant="contained"
-					>
-						<div
-							style={
-								(MyTheme.typographyRubik, { color: "white", fontSize: "20px" })
-							}
-						>
-							Enviar
-						</div>
-					</Button>
-					<Button
-						className={classes.button}
-						style={MyTheme.palette.buttonCancel}
-					>
-						<div style={(MyTheme.typographyKarla, { fontSize: "20px" })}>
-							Cancelar
-						</div>
-					</Button>
+					<ButtonPrimary className={classes.send_button} name="Enviar" />
+					<ButtonSecondary className={classes.cancel_button} name="Cancelar" />
 				</form>
 			</div>
 		</ThemeProvider>
