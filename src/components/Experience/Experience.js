@@ -13,6 +13,10 @@ import Card from "../Card/Card";
 import MyTheme from "../../MyTheme";
 import Timeline from "../../assets/images/timeline/timeline.svg";
 import Magenta from "../../assets/images/magenta/magenta.png";
+import HtmlLogo from "../../assets/images/icons/html-logo.svg";
+import CssLogo from "../../assets/images/icons/css-logo.svg";
+import TailwindLogo from "../../assets/images/icons/tailwind-logo.svg";
+import JavascriptLogo from "../../assets/images/icons/javascript-logo.svg";
 
 const useStyles = makeStyles((theme) => ({
 	title: {
@@ -66,10 +70,10 @@ const useStyles = makeStyles((theme) => ({
 		width: "50%",
 	},
 	footer_container: {
-		height: "15%",
+		height: "12%",
 		left: "15%",
 		position: "absolute",
-		top: "75%",
+		top: "82%",
 		width: "70%",
 	},
 	project_image: {
@@ -117,6 +121,17 @@ const useStyles = makeStyles((theme) => ({
 	timeline: {
 		width: "5%",
 		marginTop: "15px",
+	},
+	icon: {
+		marginLeft: "15px",
+	},
+	icon_size: {
+		height: "40px",
+		width: "40px",
+	},
+	develop_text: {
+		fontSize: "1.25rem",
+		marginTop: "5px",
 	},
 }));
 
@@ -201,7 +216,7 @@ function Experience() {
 								</Button>
 							</Link>
 							<Link
-								href="https://www.linkedin.com/in/gabriel-fierro-2020/"
+								href="https://github.com/magentateam/landingOng"
 								onClick={preventDefault}
 							>
 								<Button
@@ -220,7 +235,44 @@ function Experience() {
 						</Grid>
 					</Grid>
 				</Box>
-				<Box className={classes.footer_container}></Box>
+				<Grid direction="row" className={classes.footer_container}>
+					<Box alignItems="flex-start" display="flex" p={1}>
+						<Typography
+							className={classes.develop_text}
+							style={MyTheme.typographyRubik}
+						>
+							Desarrollado con:
+						</Typography>
+						<Box className={classes.icon}>
+							<img
+								alt="html logo"
+								className={classes.icon_size}
+								src={HtmlLogo}
+							></img>
+						</Box>
+						<Box className={classes.icon}>
+							<img
+								alt="css logo"
+								className={classes.icon_size}
+								src={CssLogo}
+							></img>
+						</Box>
+						<Box className={classes.icon}>
+							<img
+								alt="tailwind logo"
+								className={classes.icon_size}
+								src={TailwindLogo}
+							></img>
+						</Box>
+						<Box className={classes.icon}>
+							<img
+								alt="javascript logo"
+								className={classes.icon_size}
+								src={JavascriptLogo}
+							></img>
+						</Box>
+					</Box>
+				</Grid>
 			</Container>
 		</ThemeProvider>
 	);
