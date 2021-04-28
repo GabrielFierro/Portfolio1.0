@@ -5,7 +5,6 @@ import {
 	Button,
 	Box,
 	Grid,
-	Link,
 	Typography,
 	ThemeProvider,
 } from "@material-ui/core";
