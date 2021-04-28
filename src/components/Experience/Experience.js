@@ -17,6 +17,8 @@ import HtmlLogo from "../../assets/images/icons/html-logo.svg";
 import CssLogo from "../../assets/images/icons/css-logo.svg";
 import TailwindLogo from "../../assets/images/icons/tailwind-logo.svg";
 import JavascriptLogo from "../../assets/images/icons/javascript-logo.svg";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
+import ButtonSecondary from "../Buttons/ButtonSecondary";
 
 const useStyles = makeStyles((theme) => ({
 	title: {
@@ -94,28 +96,11 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	primary_button: {
-		height: "40px",
-		marginLeft: "75px",
+		marginLeft: "15px",
 		width: "110px",
-		boxShadow: "1px 1px 8px #100f10",
-		"&:hover": {
-			boxShadow: "3px 3px 10px #37b9f1",
-		},
-	},
-	secondary_button: {
-		height: "40px",
-		marginLeft: "25px",
-		boxShadow: "1px 1px 8px #100f10",
-		"&:hover": {
-			boxShadow: "3px 3px 10px #37b9f1",
-		},
 	},
 	primary_button_text: {
 		color: "#f7f7fe",
-		fontSize: "24px",
-	},
-	secondary_button_text: {
-		color: "#100f10",
 		fontSize: "24px",
 	},
 	timeline: {
@@ -137,7 +122,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Experience() {
 	const classes = useStyles();
-	const preventDefault = (event) => event.preventDefault();
 	return (
 		<ThemeProvider theme={MyTheme}>
 			<Card />
@@ -197,42 +181,14 @@ function Experience() {
 								src={Magenta}
 							></img>
 						</Box>
-						<Grid direction="row">
-							<Link
-								href="https://magentateam.github.io/landingOng/public/"
-								onClick={preventDefault}
-							>
-								<Button
-									className={classes.primary_button}
-									style={MyTheme.palette.buttonSend}
-									variant="contained"
-								>
-									<Typography
-										className={classes.primary_button_text}
-										style={MyTheme.typographyKarla}
-									>
-										Demo
-									</Typography>
-								</Button>
-							</Link>
-							<Link
-								href="https://github.com/magentateam/landingOng"
-								onClick={preventDefault}
-							>
-								<Button
-									className={classes.secondary_button}
-									style={MyTheme.palette.buttonCancel}
-									variant="outlined"
-								>
-									<Typography
-										className={classes.secondary_button_text}
-										style={MyTheme.typographyKarla}
-									>
-										Repositorio
-									</Typography>
-								</Button>
-							</Link>
-						</Grid>
+						<Box alignItems="flex-start" display="flex" p={1}>
+							<Grid className={classes.primary_button}>
+								<ButtonPrimary name="Demo"></ButtonPrimary>
+							</Grid>
+							<Grid className={classes.secondary_button}>
+								<ButtonSecondary name="Repositorio" />
+							</Grid>
+						</Box>
 					</Grid>
 				</Box>
 				<Grid direction="row" className={classes.footer_container}>
