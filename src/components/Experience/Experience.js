@@ -88,11 +88,8 @@ const useStyles = makeStyles((theme) => ({
 		boxShadow: "1px 1px 8px #100f10",
 	},
 	button: {
-		margin: "0 0 30px 0",
-		boxShadow: "1px 1px 8px #100f10",
-		"&:hover": {
-			boxShadow: "3px 3px 10px #37b9f1",
-		},
+		width: "420px",
+		margin: "5px 0 10px 25px",
 	},
 	primary_button: {
 		marginLeft: "15px",
@@ -152,15 +149,9 @@ function Experience() {
 								direction="column"
 								className={classes.project_name_description}
 							>
-								<Button
-									className={classes.button}
-									variant="contained"
-									style={MyTheme.palette.buttonSend}
-								>
-									<div style={{ color: "white", fontSize: "12px" }}>
-										Octubre 2020 - Noviembre 2020
-									</div>
-								</Button>
+								<Grid className={classes.button}>
+									<ButtonPrimary name="Octubre 2020 - Noviembre 2020"></ButtonPrimary>
+								</Grid>
 								<Typography
 									className={classes.description_text}
 									style={MyTheme.typographyKarla}
