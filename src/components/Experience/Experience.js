@@ -5,6 +5,7 @@ import {
 	Button,
 	Box,
 	Grid,
+	Link,
 	Typography,
 	ThemeProvider,
 } from "@material-ui/core";
@@ -121,6 +122,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Experience() {
 	const classes = useStyles();
+	const preventDefault = (event) => event.preventDefault();
 	return (
 		<ThemeProvider theme={MyTheme}>
 			<Card />
@@ -181,29 +183,40 @@ function Experience() {
 							></img>
 						</Box>
 						<Grid direction="row">
-							<Button
-								className={classes.primary_button}
-								style={MyTheme.palette.buttonSend}
-								variant="contained"
+							<Link
+								href="https://magentateam.github.io/landingOng/public/"
+								onClick={preventDefault}
 							>
-								<Typography
-									className={classes.primary_button_text}
-									style={MyTheme.typographyKarla}
+								<Button
+									className={classes.primary_button}
+									style={MyTheme.palette.buttonSend}
+									variant="contained"
 								>
-									Demo
-								</Typography>
-							</Button>
-							<Button
-								className={classes.secondary_button}
-								style={MyTheme.palette.buttonCancel}
+									<Typography
+										className={classes.primary_button_text}
+										style={MyTheme.typographyKarla}
+									>
+										Demo
+									</Typography>
+								</Button>
+							</Link>
+							<Link
+								href="https://www.linkedin.com/in/gabriel-fierro-2020/"
+								onClick={preventDefault}
 							>
-								<Typography
-									className={classes.secondary_button_text}
-									style={MyTheme.typographyKarla}
+								<Button
+									className={classes.secondary_button}
+									style={MyTheme.palette.buttonCancel}
+									variant="outlined"
 								>
-									Repositorio
-								</Typography>
-							</Button>
+									<Typography
+										className={classes.secondary_button_text}
+										style={MyTheme.typographyKarla}
+									>
+										Repositorio
+									</Typography>
+								</Button>
+							</Link>
 						</Grid>
 					</Grid>
 				</Box>
