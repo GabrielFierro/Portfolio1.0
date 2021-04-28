@@ -11,6 +11,7 @@ import {
 import Card from "../Card/Card";
 import MyTheme from "../../MyTheme";
 import Timeline from "../../assets/images/timeline/timeline.svg";
+import Magenta from "../../assets/images/magenta/magenta.png";
 
 const useStyles = makeStyles((theme) => ({
 	title: {
@@ -30,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		fontSize: "1.75rem",
 		justifyContent: "center",
-		marginTop: "15px",
+		marginTop: "-10px",
 	},
 	project_name_description: {
 		alignItems: "center",
@@ -41,8 +42,8 @@ const useStyles = makeStyles((theme) => ({
 		marginLeft: "-10px",
 	},
 	description_text: {
-		fontSize: "1rem",
-		margin: "0 40px 0 40px",
+		fontSize: "1.25rem",
+		margin: "0 30px 0 60px",
 	},
 	description_container: {
 		height: "45%",
@@ -70,16 +71,51 @@ const useStyles = makeStyles((theme) => ({
 		top: "75%",
 		width: "70%",
 	},
+	project_image: {
+		width: "100%",
+		margin: "10px 0 0 35px",
+	},
+	image: {
+		width: "380px",
+		margin: "5px 0 10px 0",
+		borderRadius: "5px",
+		boxShadow: "1px 1px 8px #100f10",
+	},
 	button: {
-		marginBottom: "30px",
-		boxShadow: "2px 2px 5px #37b9f1",
+		margin: "0 0 30px 0",
+		boxShadow: "1px 1px 8px #100f10",
 		"&:hover": {
 			boxShadow: "3px 3px 10px #37b9f1",
 		},
 	},
+	primary_button: {
+		height: "40px",
+		marginLeft: "75px",
+		width: "110px",
+		boxShadow: "1px 1px 8px #100f10",
+		"&:hover": {
+			boxShadow: "3px 3px 10px #37b9f1",
+		},
+	},
+	secondary_button: {
+		height: "40px",
+		marginLeft: "25px",
+		boxShadow: "1px 1px 8px #100f10",
+		"&:hover": {
+			boxShadow: "3px 3px 10px #37b9f1",
+		},
+	},
+	primary_button_text: {
+		color: "#f7f7fe",
+		fontSize: "24px",
+	},
+	secondary_button_text: {
+		color: "#100f10",
+		fontSize: "24px",
+	},
 	timeline: {
 		width: "5%",
-		marginTop: "20px",
+		marginTop: "15px",
 	},
 }));
 
@@ -136,7 +172,40 @@ function Experience() {
 							</Grid>
 						</Grid>
 					</Grid>
-					<Grid className={classes.right_container}></Grid>
+					<Grid className={classes.right_container}>
+						<Box className={classes.project_image}>
+							<img
+								alt="magenta project"
+								className={classes.image}
+								src={Magenta}
+							></img>
+						</Box>
+						<Grid direction="row">
+							<Button
+								className={classes.primary_button}
+								style={MyTheme.palette.buttonSend}
+								variant="contained"
+							>
+								<Typography
+									className={classes.primary_button_text}
+									style={MyTheme.typographyKarla}
+								>
+									Demo
+								</Typography>
+							</Button>
+							<Button
+								className={classes.secondary_button}
+								style={MyTheme.palette.buttonCancel}
+							>
+								<Typography
+									className={classes.secondary_button_text}
+									style={MyTheme.typographyKarla}
+								>
+									Repositorio
+								</Typography>
+							</Button>
+						</Grid>
+					</Grid>
 				</Box>
 				<Box className={classes.footer_container}></Box>
 			</Container>
