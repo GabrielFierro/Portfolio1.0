@@ -9,12 +9,12 @@ export default createMuiTheme({
 		accentColor: {
 			color: "#37b9f1",
 		},
-		buttonCancel: {
+		buttonSecondary: {
 			backgroundColor: "#f7f7fe",
 			contrastText: "#37b9f1",
 			border: "1px solid #37b9f1",
 		},
-		buttonSend: {
+		buttonPrimary: {
 			backgroundColor: "#37b9f1",
 			constrastText: "#f7f7fe",
 		},
