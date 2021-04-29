@@ -11,9 +11,21 @@ import JavascriptLogo from "../../../assets/images/icons/javascript-logo.svg";
 import GitLogo from "../../../assets/images/icons/git-icon.svg";
 import Logo from "../Logo/Logo";
 
+const useStyles = makeStyles((theme) => ({
+	container_logo: {
+		marginLeft: "50px",
+	},
+}));
+
 function LogoContainer() {
+	const classes = useStyles();
 	return (
-		<Box alignItems="flex-start" display="flex" p={1}>
+		<Box
+			className={classes.container_logo}
+			alignItems="center"
+			display="flex"
+			p={1}
+		>
 			<Logo alt="Html logo" src={HtmlLogo}></Logo>
 			<Logo alt="Css logo" src={CssLogo}></Logo>
 			<Logo alt="Tailwind logo" src={TailwindLogo}></Logo>
