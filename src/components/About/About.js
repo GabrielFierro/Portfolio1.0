@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Card from "../Card/Card";
 import ProfilePicture from "../../assets/images/profile/gabifierro.jpg";
 import MyTheme from "../../MyTheme";
-import Logo from "./Logo/Logo";
+import LogoContainer from "./LogoContainer/LogoContainer";
 
 const useStyles = makeStyles((theme) => ({
 	section_container: {
@@ -213,7 +213,7 @@ function About() {
 					</Typography>
 				</Grid>
 				<Grid container xs={3} sm direction="row">
-					<Logo />
+					<LogoContainer />
 				</Grid>
 			</Grid>
 		</ThemeProvider>
