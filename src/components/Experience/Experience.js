@@ -1,13 +1,7 @@
 /* Experience.js */
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
-import {
-	Button,
-	Box,
-	Grid,
-	Typography,
-	ThemeProvider,
-} from "@material-ui/core";
+import { Box, Grid, Typography, ThemeProvider } from "@material-ui/core";
 import Card from "../Card/Card";
 import MyTheme from "../../MyTheme";
 import Timeline from "../../assets/images/timeline/timeline.svg";
