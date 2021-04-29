@@ -5,7 +5,6 @@ import MyTheme from "../../MyTheme";
 const useStyles = makeStyles((theme) => ({
 	button: {
 		marginLeft: "20px",
-		marginBottom: "10px",
 		boxShadow: "1px 1px 8px #100f10",
 		"&:hover": {
 			boxShadow: "3px 3px 10px #37b9f1",
