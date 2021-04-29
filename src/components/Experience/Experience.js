@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
 		width: "75%",
 	},
 	skills_text: {
-		alignItems: "	",
+		alignItems: "center",
 		display: "flex",
 		fontSize: "3rem",
 		justifyContent: "center",
