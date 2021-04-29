@@ -3,6 +3,7 @@ import "./Contact.css";
 import Card from "../Card/Card";
 import MyTheme from "../../MyTheme";
 import {
+	Box,
 	Grid,
 	Link,
 	TextField,
@@ -51,19 +52,9 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: "0.5em",
 		},
 	},
-	cancel_button: {
-		marginLeft: "50px",
-		[theme.breakpoints.down("md")]: {
-			height: "35px",
-			marginBottom: "5px",
-		},
-	},
-	send_button: {
-		marginLeft: "20px",
-		[theme.breakpoints.down("md")]: {
-			height: "35px",
-			marginBottom: "5px",
-		},
+	button_container: {
+		marginTop: "5px",
+		marginBottom: "15px",
 	},
 	icon: {
 		width: "50px",
@@ -329,8 +320,13 @@ function Contact() {
 						type="text"
 						variant="outlined"
 					/>
-					<ButtonPrimary className={classes.send_button} name="Enviar" />
-					<ButtonSecondary className={classes.cancel_button} name="Cancelar" />
+					<Box className={classes.button_container}>
+						<ButtonPrimary className={classes.send_button} name="Enviar" />
+						<ButtonSecondary
+							className={classes.cancel_button}
+							name="Cancelar"
+						/>
+					</Box>
 				</form>
 			</div>
 		</ThemeProvider>
