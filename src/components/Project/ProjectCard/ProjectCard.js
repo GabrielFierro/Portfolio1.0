@@ -1,30 +1,51 @@
 import React from "react";
-import {
-	ButtonBase,
-	makeStyles,
-	ThemeProvider,
-	Typography,
-} from "@material-ui/core";
-import MyTheme from "../../../MyTheme";
-import HuddleLanding from "../../../assets/images/projects/huddle-landing.jpg";
-import ProfileCard from "../../../assets/images/projects/profile-card.jpg";
-import Testimonial from "../../../assets/images/projects/testimonial-grid.jpg";
-import FyloLanding from "../../../assets/images/projects/fylo-landing.jpg";
-import GitHubProfileFinder from "../../../assets/images/projects/github-profile-finder.png";
-import Pokeballs from "../../../assets/images/projects/react-pokeballs.png";
+import { makeStyles } from "@material-ui/core/styles";
+import ButtonBase from "@material-ui/core/ButtonBase";
+import Typography from "@material-ui/core/Typography";
+
+const images = [
+	{
+		url: "/static/images/projects/huddle-landing.jpg",
+		title: "Huddle landing",
+		width: "30%",
+	},
+	{
+		url: "/static/images/projects/profile-card.jpg",
+		title: "Profile card",
+		width: "30%",
+	},
+	{
+		url: "/static/images/projects/testimonial-grid.jpg",
+		title: "Testimonial grid",
+		width: "30%",
+	},
+	{
+		url: "/static/images/projects/fylo-landing.jpg",
+		title: "Fylo Landing",
+		width: "30%",
+	},
+	{
+		url: "/static/images/projects/github-profile-finder.png",
+		title: "GitHub Profile Finder",
+		width: "30%",
+	},
+	{
+		url: "/static/images/projects/react-pokeballs.png",
+		title: "Pokeballs",
+		width: "30%",
+	},
+];
 
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: "flex",
 		flexWrap: "wrap",
-		marginTop: "10px",
-		marginLeft: "45px",
 		minWidth: 300,
 		width: "100%",
 	},
 	image: {
 		position: "relative",
-		height: 160,
+		height: 170,
 		[theme.breakpoints.down("xs")]: {
 			width: "100% !important", // Overrides inline-style
 			height: 100,
@@ -90,24 +111,25 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-function ProjectCard() {
+export default function ButtonBases() {
 	const classes = useStyles();
 
 	return (
-		<ThemeProvider theme={MyTheme}>
-			<div className={classes.root}>
+		<div className={classes.root}>
+			{images.map((image) => (
 				<ButtonBase
 					focusRipple
+					key={image.title}
 					className={classes.image}
 					focusVisibleClassName={classes.focusVisible}
 					style={{
-						width: "30%",
+						width: image.width,
 					}}
 				>
 					<span
 						className={classes.imageSrc}
 						style={{
-							backgroundImage: `url(${HuddleLanding})`,
+							backgroundImage: `url(${image.url})`,
 						}}
 					/>
 					<span className={classes.imageBackdrop} />
@@ -117,156 +139,13 @@ function ProjectCard() {
 							variant="subtitle1"
 							color="inherit"
 							className={classes.imageTitle}
-							style={MyTheme.typographyRubik}
 						>
-							"Testimonial"
+							{image.title}
 							<span className={classes.imageMarked} />
 						</Typography>
 					</span>
 				</ButtonBase>
-				<ButtonBase
-					focusRipple
-					className={classes.image}
-					focusVisibleClassName={classes.focusVisible}
-					style={{
-						width: "30%",
-					}}
-				>
-					<span
-						className={classes.imageSrc}
-						style={{
-							backgroundImage: `url(${ProfileCard})`,
-						}}
-					/>
-					<span className={classes.imageBackdrop} />
-					<span className={classes.imageButton}>
-						<Typography
-							component="span"
-							variant="subtitle1"
-							color="inherit"
-							className={classes.imageTitle}
-							style={MyTheme.typographyRubik}
-						>
-							"ProfileCard"
-							<span className={classes.imageMarked} />
-						</Typography>
-					</span>
-				</ButtonBase>
-				<ButtonBase
-					focusRipple
-					className={classes.image}
-					focusVisibleClassName={classes.focusVisible}
-					style={{
-						width: "30%",
-					}}
-				>
-					<span
-						className={classes.imageSrc}
-						style={{
-							backgroundImage: `url(${Testimonial})`,
-						}}
-					/>
-					<span className={classes.imageBackdrop} />
-					<span className={classes.imageButton}>
-						<Typography
-							component="span"
-							variant="subtitle1"
-							color="inherit"
-							className={classes.imageTitle}
-							style={MyTheme.typographyRubik}
-						>
-							"Testimonial"
-							<span className={classes.imageMarked} />
-						</Typography>
-					</span>
-				</ButtonBase>
-				<ButtonBase
-					focusRipple
-					className={classes.image}
-					focusVisibleClassName={classes.focusVisible}
-					style={{
-						width: "30%",
-					}}
-				>
-					<span
-						className={classes.imageSrc}
-						style={{
-							backgroundImage: `url(${FyloLanding})`,
-						}}
-					/>
-					<span className={classes.imageBackdrop} />
-					<span className={classes.imageButton}>
-						<Typography
-							component="span"
-							variant="subtitle1"
-							color="inherit"
-							className={classes.imageTitle}
-							style={MyTheme.typographyRubik}
-						>
-							"Fylo Landing Page"
-							<span className={classes.imageMarked} />
-						</Typography>
-					</span>
-				</ButtonBase>
-				<ButtonBase
-					focusRipple
-					className={classes.image}
-					focusVisibleClassName={classes.focusVisible}
-					style={{
-						width: "30%",
-					}}
-				>
-					<span
-						className={classes.imageSrc}
-						style={{
-							backgroundImage: `url(${GitHubProfileFinder})`,
-						}}
-					/>
-					<span className={classes.imageBackdrop} />
-					<span className={classes.imageButton}>
-						<Typography
-							component="span"
-							variant="subtitle1"
-							color="inherit"
-							className={classes.imageTitle}
-							style={MyTheme.typographyRubik}
-						>
-							"GitHub Profile Finder"
-							<span className={classes.imageMarked} />
-						</Typography>
-					</span>
-				</ButtonBase>
-				<ButtonBase
-					focusRipple
-					className={classes.image}
-					focusVisibleClassName={classes.focusVisible}
-					style={{
-						width: "30%",
-					}}
-				>
-					<span
-						className={classes.imageSrc}
-						style={{
-							backgroundImage: `url(${Pokeballs})`,
-						}}
-					/>
-					<span className={classes.imageBackdrop} />
-					<span className={classes.imageButton}>
-						<Typography
-							component="span"
-							variant="subtitle1"
-							color="inherit"
-							className={classes.imageTitle}
-							style={MyTheme.typographyRubik}
-						>
-							"Pokeballs"
-							<span className={classes.imageMarked} />
-						</Typography>
-					</span>
-				</ButtonBase>
-			</div>
-		</ThemeProvider>
+			))}
+		</div>
 	);
 }
-
-export default ProjectCard;
