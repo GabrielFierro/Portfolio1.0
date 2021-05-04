@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Typography from "@material-ui/core/Typography";
+import MyTheme from "../../../MyTheme";
 
 const images = [
 	{
@@ -42,10 +43,13 @@ const useStyles = makeStyles((theme) => ({
 		flexWrap: "wrap",
 		minWidth: 300,
 		width: "100%",
+		marginLeft: "10px",
+		marginTop: 5,
 	},
 	image: {
 		position: "relative",
-		height: 170,
+		height: 150,
+		margin: "10px",
 		[theme.breakpoints.down("xs")]: {
 			width: "100% !important", // Overrides inline-style
 			height: 100,
@@ -136,9 +140,10 @@ export default function ButtonBases() {
 					<span className={classes.imageButton}>
 						<Typography
 							component="span"
-							variant="subtitle1"
+							variant="h6"
 							color="inherit"
 							className={classes.imageTitle}
+							style={MyTheme.typographyKarla}
 						>
 							{image.title}
 							<span className={classes.imageMarked} />
