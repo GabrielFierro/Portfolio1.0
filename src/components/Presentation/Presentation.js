@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 	title: {
 		color: "rgba(16, 15, 16, 1)",
 		margin: "0 1.5rem 0 1.5rem",
-		fontSize: "3.75rem",
 		letterSpacing: "-0.00833em",
 		lineHeight: "1.2",
 		position: "relative",
@@ -29,24 +28,34 @@ const useStyles = makeStyles((theme) => ({
 			top: "25%",
 		},
 		[theme.breakpoints.down("sm")]: {
-			fontSize: "2.6rem",
+			fontSize: "2.75rem",
 			top: "20%",
+			margin: "0 0.5rem 0 0.5rem",
 		},
 		[theme.breakpoints.down("xs")]: {
-			fontSize: "1.8rem",
+			fontSize: "2rem",
 			top: "30%",
 		},
 	},
 	subtitle: {
 		color: "#100f10",
-		fontSize: "3.75rem",
 		letterSpacing: "-0.00833em",
 		lineHeight: "1.2",
+		display: "block",
 		[theme.breakpoints.down("sm")]: {
-			fontSize: "2.6rem",
+			fontSize: "2.75rem",
 		},
 		[theme.breakpoints.down("xs")]: {
-			fontSize: "1.8rem",
+			fontSize: "2rem",
+		},
+	},
+	spanColor: {
+		color: "#37b9f1",
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "2.75rem",
+		},
+		[theme.breakpoints.down("xs")]: {
+			fontSize: "2rem",
 		},
 	},
 }));
@@ -56,15 +65,29 @@ function Presentation() {
 	return (
 		<article>
 			<ThemeProvider theme={MyTheme}>
-				<Grid item xs direction="column" className={classes.card}>
-					<Typography className={classes.title} style={MyTheme.typographyRubik}>
+				<Grid container item xs direction="column" className={classes.card}>
+					<Typography
+						variant="h2"
+						className={classes.title}
+						style={MyTheme.typographyRubik}
+					>
 						Hola, me llamo Gabriel Fierro.
 						<Typography
+							component="span"
+							variant="h2"
 							className={classes.subtitle}
 							style={MyTheme.typographyRubik}
 						>
 							Soy un desarrollador
-							<span style={MyTheme.palette.accentColor}> front-end </span>
+							<Typography
+								variant="h2"
+								component="span"
+								className={classes.spanColor}
+								style={MyTheme.typographyRubik}
+							>
+								{" "}
+								front-end{" "}
+							</Typography>
 							creativo.
 						</Typography>
 					</Typography>
