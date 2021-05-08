@@ -9,31 +9,43 @@ const images = [
 		url: "/static/images/projects/huddle-landing.jpg",
 		title: "Huddle landing",
 		width: "30%",
+		repositorie: "https://github.com/GabrielFierro/Huddle-landing-page",
+		demo: "https://gabrielfierro.github.io/Huddle-landing-page/",
 	},
 	{
 		url: "/static/images/projects/profile-card.jpg",
 		title: "Profile card",
 		width: "30%",
+		repositorie: "https://github.com/GabrielFierro/ProfileCardComponent",
+		demo: "https://gabrielfierro.github.io/ProfileCardComponent/",
 	},
 	{
 		url: "/static/images/projects/testimonial-grid.jpg",
 		title: "Testimonial grid",
 		width: "30%",
+		repositorie: "https://github.com/GabrielFierro/TestimonialsGridSection",
+		demo: "https://gabrielfierro.github.io/TestimonialsGridSection/",
 	},
 	{
 		url: "/static/images/projects/fylo-landing.jpg",
 		title: "Fylo Landing",
 		width: "30%",
+		repositorie: "https://github.com/GabrielFierro/Fylo-landing-page",
+		demo: "https://gabrielfierro.github.io/Fylo-landing-page/",
 	},
 	{
 		url: "/static/images/projects/github-profile-finder.png",
-		title: "GitHub Profile Finder",
+		title: "GitHub Profile",
 		width: "30%",
+		repositorie: "https://github.com/GabrielFierro/GithubProfileFinder",
+		demo: "https://github-profile-finder-gabrielfierro.vercel.app/",
 	},
 	{
 		url: "/static/images/projects/react-pokeballs.png",
 		title: "Pokeballs",
 		width: "30%",
+		repositorie: "https://github.com/GabrielFierro/React-Pokeball",
+		demo: "https://gabrielfierro.github.io/React-Pokeball/",
 	},
 ];
 
@@ -57,13 +69,14 @@ const useStyles = makeStyles((theme) => ({
 		"&:hover, &$focusVisible": {
 			zIndex: 1,
 			"& $imageBackdrop": {
-				opacity: 0.15,
+				opacity: 0.7,
 			},
 			"& $imageMarked": {
-				opacity: 0,
+				opacity: 0.7,
 			},
 			"& $imageTitle": {
 				border: "4px solid currentColor",
+				cursor: "default",
 			},
 		},
 	},
@@ -109,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
 		width: 18,
 		backgroundColor: theme.palette.common.white,
 		position: "absolute",
-		bottom: -2,
+		bottom: -3,
 		left: "calc(50% - 9px)",
 		transition: theme.transitions.create("opacity"),
 	},
