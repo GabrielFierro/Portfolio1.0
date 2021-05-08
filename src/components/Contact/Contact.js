@@ -87,8 +87,11 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	form: {
+		backgroundColor: "#f7f7fe",
+		border: "2px solid #100f10",
 		width: "100%",
 		[theme.breakpoints.down("xs")]: {
+			marginTop: "-25px",
 			width: "100%",
 		},
 	},
@@ -208,7 +211,6 @@ function Contact() {
 					direction="column"
 					alignItems="center"
 					justify="center"
-					style={{ background: "#f7f7fe", border: "2px solid #100f10" }}
 				>
 					<TextField
 						className={classes.textFieldName}
