@@ -2,7 +2,11 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import ButtonBase from "@material-ui/core/ButtonBase";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 import MyTheme from "../../../MyTheme";
+import { ReactComponent as LinkIcon } from "../../../assets/images/icons/link.svg";
+import { ReactComponent as WorldWideWeb } from "../../../assets/images/icons/worldwideweb.svg";
+import Link from "@material-ui/core/Link";
 
 const images = [
 	{
@@ -69,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
 		"&:hover, &$focusVisible": {
 			zIndex: 1,
 			"& $imageBackdrop": {
-				opacity: 0.7,
+				opacity: 0.8,
 			},
 			"& $imageMarked": {
 				opacity: 0.7,
@@ -126,11 +130,24 @@ const useStyles = makeStyles((theme) => ({
 		left: "calc(50% - 9px)",
 		transition: theme.transitions.create("opacity"),
 	},
+	iconContainer: {
+		display: "flex",
+		height: 30,
+		justifyContent: "space-evenly",
+		width: 160,
+	},
+	icon: {
+		width: 30,
+		height: 30,
+		"&:hover": {
+			stroke: "#37b9f1",
+		},
+	},
 }));
 
 export default function ButtonBases() {
 	const classes = useStyles();
-
+	const preventDefault = (event) => event.preventDefault();
 	return (
 		<div className={classes.root}>
 			{images.map((image) => (
@@ -153,13 +170,22 @@ export default function ButtonBases() {
 					<span className={classes.imageButton}>
 						<Typography
 							component="span"
-							variant="h6"
+							variant="h5"
 							color="inherit"
 							className={classes.imageTitle}
 							style={MyTheme.typographyKarla}
 						>
 							{image.title}
 							<span className={classes.imageMarked} />
+
+							<Grid container className={classes.iconContainer}>
+								<Link href={image.demo} onClick={preventDefault}>
+									<WorldWideWeb className={classes.icon} />
+								</Link>
+								<Link href={image.repositorie} onClick={preventDefault}>
+									<LinkIcon className={classes.icon} />
+								</Link>
+							</Grid>
 						</Typography>
 					</span>
 				</ButtonBase>
