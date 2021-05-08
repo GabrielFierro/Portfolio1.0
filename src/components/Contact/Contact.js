@@ -13,6 +13,9 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import ButtonSecondary from "../Buttons/ButtonSecondary";
+import LinkedInIcon from "./Screens/LinkedInIcon/LinkedInIcon.js";
+import GitHubIcon from "./Screens/GitHubIcon/GitHubIcon.js";
+import TwitterIcon from "./Screens/TwitterIcon/TwitterIcon.js";
 
 const useStyles = makeStyles((theme) => ({
 	textFieldName: {
@@ -171,102 +174,31 @@ function Contact() {
 							/>
 						</svg>
 					</div>
-					<Grid
-						className={classes.gridMarginLeft}
-						container
-						style={{ marginTop: "5px" }}
-					>
-						<Link
-							href="https://www.linkedin.com/in/gabriel-fierro-2020/"
-							onClick={preventDefault}
-						>
-							<div className={classes.icon}>
-								<svg
-									class="icon-hover"
-									viewBox="0 0 55 55"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M41.25 9.16675H13.75C11.2187 9.16675 9.16667 11.2188 9.16667 13.7501V41.2501C9.16667 43.7814 11.2187 45.8334 13.75 45.8334H41.25C43.7813 45.8334 45.8333 43.7814 45.8333 41.2501V13.7501C45.8333 11.2188 43.7813 9.16675 41.25 9.16675Z"
-										stroke="#100F10"
-										stroke-width="2.75"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-									<path
-										d="M18.3333 25.2083V36.6666"
-										stroke="#100F10"
-										stroke-width="2.75"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-									<path
-										d="M18.3333 18.3333V18.3562"
-										stroke="#100F10"
-										stroke-width="2.75"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-									<path
-										d="M27.5 36.6666V25.2083"
-										stroke="#100F10"
-										stroke-width="2.75"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-									<path
-										d="M36.6667 36.6666V29.7916C36.6667 28.576 36.1838 27.4102 35.3242 26.5507C34.4647 25.6911 33.2989 25.2083 32.0833 25.2083C30.8678 25.2083 29.702 25.6911 28.8424 26.5507C27.9829 27.4102 27.5 28.576 27.5 29.7916"
-										stroke="#100F10"
-										stroke-width="2.75"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-								</svg>
-							</div>
-						</Link>
-						<Link
-							href="https://github.com/GabrielFierro/"
-							onClick={preventDefault}
-						>
-							<div className={classes.icon}>
-								<svg
-									class="icon-hover"
-									viewBox="0 0 50 50"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M31.25 43.75V36.4584C31.25 34.375 31.4583 33.5417 30.2083 32.2917C36.0417 31.6667 41.6667 29.375 41.6667 19.7917C41.6641 17.302 40.6928 14.9111 38.9583 13.125C39.7718 10.9625 39.6969 8.56591 38.75 6.45835C38.75 6.45835 36.4583 5.83335 31.4583 9.16669C27.2234 8.06374 22.7766 8.06374 18.5417 9.16669C13.5417 5.83335 11.25 6.45835 11.25 6.45835C10.3031 8.56591 10.2282 10.9625 11.0417 13.125C9.30719 14.9111 8.33587 17.302 8.33333 19.7917C8.33333 29.375 13.9583 31.6667 19.7917 32.2917C18.5417 33.5417 18.5417 34.7917 18.75 36.4584V43.75M18.75 39.5834C9.79167 42.5 9.79167 34.375 6.25 33.3334L18.75 39.5834Z"
-										stroke="#100F10"
-										stroke-width="2.75"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-								</svg>
-							</div>
-						</Link>
-						<Link
-							href="https://twitter.com/f_gabriel01"
-							onClick={preventDefault}
-						>
-							<div className={classes.icon}>
-								<svg
-									class="icon-hover"
-									viewBox="0 0 55 55"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<path
-										d="M50.4167 9.18949C48.125 10.3124 45.8792 10.7685 43.5417 11.4582C40.9727 8.55928 37.164 8.39887 33.5042 9.76928C29.8444 11.1397 27.4473 14.4901 27.5 18.3332V20.6249C20.0635 20.8151 13.4406 17.428 9.16667 11.4582C9.16667 11.4582 -0.417086 28.4922 18.3333 36.6666C14.0433 39.5243 9.76479 41.4516 4.58333 41.2499C12.1642 45.3818 20.4256 46.8026 27.5779 44.7264C35.7821 42.343 42.5242 36.1945 45.1115 26.9843C45.8833 24.1831 46.2665 21.2892 46.2504 18.3837C46.2458 17.813 49.7108 12.0312 50.4167 9.1872V9.18949Z"
-										stroke="#100F10"
-										stroke-width="2.75"
-										stroke-linecap="round"
-										stroke-linejoin="round"
-									/>
-								</svg>
-							</div>
-						</Link>
+					<Grid className={classes.gridMarginLeft} container>
+						<Grid className={classes.icon}>
+							<Link
+								href="https://www.linkedin.com/in/gabriel-fierro-2020/"
+								onClick={preventDefault}
+							>
+								<LinkedInIcon className={classes.icon} />
+							</Link>
+						</Grid>
+						<Grid className={classes.icon}>
+							<Link
+								href="https://github.com/GabrielFierro/"
+								onClick={preventDefault}
+							>
+								<GitHubIcon className={classes.icon} />
+							</Link>
+						</Grid>
+						<Grid className={classes.icon}>
+							<Link
+								href="https://twitter.com/f_gabriel01"
+								onClick={preventDefault}
+							>
+								<TwitterIcon className={classes.icon} />
+							</Link>
+						</Grid>
 					</Grid>
 				</Grid>
 				<form
