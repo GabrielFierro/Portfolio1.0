@@ -63,11 +63,11 @@ const useStyles = makeStyles((theme) => ({
 		width: "50px",
 		height: "50px",
 		marginLeft: "30px",
+		marginTop: "5px",
 		[theme.breakpoints.down("sm")]: {
 			width: "40px",
 			height: "40px",
 			marginLeft: "25px",
-			marginTop: "5px",
 		},
 	},
 	linkIcon: {
@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "#f7f7fe",
 		border: "2px solid #100f10",
 		width: "100%",
-		[theme.breakpoints.down("xs")]: {
+		[theme.breakpoints.down("md")]: {
 			marginTop: "-25px",
 			width: "100%",
 		},
