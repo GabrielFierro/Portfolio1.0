@@ -1,12 +1,5 @@
 import React from "react";
-import {
-	Box,
-	Grid,
-	makeStyles,
-	ThemeProvider,
-	Typography,
-} from "@material-ui/core";
-import MyTheme from "../../../MyTheme";
+import { Box, Grid, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
 	section_text: {
@@ -22,26 +15,14 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-function Section(props) {
+function Section({ children }) {
 	const classes = useStyles();
 	return (
-		<ThemeProvider theme={MyTheme}>
-			<Grid display="flex" justifyContent="center">
-				<Box
-					className={classes.box}
-					display="flex"
-					justifyContent="center"
-					m={2}
-				>
-					<Typography
-						className={classes.section_text}
-						style={MyTheme.typographyRubik}
-					>
-						{props.name}
-					</Typography>
-				</Box>
-			</Grid>
-		</ThemeProvider>
+		<Grid display="flex" justifyContent="center">
+			<Box className={classes.box} display="flex" justifyContent="center" m={2}>
+				{children}
+			</Box>
+		</Grid>
 	);
 }
 
