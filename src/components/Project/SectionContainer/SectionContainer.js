@@ -1,10 +1,23 @@
 import React from "react";
-import { Box, makeStyles } from "@material-ui/core";
-import Section from "../Section/Section";
+import {
+	Box,
+	Button,
+	makeStyles,
+	ThemeProvider,
+	Typography,
+} from "@material-ui/core";
+import MyTheme from "../../../MyTheme";
 
 const useStyles = makeStyles((theme) => ({
 	section_container: {
-		width: "100%",
+		width: "60%",
+	},
+	button: {
+		backgroundColor: "#1a1a19",
+		color: "#f7f7fe",
+		"&:hover": {
+			backgroundColor: "#37b9f1",
+		},
 	},
 }));
 
@@ -13,22 +26,37 @@ function SectionContainer(props) {
 	return (
 		<Box
 			className={classes.section_container}
-			alignItems="center"
+			justifyContent="center"
 			display="flex"
-			style={{ marginLeft: "160px", marginTop: "-25px" }}
+			style={{
+				height: "25px",
+				marginLeft: "160px",
+				marginTop: "-10px",
+			}}
+			p={2}
 		>
-			<Box p={1}>
-				<Section name="Todos"></Section>
-			</Box>
-			<Box p={1}>
-				<Section name="API"></Section>
-			</Box>
-			<Box p={1}>
-				<Section name="Diseño"></Section>
-			</Box>
-			<Box p={1}>
-				<Section name="React"></Section>
-			</Box>
+			<ThemeProvider theme={MyTheme}>
+				<Box px={2} mt={-1}>
+					<Button variant="contained" className={classes.button}>
+						<Typography style={MyTheme.typographyKarla}>Todos</Typography>
+					</Button>
+				</Box>
+				<Box px={2} mt={-1}>
+					<Button variant="contained" className={classes.button}>
+						<Typography style={MyTheme.typographyKarla}>Diseño</Typography>
+					</Button>
+				</Box>
+				<Box px={2} mt={-1}>
+					<Button variant="contained" className={classes.button}>
+						<Typography style={MyTheme.typographyKarla}>React</Typography>
+					</Button>
+				</Box>
+				<Box px={2} mt={-1}>
+					<Button variant="contained" className={classes.button}>
+						<Typography style={MyTheme.typographyKarla}>API</Typography>
+					</Button>
+				</Box>
+			</ThemeProvider>
 		</Box>
 	);
 }
