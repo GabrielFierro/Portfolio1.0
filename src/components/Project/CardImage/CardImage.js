@@ -99,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-function ButtonContainer(props) {
+function CardImage(props) {
 	const classes = useStyles();
 	const preventDefault = (event) => event.preventDefault();
 
@@ -147,4 +147,4 @@ function ButtonContainer(props) {
 	);
 }
 
-export default ButtonContainer;
+export default CardImage;

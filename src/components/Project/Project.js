@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import MyTheme from "../../MyTheme";
 import Card from "../Card/Card";
-import ButtonContainer from "./ButtonContainer/ButtonContainer";
+import CardImage from "./CardImage/CardImage";
 
 const images = [
 	{
@@ -355,7 +355,7 @@ function Project() {
 					<div className={classes.root}>
 						{display || category === "Todos" ? (
 							<div className={classes.buttonB}>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									demo="https://gabrielfierro.github.io/Huddle-landing-page/"
 									repository="https://github.com/GabrielFierro/Huddle-landing-page"
@@ -363,31 +363,31 @@ function Project() {
 									url="/static/images/projects/huddle-landing.jpg"
 									width="100%"
 								/>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/profile-card.jpg"
 									title="Profile"
 								/>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/testimonial-grid.jpg"
 									title="Testimonial grid"
 								/>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/fylo-landing.jpg"
 									title="Fylo landing"
 								/>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/github-profile-finder.png"
 									title="GitHub Profile"
 								/>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/react-pokeballs.png"
@@ -397,25 +397,25 @@ function Project() {
 						) : null}
 						{category === "Diseño" && (
 							<div className={classes.buttonB}>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/huddle-landing.jpg"
 									title="Huddle landing"
 								/>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/profile-card.jpg"
 									title="Profile"
 								/>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/testimonial-grid.jpg"
 									title="Testimonial grid"
 								/>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/fylo-landing.jpg"
@@ -425,7 +425,7 @@ function Project() {
 						)}
 						{category === "API" && (
 							<div className={classes.buttonB}>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/github-profile-finder.png"
@@ -435,7 +435,7 @@ function Project() {
 						)}
 						{category === "React" && (
 							<div className={classes.buttonB}>
-								<ButtonContainer
+								<CardImage
 									category={category}
 									width="100%"
 									url="/static/images/projects/react-pokeballs.png"
