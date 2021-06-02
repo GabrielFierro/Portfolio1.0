@@ -3,11 +3,13 @@ import Grid from "@material-ui/core/Grid";
 import { ThemeProvider } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import CardMedia from "@material-ui/core/CardMedia";
-import { makeStyles } from "@material-ui/core/styles";
+import { Box, makeStyles } from "@material-ui/core";
 import Card from "../Card/Card";
 import ProfilePicture from "../../assets/images/profile/gabifierro.jpg";
 import MyTheme from "../../MyTheme";
 import LogoContainer from "./LogoContainer/LogoContainer";
+import { ReactComponent as Location } from "../../assets/images/icons/location.svg";
+import { ReactComponent as Book } from "../../assets/images/icons/book.svg";
 
 const useStyles = makeStyles((theme) => ({
 	section_container: {
@@ -35,11 +37,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("xs")]: {
 			marginTop: "-5px",
-			display: "flex",
-			textAlign: "center",
-			marginLeft: "80px",
-			width: "75px",
-			height: "75px",
+			marginLeft: "75px",
 		},
 		[theme.breakpoints.between("320", "375")]: {
 			marginLeft: "65px",
@@ -49,38 +47,48 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	text_container: {
-		left: "5%",
+		marginLeft: "10px",
 		position: "relative",
 		width: "100%",
 	},
 	my_description: {
+		width: "100%",
 		marginTop: "-5px",
-		marginRight: "5px",
 		fontSize: "1.5rem",
 		lineHeight: "1.2",
 		[theme.breakpoints.down("md")]: {
-			fontSize: "24px",
+			fontSize: "1.35rem",
 		},
 		[theme.breakpoints.down("sm")]: {
-			fontSize: "20px",
-			marginLeft: "10px",
-			marginRight: "-35px",
+			fontSize: "1.20rem",
+			marginRight: "15px",
 		},
 		[theme.breakpoints.down("xs")]: {
-			fontSize: "16px",
-			marginLeft: "5px",
-			marginRight: "-70px",
+			fontSize: "1rem",
+			marginTop: "10px",
 		},
 	},
 	properties_container: {
 		left: "5%",
 		position: "relative",
 		width: "100%",
+		marginTop: "15px",
+		[theme.breakpoints.down("md")]: {
+			marginTop: "20px",
+		},
+		[theme.breakpoints.down("sm")]: {
+			marginTop: "25px",
+			marginLeft: "-10px",
+		},
 	},
 	property_text: {
 		fontSize: "1.15rem",
-		marginTop: "5px",
-		marginLeft: "8px",
+		[theme.breakpoints.down("md")]: {
+			fontSize: "1rem",
+		},
+		[theme.breakpoints.down("xs")]: {
+			marginTop: "5px",
+		},
 	},
 	skills_container: {
 		left: "15%",
@@ -92,10 +100,15 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: "2.25rem",
 	},
 	skills_text: {
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
 		fontSize: "3rem",
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "2.75rem",
+			marginTop: "25px",
+		},
+		[theme.breakpoints.down("xs")]: {
+			fontSize: "1.75rem",
+			marginTop: "130px",
+		},
 	},
 	icons_container: {
 		position: "relative",
@@ -134,30 +147,13 @@ function About() {
 						</Typography>
 					</Grid>
 					<Grid
-						container
-						xs={12}
-						sm
-						direction="row"
 						className={classes.properties_container}
-						style={{ marginTop: "25px" }}
+						container
+						direction="row"
+						spacing={3}
 					>
-						<Grid container direction="row" xs={4}>
-							<svg
-								class="icon icon-tabler icon-tabler-map-pin"
-								fill="none"
-								height="30"
-								stroke="#37B9F1"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="1.5"
-								viewBox="0 0 24 24"
-								width="30"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<circle cx="12" cy="11" r="3" />
-								<path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
-							</svg>
+						<Grid container direction="row" sm="auto" md={3}>
+							<Location />
 							<Typography
 								className={classes.property_text}
 								gutterBottom
@@ -166,26 +162,8 @@ function About() {
 								Argentina
 							</Typography>
 						</Grid>
-						<Grid container direction="row" sm>
-							<svg
-								class="icon icon-tabler icon-tabler-book"
-								fill="none"
-								height="30"
-								stroke="#37B9F1"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="1.5"
-								viewBox="0 0 24 24"
-								width="30"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path stroke="none" d="M0 0h24v24H0z" fill="none" />
-								<path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-								<path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
-								<line x1="3" y1="6" x2="3" y2="19" />
-								<line x1="12" y1="6" x2="12" y2="19" />
-								<line x1="21" y1="6" x2="21" y2="19" />
-							</svg>
+						<Grid container direction="row" sm="auto" md={9}>
+							<Book />
 							<Typography
 								className={classes.property_text}
 								gutterBottom
@@ -203,7 +181,13 @@ function About() {
 				direction="column"
 				className={classes.skills_container}
 			>
-				<Grid container item direction="column">
+				<Grid
+					container
+					direction="column"
+					display="flex"
+					alignItems="center"
+					justifyContent="center"
+				>
 					<Typography
 						className={classes.skills_text}
 						gutterbottom
@@ -212,7 +196,7 @@ function About() {
 						Habilidades
 					</Typography>
 				</Grid>
-				<Grid container xs={3} sm direction="row">
+				<Grid container direction="row">
 					<LogoContainer />
 				</Grid>
 			</Grid>
