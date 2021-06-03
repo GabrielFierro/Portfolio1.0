@@ -1,13 +1,15 @@
 /* About.js */
-import Grid from "@material-ui/core/Grid";
-import { ThemeProvider } from "@material-ui/core";
-import Typography from "@material-ui/core/Typography";
-import CardMedia from "@material-ui/core/CardMedia";
-import { Box, makeStyles } from "@material-ui/core";
-import Card from "../Card/Card";
-import ProfilePicture from "../../assets/images/profile/gabifierro.jpg";
+import {
+	CardMedia,
+	Grid,
+	makeStyles,
+	ThemeProvider,
+	Typography,
+} from "@material-ui/core";
 import MyTheme from "../../MyTheme";
+import Card from "../Card/Card";
 import LogoContainer from "./LogoContainer/LogoContainer";
+import ProfilePicture from "../../assets/images/profile/gabifierro.jpg";
 import { ReactComponent as Location } from "../../assets/images/icons/location.svg";
 import { ReactComponent as Book } from "../../assets/images/icons/book.svg";
 
