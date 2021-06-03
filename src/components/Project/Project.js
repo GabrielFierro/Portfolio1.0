@@ -210,7 +210,7 @@ function Project() {
 	const classes = useStyles();
 	const [category, setCategory] = useState("");
 	const [display, setDisplay] = useState(true);
-	const mapped = images.map((obj, index) => obj.category);
+	const mapped = images.map((obj) => obj.category);
 	const filteredImages = mapped.filter(
 		(type, index) => mapped.indexOf(type) === index
 	);
