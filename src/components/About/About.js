@@ -33,19 +33,14 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: "-10px",
 		},
 		[theme.breakpoints.down("sm")]: {
+			border: "5px solid tomato",
 			width: "90px",
 			height: "95px",
-			marginLeft: "-10px",
+			marginTop: "-90px",
 		},
 		[theme.breakpoints.down("xs")]: {
+			border: "5px solid teal",
 			marginTop: "-5px",
-			marginLeft: "75px",
-		},
-		[theme.breakpoints.between("320", "375")]: {
-			marginLeft: "65px",
-		},
-		[theme.breakpoints.between("425", "500")]: {
-			marginLeft: "100px",
 		},
 	},
 	text_container: {
@@ -55,10 +50,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 	my_description: {
 		width: "100%",
-		marginTop: "-5px",
+		marginTop: "-55px",
+		marginLeft: "10px",
 		fontSize: "1.5rem",
 		lineHeight: "1.2",
 		[theme.breakpoints.down("md")]: {
+			marginTop: "-5px",
 			fontSize: "1.35rem",
 		},
 		[theme.breakpoints.down("sm")]: {
@@ -66,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
 			marginRight: "15px",
 		},
 		[theme.breakpoints.down("xs")]: {
-			fontSize: "1rem",
+			fontSize: "0.9rem",
 			marginTop: "10px",
 		},
 	},
@@ -82,14 +79,18 @@ const useStyles = makeStyles((theme) => ({
 			marginTop: "25px",
 			marginLeft: "-10px",
 		},
+		[theme.breakpoints.down("xs")]: {
+			marginTop: "5px",
+		},
 	},
 	property_text: {
 		fontSize: "1.15rem",
 		[theme.breakpoints.down("md")]: {
 			fontSize: "1rem",
 		},
-		[theme.breakpoints.down("xs")]: {
-			marginTop: "5px",
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "0.6rem",
+			marginTop: "10px",
 		},
 	},
 	skills_container: {
@@ -103,19 +104,16 @@ const useStyles = makeStyles((theme) => ({
 	},
 	skills_text: {
 		fontSize: "3rem",
+		marginTop: "20px",
+		marginBottom: "15px",
 		[theme.breakpoints.down("sm")]: {
-			fontSize: "2.75rem",
-			marginTop: "25px",
+			fontSize: "2.5rem",
+			marginTop: "40px",
 		},
 		[theme.breakpoints.down("xs")]: {
-			fontSize: "1.75rem",
-			marginTop: "130px",
+			fontSize: "1.25rem",
+			marginTop: "110px",
 		},
-	},
-	icons_container: {
-		position: "relative",
-		top: "60%",
-		left: "15%",
 	},
 }));
 
@@ -127,17 +125,18 @@ function About() {
 			<Grid
 				className={classes.section_container}
 				container
-				direction="row"
-				item
+				display="flex"
+				justify="center"
+				alignItems="center"
 			>
-				<Grid item>
+				<Grid>
 					<CardMedia
 						title="Profile picture about me"
 						className={classes.media}
 						image={ProfilePicture}
 					/>
 				</Grid>
-				<Grid item sm container direction="row">
+				<Grid sm container direction="row">
 					<Grid className={classes.text_container}>
 						<Typography
 							className={classes.my_description}
@@ -148,27 +147,20 @@ function About() {
 							nivel personal, como profesional.
 						</Typography>
 					</Grid>
-					<Grid
-						className={classes.properties_container}
-						container
-						direction="row"
-						spacing={3}
-					>
-						<Grid container direction="row" sm="auto" md={3}>
+					<Grid className={classes.properties_container} container>
+						<Grid container direction="row" item xs sm="auto" md={3}>
 							<Location />
 							<Typography
 								className={classes.property_text}
-								gutterBottom
 								style={MyTheme.typographyKarla}
 							>
 								Argentina
 							</Typography>
 						</Grid>
-						<Grid container direction="row" sm="auto" md={9}>
+						<Grid container direction="row" item xs={12} sm="auto" md={9}>
 							<Book />
 							<Typography
 								className={classes.property_text}
-								gutterBottom
 								style={MyTheme.typographyKarla}
 							>
 								Lic. en Ciencias de la Computación
@@ -179,6 +171,7 @@ function About() {
 			</Grid>
 			<Grid
 				container
+				xs
 				item
 				direction="column"
 				className={classes.skills_container}
@@ -188,11 +181,10 @@ function About() {
 					direction="column"
 					display="flex"
 					alignItems="center"
-					justifyContent="center"
+					justifycontent="center"
 				>
 					<Typography
 						className={classes.skills_text}
-						gutterbottom
 						style={MyTheme.typographyRubik}
 					>
 						Habilidades

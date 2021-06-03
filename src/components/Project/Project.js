@@ -19,7 +19,7 @@ const images = [
 	{
 		id: 1,
 		category: "Diseño",
-		url: "/static/images/projects/huddle-landing.jpg",
+		url: "/static/images/projects/huddle-landing.avif",
 		title: "Huddle landing",
 		width: "30%",
 		repository: "https://github.com/GabrielFierro/Huddle-landing-page",
@@ -28,7 +28,7 @@ const images = [
 	{
 		id: 2,
 		category: "Diseño",
-		url: "/static/images/projects/profile-card.jpg",
+		url: "/static/images/projects/profile-card.avif",
 		title: "Profile card",
 		width: "30%",
 		repository: "https://github.com/GabrielFierro/ProfileCardComponent",
@@ -37,7 +37,7 @@ const images = [
 	{
 		id: 3,
 		category: "Diseño",
-		url: "/static/images/projects/testimonial-grid.jpg",
+		url: "/static/images/projects/testimonial-grid.avif",
 		title: "Testimonial grid",
 		width: "30%",
 		repository: "https://github.com/GabrielFierro/TestimonialsGridSection",
@@ -45,7 +45,7 @@ const images = [
 	},
 	{
 		category: "Diseño",
-		url: "/static/images/projects/fylo-landing.jpg",
+		url: "/static/images/projects/fylo-landing.avif",
 		title: "Fylo Landing",
 		width: "30%",
 		repository: "https://github.com/GabrielFierro/Fylo-landing-page",
@@ -54,7 +54,7 @@ const images = [
 	{
 		id: 4,
 		category: "API",
-		url: "/static/images/projects/github-profile-finder.png",
+		url: "/static/images/projects/github-profile-finder.avif",
 		title: "GitHub Profile",
 		width: "30%",
 		repository: "https://github.com/GabrielFierro/GithubProfileFinder",
@@ -63,7 +63,7 @@ const images = [
 	{
 		id: 5,
 		category: "React",
-		url: "/static/images/projects/react-pokeballs.png",
+		url: "/static/images/projects/react-pokeballs.avif",
 		title: "Pokeballs",
 		width: "30%",
 		repository: "https://github.com/GabrielFierro/React-Pokeball",
@@ -360,37 +360,37 @@ function Project() {
 									demo="https://gabrielfierro.github.io/Huddle-landing-page/"
 									repository="https://github.com/GabrielFierro/Huddle-landing-page"
 									title="Huddle landing"
-									url="/static/images/projects/huddle-landing.jpg"
+									url="/static/images/projects/huddle-landing.avif"
 									width="100%"
 								/>
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/profile-card.jpg"
+									url="/static/images/projects/profile-card.avif"
 									title="Profile"
 								/>
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/testimonial-grid.jpg"
+									url="/static/images/projects/testimonial-grid.avif"
 									title="Testimonial grid"
 								/>
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/fylo-landing.jpg"
+									url="/static/images/projects/fylo-landing.avif"
 									title="Fylo landing"
 								/>
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/github-profile-finder.png"
+									url="/static/images/projects/github-profile-finder.avif"
 									title="GitHub Profile"
 								/>
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/react-pokeballs.png"
+									url="/static/images/projects/react-pokeballs.avif"
 									title="Pokeballs"
 								/>
 							</div>
@@ -400,25 +400,25 @@ function Project() {
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/huddle-landing.jpg"
+									url="/static/images/projects/huddle-landing.avif"
 									title="Huddle landing"
 								/>
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/profile-card.jpg"
+									url="/static/images/projects/profile-card.avif"
 									title="Profile"
 								/>
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/testimonial-grid.jpg"
+									url="/static/images/projects/testimonial-grid.avif"
 									title="Testimonial grid"
 								/>
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/fylo-landing.jpg"
+									url="/static/images/projects/fylo-landing.avif"
 									title="Fylo landing"
 								/>
 							</div>
@@ -428,7 +428,7 @@ function Project() {
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/github-profile-finder.png"
+									url="/static/images/projects/github-profile-finder.avif"
 									title="GitHub Profile"
 								/>
 							</div>
@@ -438,7 +438,7 @@ function Project() {
 								<CardImage
 									category={category}
 									width="100%"
-									url="/static/images/projects/react-pokeballs.png"
+									url="/static/images/projects/react-pokeballs.avif"
 									title="Pokeballs"
 								/>
 							</div>

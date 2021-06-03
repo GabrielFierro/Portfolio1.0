@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -13,11 +13,18 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("sm")]: {
 			height: "45px",
 			width: "45px",
-			marginTop: "45px",
 		},
 		[theme.breakpoints.down("xs")]: {
 			height: "30px",
 			width: "30px",
+		},
+		[theme.breakpoints.between("425", "500")]: {
+			height: "25px",
+			width: "25px",
+		},
+		[theme.breakpoints.between("320", "375")]: {
+			height: "20px",
+			width: "20px",
 			marginTop: "5px",
 		},
 	},
@@ -26,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 function Logo(props) {
 	const classes = useStyles();
 	return (
-		<Grid container xs="auto" display="flex">
+		<Grid container xs="auto" item display="flex">
 			<img alt={props.alt} src={props.src} className={classes.icon}></img>
 		</Grid>
 	);
