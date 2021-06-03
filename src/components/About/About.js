@@ -33,13 +33,11 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: "-10px",
 		},
 		[theme.breakpoints.down("sm")]: {
-			border: "5px solid tomato",
 			width: "90px",
 			height: "95px",
 			marginTop: "-90px",
 		},
 		[theme.breakpoints.down("xs")]: {
-			border: "5px solid teal",
 			marginTop: "-5px",
 		},
 	},
@@ -47,6 +45,9 @@ const useStyles = makeStyles((theme) => ({
 		marginLeft: "10px",
 		position: "relative",
 		width: "100%",
+		[theme.breakpoints.down("xs")]: {
+			marginLeft: "0px",
+		},
 	},
 	my_description: {
 		width: "100%",
@@ -65,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("xs")]: {
 			fontSize: "0.9rem",
 			marginTop: "10px",
+			marginLeft: "0px",
 		},
 	},
 	properties_container: {
@@ -136,7 +138,7 @@ function About() {
 						image={ProfilePicture}
 					/>
 				</Grid>
-				<Grid sm container direction="row">
+				<Grid item sm container direction="row">
 					<Grid className={classes.text_container}>
 						<Typography
 							className={classes.my_description}
@@ -171,8 +173,8 @@ function About() {
 			</Grid>
 			<Grid
 				container
-				xs
 				item
+				xs
 				direction="column"
 				className={classes.skills_container}
 			>
