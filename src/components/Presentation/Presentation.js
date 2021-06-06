@@ -17,10 +17,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	title: {
-		color: "rgba(16, 15, 16, 1)",
 		margin: "0 1.5rem 0 1.5rem",
 		letterSpacing: "-0.00833em",
-		lineHeight: "1.2",
+		lineHeight: "1.5",
 		position: "relative",
 		top: "30%",
 		[theme.breakpoints.down("md")]: {
@@ -34,19 +33,20 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("xs")]: {
 			fontSize: "2rem",
-			top: "30%",
+			margin: "1rem 1.25rem 0 1rem",
 		},
 	},
 	subtitle: {
 		color: "#100f10",
 		letterSpacing: "-0.00833em",
-		lineHeight: "1.2",
+		lineHeight: "1.5",
 		display: "block",
 		[theme.breakpoints.down("sm")]: {
 			fontSize: "2.75rem",
 		},
 		[theme.breakpoints.down("xs")]: {
 			fontSize: "2rem",
+			margin: "1rem 1.25rem 0 0",
 		},
 	},
 	spanColor: {
