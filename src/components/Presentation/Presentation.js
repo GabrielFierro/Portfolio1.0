@@ -17,9 +17,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	title: {
-		margin: "0 1.5rem 0 1.5rem",
 		letterSpacing: "-0.00833em",
 		lineHeight: "1.5",
+		margin: "0 1.5rem 0 1.5rem",
 		position: "relative",
 		top: "30%",
 		[theme.breakpoints.down("md")]: {
@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("sm")]: {
 			fontSize: "2.75rem",
-			top: "20%",
 			margin: "0 0.5rem 0 0.5rem",
+			top: "20%",
 		},
 		[theme.breakpoints.down("xs")]: {
 			fontSize: "2rem",
@@ -38,9 +38,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	subtitle: {
 		color: "#100f10",
+		display: "block",
 		letterSpacing: "-0.00833em",
 		lineHeight: "1.5",
-		display: "block",
 		[theme.breakpoints.down("sm")]: {
 			fontSize: "2.75rem",
 		},
