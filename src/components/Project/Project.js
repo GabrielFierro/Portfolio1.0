@@ -83,13 +83,22 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 		fontSize: "3rem",
 		justifyContent: "center",
+		[theme.breakpoints.down("md")]: {
+			fontSize: "2.65rem",
+		},
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "2.35rem",
+		},
+		[theme.breakpoints.down("xs")]: {
+			fontSize: "2rem",
+		},
 	},
 	description_container: {
 		height: "5%",
-		left: "15%",
+		left: "12%",
 		position: "absolute",
 		top: "30%",
-		width: "70%",
+		width: "75%",
 	},
 	projects_container: {
 		height: "57%",
@@ -99,14 +108,43 @@ const useStyles = makeStyles((theme) => ({
 		width: "70%",
 	},
 	section_container: {
-		width: "60%",
+		width: "100%",
+		height: "100%",
+		[theme.breakpoints.down("md")]: {
+			margin: "0 100px 0 50px",
+		},
+		[theme.breakpoints.down("sm")]: {
+			margin: "0 0 0 -10px",
+		},
+		[theme.breakpoints.down("xs")]: {
+			margin: "0 0 0 -38px",
+		},
+	},
+	button_container: {
+		width: "20%",
+		height: "100%",
+		marginLeft: "-5px",
+		[theme.breakpoints.down("xs")]: {
+			marginLeft: "10px",
+			width: "20%",
+		},
 	},
 	button: {
-		marginLeft: 10,
 		backgroundColor: "#1a1a19",
 		color: "#f7f7fe",
+		width: "60%",
+		marginLeft: "25px",
 		"&:hover": {
 			backgroundColor: "#37b9f1",
+		},
+	},
+	button_text: {
+		fontSize: "1rem",
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "0.75rem",
+		},
+		[theme.breakpoints.down("xs")]: {
+			fontSize: "0.5rem",
 		},
 	},
 	root: {
@@ -223,7 +261,6 @@ function Project() {
 	const [reactBackground, setReactBackground] = useState("#1a1a19");
 
 	const handleButtonCategory = (category) => {
-		console.log("Entro al switch con category: " + category);
 		switch (category) {
 			case "Diseño":
 				setDefaultBackground("#1a1a19");
@@ -253,142 +290,150 @@ function Project() {
 	};
 
 	return (
-		<ThemeProvider>
+		<ThemeProvider theme={MyTheme}>
 			<Card />
 			<Box className={classes.title}>
 				<Typography
 					className={classes.skills_text}
-					gutterbottom
 					style={MyTheme.typographyRubik}
 				>
 					Proyectos
 				</Typography>
 			</Box>
 			<Box className={classes.description_container}>
-				<Grid container xs={3} sm direction="row">
-					<Box
+				<Grid container xs sm item direction="row">
+					<Grid
+						alignItems="center"
 						className={classes.section_container}
-						justifyContent="center"
-						display="flex"
-						style={{
-							height: "25px",
-							marginLeft: "160px",
-							marginTop: "-10px",
-						}}
-						p={2}
+						container
+						direction="row"
+						justify="center"
 					>
 						<ThemeProvider theme={MyTheme}>
 							{filteredImages.map((category) => (
-								<Box px={2} mt={-1}>
+								<Grid
+									container
+									direction="row"
+									className={classes.button_container}
+									key={category}
+								>
 									{category === "Todos" ? (
 										<Button
-											variant="contained"
 											className={classes.button}
 											onClick={() => {
 												setCategory(category);
 												setDisplay(false);
 												handleButtonCategory(category);
 											}}
+											size="small"
 											style={{ backgroundColor: `${defaultBackground}` }}
+											variant="contained"
 										>
-											<Typography style={MyTheme.typographyKarla}>
+											<Typography
+												className={classes.button_text}
+												style={MyTheme.typographyKarla}
+											>
 												{category}
 											</Typography>
 										</Button>
 									) : null}
 									{category === "Diseño" ? (
 										<Button
-											variant="contained"
 											className={classes.button}
 											onClick={() => {
 												setCategory(category);
 												setDisplay(false);
 												handleButtonCategory(category);
 											}}
+											size="small"
 											style={{ backgroundColor: `${designBackground}` }}
+											variant="contained"
 										>
-											<Typography style={MyTheme.typographyKarla}>
+											<Typography
+												className={classes.button_text}
+												style={MyTheme.typographyKarla}
+											>
 												{category}
 											</Typography>
 										</Button>
 									) : null}
 									{category === "API" ? (
 										<Button
-											variant="contained"
 											className={classes.button}
 											onClick={() => {
 												setCategory(category);
 												setDisplay(false);
 												handleButtonCategory(category);
 											}}
+											size="small"
 											style={{ backgroundColor: `${apiBackground}` }}
+											variant="contained"
 										>
-											<Typography style={MyTheme.typographyKarla}>
+											<Typography
+												className={classes.button_text}
+												style={MyTheme.typographyKarla}
+											>
 												{category}
 											</Typography>
 										</Button>
 									) : null}
 									{category === "React" ? (
 										<Button
-											variant="contained"
 											className={classes.button}
 											onClick={() => {
 												setCategory(category);
 												setDisplay(false);
 												handleButtonCategory(category);
 											}}
+											size="small"
 											style={{ backgroundColor: `${reactBackground}` }}
+											variant="contained"
 										>
-											<Typography style={MyTheme.typographyKarla}>
+											<Typography
+												className={classes.button_text}
+												style={MyTheme.typographyKarla}
+											>
 												{category}
 											</Typography>
 										</Button>
 									) : null}
-								</Box>
+								</Grid>
 							))}
 						</ThemeProvider>
-					</Box>
+					</Grid>
 				</Grid>
 			</Box>
-			{images.map((image) => (
-				<Box className={classes.projects_container}>
+			{images.map((image, index) => (
+				<Box className={classes.projects_container} key={index}>
 					<div className={classes.root}>
 						{display || category === "Todos" ? (
 							<div className={classes.buttonB}>
 								<CardImage
-									category={category}
-									demo="https://gabrielfierro.github.io/Huddle-landing-page/"
-									repository="https://github.com/GabrielFierro/Huddle-landing-page"
-									title="Huddle landing"
-									url="/static/images/projects/huddle-landing.avif"
 									width="100%"
+									url="/static/images/projects/huddle-landing.avif"
+									title="Huddle landing"
 								/>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/profile-card.avif"
 									title="Profile"
 								/>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/testimonial-grid.avif"
 									title="Testimonial grid"
 								/>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/fylo-landing.avif"
 									title="Fylo landing"
 								/>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/github-profile-finder.avif"
 									title="GitHub Profile"
 								/>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/react-pokeballs.avif"
 									title="Pokeballs"
@@ -398,25 +443,21 @@ function Project() {
 						{category === "Diseño" && (
 							<div className={classes.buttonB}>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/huddle-landing.avif"
 									title="Huddle landing"
 								/>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/profile-card.avif"
 									title="Profile"
 								/>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/testimonial-grid.avif"
 									title="Testimonial grid"
 								/>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/fylo-landing.avif"
 									title="Fylo landing"
@@ -426,7 +467,6 @@ function Project() {
 						{category === "API" && (
 							<div className={classes.buttonB}>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/github-profile-finder.avif"
 									title="GitHub Profile"
@@ -436,7 +476,6 @@ function Project() {
 						{category === "React" && (
 							<div className={classes.buttonB}>
 								<CardImage
-									category={category}
 									width="100%"
 									url="/static/images/projects/react-pokeballs.avif"
 									title="Pokeballs"
