@@ -181,12 +181,11 @@ function Experience() {
 	return (
 		<ThemeProvider theme={MyTheme}>
 			<Card />
-			<Grid spacing={3}>
+			<Grid>
 				<Grid item xs={12} className={classes.description_container}>
 					<Box className={classes.title}>
 						<Typography
 							className={classes.skills_text}
-							gutterbottom
 							style={MyTheme.typographyRubik}
 						>
 							Experiencia
@@ -203,6 +202,7 @@ function Experience() {
 						</Typography>
 						<Grid container direction="row">
 							<Grid
+								container
 								direction="column"
 								className={classes.project_name_description}
 							>
@@ -232,10 +232,10 @@ function Experience() {
 					<Grid container>
 						<Grid className={classes.project_image}>
 							<picture>
-								<source media="(min-width:660px)" srcset={Magenta}></source>
+								<source media="(min-width:660px)" srcSet={Magenta}></source>
 								<source
 									media="(min-width:200px)"
-									srcset={MagentaMobile}
+									srcSet={MagentaMobile}
 								></source>
 								<img
 									alt="magenta project"
@@ -248,6 +248,7 @@ function Experience() {
 							className={classes.button_container}
 							container
 							direction="row"
+							item
 							xs={12}
 						>
 							<Grid className={classes.button_image} item xs={6} sm={5}>
