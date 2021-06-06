@@ -9,10 +9,8 @@ import {
 } from "@material-ui/core";
 import Card from "../Card/Card";
 import MyTheme from "../../MyTheme";
-import Magenta from "../../assets/images/magenta/magenta.png";
+import Magenta from "../../assets/images/magenta/magenta.avif";
 import MagentaMobile from "../../assets/images/magenta/magenta_mobile.avif";
-import ButtonPrimary from "../Buttons/ButtonPrimary";
-import ButtonSecondary from "../Buttons/ButtonSecondary";
 
 const useStyles = makeStyles((theme) => ({
 	title: {
@@ -91,61 +89,54 @@ const useStyles = makeStyles((theme) => ({
 		top: "30%",
 		width: "35%",
 	},
-	footer_container: {
-		height: "12%",
-		left: "15%",
-		position: "absolute",
-		top: "82%",
-		width: "70%",
-	},
 	project_image: {
-		width: "90%",
 		margin: "10px 0 0 5px",
+		width: "90%",
 	},
 	image: {
-		width: "100%",
-		margin: "5px 0 10px 0",
 		borderRadius: "5px",
+		margin: "5px 0 10px 0",
+		width: "100%",
 		[theme.breakpoints.down("sm")]: {
 			marginLeft: "-10px",
 		},
 	},
 	button: {
-		width: "80%",
 		margin: "5px 0 5px 0",
+		width: "80%",
 		[theme.breakpoints.down("xs")]: {
 			margin: "5px 0 5px -20px",
 		},
 	},
 	button_container: {
-		width: "100%",
 		height: "50%",
+		width: "100%",
 	},
 	button_image: {
-		width: "40%",
 		margin: "5px",
+		width: "40%",
 	},
 	informative_button: {
-		width: "100%",
 		boxShadow: "1px 1px 8px #100f10",
+		width: "100%",
 	},
 	button_primary: {
-		width: "90%",
 		boxShadow: "1px 1px 8px #100f10",
+		width: "90%",
 		"&:hover": {
 			boxShadow: "3px 3px 10px #37b9f1",
 		},
 	},
 	button_secondary: {
-		width: "90%",
 		boxShadow: "1px 1px 8px #100f10",
+		width: "90%",
 		"&:hover": {
 			boxShadow: "3px 3px 10px #37b9f1",
 		},
 	},
 	button_text: {
-		fontSize: "1.25rem",
 		color: "#f7f7fe",
+		fontSize: "1.25rem",
 		[theme.breakpoints.down("md")]: {
 			fontSize: "0.75rem",
 		},
@@ -166,8 +157,8 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	button_text_secondary: {
-		fontSize: "1.25rem",
 		color: "#100f10",
+		fontSize: "1.25rem",
 		[theme.breakpoints.down("md")]: {
 			fontSize: "0.75rem",
 		},
@@ -182,23 +173,6 @@ const useStyles = makeStyles((theme) => ({
 	primary_button_text: {
 		color: "#f7f7fe",
 		fontSize: "24px",
-	},
-	icon: {
-		marginLeft: "15px",
-	},
-	icon_size: {
-		height: "40px",
-		width: "40px",
-	},
-	develop_text: {
-		fontSize: "1.25rem",
-		marginTop: "5px",
-	},
-	grid_container: {
-		zIndex: "1",
-		height: "500px",
-		position: "relative",
-		width: "500px",
 	},
 }));
 
@@ -258,7 +232,7 @@ function Experience() {
 					<Grid container>
 						<Grid className={classes.project_image}>
 							<picture>
-								<source media="(min-width:500px)" srcset={Magenta}></source>
+								<source media="(min-width:660px)" srcset={Magenta}></source>
 								<source
 									media="(min-width:200px)"
 									srcset={MagentaMobile}
