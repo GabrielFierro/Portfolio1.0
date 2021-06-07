@@ -12,17 +12,43 @@ import { ReactComponent as WorldWideWeb } from "../../../assets/images/icons/wor
 
 const useStyles = makeStyles((theme) => ({
 	root: {
+		marginLeft: "10px",
 		minWidth: 300,
 		width: "30%",
-		marginLeft: "10px",
+		[theme.breakpoints.down("md")]: {
+			minWidth: 225,
+			width: "25%",
+		},
+		[theme.breakpoints.down("sm")]: {
+			minWidth: 140,
+			width: "25%",
+		},
+		[theme.breakpoints.down("xs")]: {
+			marginLeft: "-5px",
+			minWidth: 120,
+		},
 	},
 	image: {
-		position: "relative",
+		left: "5%",
 		height: 150,
-		margin: "10px",
+		margin: "10px 5px 5px 5px",
+		position: "relative",
+		[theme.breakpoints.down("md")]: {
+			height: 135,
+			left: "10%",
+		},
+
+		[theme.breakpoints.down("sm")]: {
+			height: 120,
+			left: "25%",
+		},
+		[theme.breakpoints.between("600", "660")]: {
+			height: 120,
+			left: "1%",
+		},
 		[theme.breakpoints.down("xs")]: {
-			width: "100% !important", // Overrides inline-style
-			height: 100,
+			height: 80,
+			width: "75% !important", // Overrides inline-style
 		},
 		"&:hover, &$focusVisible": {
 			zIndex: 1,
@@ -70,10 +96,20 @@ const useStyles = makeStyles((theme) => ({
 		transition: theme.transitions.create("opacity"),
 	},
 	imageTitle: {
+		fontSize: "1.5rem",
 		position: "relative",
 		padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
 			theme.spacing(1) + 6
 		}px`,
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "1.25rem",
+			padding: `${theme.spacing(1)}px ${theme.spacing(1)}px ${theme.spacing(
+				1
+			)}px`,
+		},
+		[theme.breakpoints.down("xs")]: {
+			fontSize: "0.7rem",
+		},
 	},
 	imageMarked: {
 		height: 3,
@@ -89,12 +125,22 @@ const useStyles = makeStyles((theme) => ({
 		height: 30,
 		justifyContent: "space-evenly",
 		width: 160,
+		[theme.breakpoints.down("sm")]: {
+			width: 120,
+		},
+		[theme.breakpoints.down("xs")]: {
+			width: 70,
+		},
 	},
 	icon: {
 		width: 30,
 		height: 30,
 		"&:hover": {
 			stroke: "#37b9f1",
+		},
+		[theme.breakpoints.down("xs")]: {
+			width: 25,
+			height: 25,
 		},
 	},
 }));
@@ -124,7 +170,6 @@ function CardImage(props) {
 				<span className={classes.imageButton}>
 					<Typography
 						component="span"
-						variant="h5"
 						color="inherit"
 						className={classes.imageTitle}
 						style={MyTheme.typographyRubik}
