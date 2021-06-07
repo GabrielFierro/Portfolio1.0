@@ -17,57 +17,52 @@ const images = [
 		category: "Todos",
 	},
 	{
-		id: 1,
 		category: "Diseño",
-		url: "/static/images/projects/huddle-landing.avif",
-		title: "Huddle landing",
-		width: "30%",
-		repository: "https://github.com/GabrielFierro/Huddle-landing-page",
 		demo: "https://gabrielfierro.github.io/Huddle-landing-page/",
+		repository: "https://github.com/GabrielFierro/Huddle-landing-page",
+		title: "Huddle landing",
+		url: "/static/images/projects/huddle-landing.avif",
+		width: "30%",
 	},
 	{
-		id: 2,
 		category: "Diseño",
-		url: "/static/images/projects/profile-card.avif",
-		title: "Profile card",
-		width: "30%",
-		repository: "https://github.com/GabrielFierro/ProfileCardComponent",
 		demo: "https://gabrielfierro.github.io/ProfileCardComponent/",
+		repository: "https://github.com/GabrielFierro/ProfileCardComponent",
+		title: "Profile card",
+		url: "/static/images/projects/profile-card.avif",
+		width: "30%",
 	},
 	{
-		id: 3,
 		category: "Diseño",
-		url: "/static/images/projects/testimonial-grid.avif",
-		title: "Testimonial grid",
-		width: "30%",
-		repository: "https://github.com/GabrielFierro/TestimonialsGridSection",
 		demo: "https://gabrielfierro.github.io/TestimonialsGridSection/",
+		repository: "https://github.com/GabrielFierro/TestimonialsGridSection",
+		title: "Testimonial grid",
+		url: "/static/images/projects/testimonial-grid.avif",
+		width: "30%",
 	},
 	{
 		category: "Diseño",
-		url: "/static/images/projects/fylo-landing.avif",
-		title: "Fylo Landing",
-		width: "30%",
-		repository: "https://github.com/GabrielFierro/Fylo-landing-page",
 		demo: "https://gabrielfierro.github.io/Fylo-landing-page/",
+		repository: "https://github.com/GabrielFierro/Fylo-landing-page",
+		title: "Fylo Landing",
+		url: "/static/images/projects/fylo-landing.avif",
+		width: "30%",
 	},
 	{
-		id: 4,
 		category: "API",
-		url: "/static/images/projects/github-profile-finder.avif",
-		title: "GitHub Profile",
-		width: "30%",
-		repository: "https://github.com/GabrielFierro/GithubProfileFinder",
 		demo: "https://github-profile-finder-gabrielfierro.vercel.app/",
+		repository: "https://github.com/GabrielFierro/GithubProfileFinder",
+		title: "GitHub Profile",
+		url: "/static/images/projects/github-profile-finder.avif",
+		width: "30%",
 	},
 	{
-		id: 5,
 		category: "React",
-		url: "/static/images/projects/react-pokeballs.avif",
-		title: "Pokeballs",
-		width: "30%",
-		repository: "https://github.com/GabrielFierro/React-Pokeball",
 		demo: "https://gabrielfierro.github.io/React-Pokeball/",
+		repository: "https://github.com/GabrielFierro/React-Pokeball",
+		title: "Pokeballs",
+		url: "/static/images/projects/react-pokeballs.avif",
+		width: "30%",
 	},
 ];
 
@@ -108,8 +103,8 @@ const useStyles = makeStyles((theme) => ({
 		width: "70%",
 	},
 	section_container: {
-		width: "100%",
 		height: "100%",
+		width: "100%",
 		[theme.breakpoints.down("md")]: {
 			margin: "0 100px 0 50px",
 		},
@@ -121,9 +116,9 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	button_container: {
-		width: "20%",
 		height: "100%",
 		marginLeft: "-5px",
+		width: "20%",
 		[theme.breakpoints.down("xs")]: {
 			marginLeft: "10px",
 			width: "20%",
@@ -132,8 +127,8 @@ const useStyles = makeStyles((theme) => ({
 	button: {
 		backgroundColor: "#1a1a19",
 		color: "#f7f7fe",
-		width: "60%",
 		marginLeft: "25px",
+		width: "60%",
 		"&:hover": {
 			backgroundColor: "#37b9f1",
 		},
@@ -150,18 +145,18 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		display: "flex",
 		flexWrap: "wrap",
-		minWidth: 300,
-		width: "100%",
 		marginLeft: "10px",
 		marginTop: 5,
+		minWidth: 300,
+		width: "100%",
 	},
 	image: {
-		position: "relative",
 		height: 150,
 		margin: "10px",
+		position: "relative",
 		[theme.breakpoints.down("xs")]: {
-			width: "100% !important", // Overrides inline-style
 			height: 100,
+			width: "100% !important", // Overrides inline-style
 		},
 		"&:hover, &$focusVisible": {
 			zIndex: 1,
@@ -179,49 +174,49 @@ const useStyles = makeStyles((theme) => ({
 	},
 	focusVisible: {},
 	imageButton: {
-		position: "absolute",
+		alignItems: "center",
+		bottom: 0,
+		color: theme.palette.common.white,
+		display: "flex",
+		justifyContent: "center",
 		left: 0,
+		position: "absolute",
 		right: 0,
 		top: 0,
-		bottom: 0,
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-		color: theme.palette.common.white,
 	},
 	imageSrc: {
-		position: "absolute",
+		backgroundPosition: "center 40%",
+		backgroundSize: "cover",
+		bottom: 0,
 		left: 0,
+		position: "absolute",
 		right: 0,
 		top: 0,
-		bottom: 0,
-		backgroundSize: "cover",
-		backgroundPosition: "center 40%",
 	},
 	imageBackdrop: {
-		position: "absolute",
+		backgroundColor: theme.palette.common.black,
+		bottom: 0,
 		left: 0,
+		opacity: 0.4,
+		position: "absolute",
 		right: 0,
 		top: 0,
-		bottom: 0,
-		backgroundColor: theme.palette.common.black,
-		opacity: 0.4,
 		transition: theme.transitions.create("opacity"),
 	},
 	imageTitle: {
-		position: "relative",
 		padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
 			theme.spacing(1) + 6
 		}px`,
+		position: "relative",
 	},
 	imageMarked: {
-		height: 3,
-		width: 18,
 		backgroundColor: theme.palette.common.white,
-		position: "absolute",
 		bottom: -3,
+		height: 3,
 		left: "calc(50% - 9px)",
+		position: "absolute",
 		transition: theme.transitions.create("opacity"),
+		width: 18,
 	},
 	iconContainer: {
 		display: "flex",
@@ -230,8 +225,8 @@ const useStyles = makeStyles((theme) => ({
 		width: 160,
 	},
 	icon: {
-		width: 30,
 		height: 30,
+		width: 30,
 		"&:hover": {
 			stroke: "#37b9f1",
 		},
@@ -409,76 +404,76 @@ function Project() {
 						{display || category === "Todos" ? (
 							<div className={classes.buttonB}>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/huddle-landing.avif"
 									title="Huddle landing"
+									url="/static/images/projects/huddle-landing.avif"
+									width="100%"
 								/>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/profile-card.avif"
 									title="Profile"
+									url="/static/images/projects/profile-card.avif"
+									width="100%"
 								/>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/testimonial-grid.avif"
 									title="Testimonial grid"
+									url="/static/images/projects/testimonial-grid.avif"
+									width="100%"
 								/>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/fylo-landing.avif"
 									title="Fylo landing"
+									url="/static/images/projects/fylo-landing.avif"
+									width="100%"
 								/>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/github-profile-finder.avif"
 									title="GitHub Profile"
+									url="/static/images/projects/github-profile-finder.avif"
+									width="100%"
 								/>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/react-pokeballs.avif"
 									title="Pokeballs"
+									url="/static/images/projects/react-pokeballs.avif"
+									width="100%"
 								/>
 							</div>
 						) : null}
 						{category === "Diseño" && (
 							<div className={classes.buttonB}>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/huddle-landing.avif"
 									title="Huddle landing"
+									url="/static/images/projects/huddle-landing.avif"
+									width="100%"
 								/>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/profile-card.avif"
 									title="Profile"
+									url="/static/images/projects/profile-card.avif"
+									width="100%"
 								/>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/testimonial-grid.avif"
 									title="Testimonial grid"
+									url="/static/images/projects/testimonial-grid.avif"
+									width="100%"
 								/>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/fylo-landing.avif"
 									title="Fylo landing"
+									url="/static/images/projects/fylo-landing.avif"
+									width="100%"
 								/>
 							</div>
 						)}
 						{category === "API" && (
 							<div className={classes.buttonB}>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/github-profile-finder.avif"
 									title="GitHub Profile"
+									url="/static/images/projects/github-profile-finder.avif"
+									width="100%"
 								/>
 							</div>
 						)}
 						{category === "React" && (
 							<div className={classes.buttonB}>
 								<CardImage
-									width="100%"
-									url="/static/images/projects/react-pokeballs.avif"
 									title="Pokeballs"
+									url="/static/images/projects/react-pokeballs.avif"
+									width="100%"
 								/>
 							</div>
 						)}
