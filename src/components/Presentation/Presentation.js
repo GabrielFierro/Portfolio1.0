@@ -19,11 +19,11 @@ const useStyles = makeStyles((theme) => ({
 	title: {
 		letterSpacing: "-0.00833em",
 		lineHeight: "1.5",
-		margin: "0 1.5rem 0 1.5rem",
+		margin: "-2rem 1.5rem 0 1.5rem",
 		position: "relative",
 		top: "30%",
 		[theme.breakpoints.down("md")]: {
-			fontSize: "3.2rem",
+			fontSize: "3rem",
 			top: "25%",
 		},
 		[theme.breakpoints.down("sm")]: {
@@ -41,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
 		display: "block",
 		letterSpacing: "-0.00833em",
 		lineHeight: "1.5",
+		[theme.breakpoints.down("md")]: {
+			fontSize: "3rem",
+		},
 		[theme.breakpoints.down("sm")]: {
 			fontSize: "2.75rem",
 		},
