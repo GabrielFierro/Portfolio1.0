@@ -1,21 +1,46 @@
 /* Navbar.js */
 
-import React from "react";
 import { NavLink } from "react-router-dom";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import {
+	AppBar,
+	makeStyles,
+	ThemeProvider,
+	Toolbar,
+	Typography,
+} from "@material-ui/core";
 import MyTheme from "../../MyTheme";
-import { ThemeProvider } from "@material-ui/core";
 import "./NavBar.css";
 
-function NavBar(props) {
+const useStyles = makeStyles((theme) => ({
+	typography: {
+		fontSize: "1.75rem",
+		backgroundColor: "lightred",
+		[theme.breakpoints.down("md")]: {
+			fontSize: "1.35rem",
+			backgroundColor: "lightblue",
+		},
+		[theme.breakpoints.down("sm")]: {
+			backgroundColor: "tomato",
+			fontSize: "0.85rem",
+		},
+		[theme.breakpoints.down("xs")]: {
+			backgroundColor: "teal",
+		},
+	},
+}));
+
+function NavBar() {
+	const classes = useStyles();
+
 	return (
 		<AppBar position="fixed">
 			<nav>
 				<Toolbar>
 					<ThemeProvider theme={MyTheme}>
-						<Typography variant="h5" style={MyTheme.typographyRubik}>
+						<Typography
+							className={classes.typography}
+							style={MyTheme.typographyRubik}
+						>
 							<NavLink exact to="/">
 								Home
 							</NavLink>
