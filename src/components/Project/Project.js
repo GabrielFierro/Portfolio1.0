@@ -404,31 +404,49 @@ function Project() {
 						{display || category === "Todos" ? (
 							<div className={classes.buttonB}>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/Huddle-landing-page/"
+									repository="https://github.com/GabrielFierro/Huddle-landing-page"
 									title="Huddle landing"
 									url="/static/images/projects/huddle-landing.avif"
 									width="100%"
 								/>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/ProfileCardComponent/"
+									repository="https://github.com/GabrielFierro/ProfileCardComponent"
 									title="Profile"
 									url="/static/images/projects/profile-card.avif"
 									width="100%"
 								/>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/TestimonialsGridSection/"
+									repository="https://github.com/GabrielFierro/TestimonialsGridSection"
 									title="Testimonial grid"
 									url="/static/images/projects/testimonial-grid.avif"
 									width="100%"
 								/>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/Fylo-landing-page/"
+									repository="https://github.com/GabrielFierro/Fylo-landing-page"
 									title="Fylo landing"
 									url="/static/images/projects/fylo-landing.avif"
 									width="100%"
 								/>
 								<CardImage
+									category={category}
+									demo="https://github-profile-finder-gabrielfierro.vercel.app/"
+									repository="https://github.com/GabrielFierro/GithubProfileFinder"
 									title="GitHub Profile"
 									url="/static/images/projects/github-profile-finder.avif"
 									width="100%"
 								/>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/React-Pokeball/"
+									repository="https://github.com/GabrielFierro/React-Pokeball"
 									title="Pokeballs"
 									url="/static/images/projects/react-pokeballs.avif"
 									width="100%"
@@ -438,21 +456,33 @@ function Project() {
 						{category === "Diseño" && (
 							<div className={classes.buttonB}>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/Huddle-landing-page/"
+									repository="https://github.com/GabrielFierro/Huddle-landing-page"
 									title="Huddle landing"
 									url="/static/images/projects/huddle-landing.avif"
 									width="100%"
 								/>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/ProfileCardComponent/"
+									repository="https://github.com/GabrielFierro/ProfileCardComponent"
 									title="Profile"
 									url="/static/images/projects/profile-card.avif"
 									width="100%"
 								/>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/TestimonialsGridSection/"
+									repository="https://github.com/GabrielFierro/TestimonialsGridSection"
 									title="Testimonial grid"
 									url="/static/images/projects/testimonial-grid.avif"
 									width="100%"
 								/>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/Fylo-landing-page/"
+									repository="https://github.com/GabrielFierro/Fylo-landing-page"
 									title="Fylo landing"
 									url="/static/images/projects/fylo-landing.avif"
 									width="100%"
@@ -462,6 +492,9 @@ function Project() {
 						{category === "API" && (
 							<div className={classes.buttonB}>
 								<CardImage
+									category={category}
+									demo="https://github-profile-finder-gabrielfierro.vercel.app/"
+									repository="https://github.com/GabrielFierro/GithubProfileFinder"
 									title="GitHub Profile"
 									url="/static/images/projects/github-profile-finder.avif"
 									width="100%"
@@ -471,6 +504,9 @@ function Project() {
 						{category === "React" && (
 							<div className={classes.buttonB}>
 								<CardImage
+									category={category}
+									demo="https://gabrielfierro.github.io/React-Pokeball/"
+									repository="https://github.com/GabrielFierro/React-Pokeball"
 									title="Pokeballs"
 									url="/static/images/projects/react-pokeballs.avif"
 									width="100%"
