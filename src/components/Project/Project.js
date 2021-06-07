@@ -97,10 +97,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	projects_container: {
 		height: "57%",
-		left: "13%",
+		left: "12%",
 		position: "absolute",
 		top: "35%",
-		width: "70%",
+		width: "75%",
 	},
 	section_container: {
 		height: "100%",
@@ -149,86 +149,8 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: 5,
 		minWidth: 300,
 		width: "100%",
-	},
-	image: {
-		height: 150,
-		margin: "10px",
-		position: "relative",
-		[theme.breakpoints.down("xs")]: {
-			height: 100,
-			width: "100% !important", // Overrides inline-style
-		},
-		"&:hover, &$focusVisible": {
-			zIndex: 1,
-			"& $imageBackdrop": {
-				opacity: 0.8,
-			},
-			"& $imageMarked": {
-				opacity: 0.7,
-			},
-			"& $imageTitle": {
-				border: "4px solid currentColor",
-				cursor: "default",
-			},
-		},
-	},
-	focusVisible: {},
-	imageButton: {
-		alignItems: "center",
-		bottom: 0,
-		color: theme.palette.common.white,
-		display: "flex",
-		justifyContent: "center",
-		left: 0,
-		position: "absolute",
-		right: 0,
-		top: 0,
-	},
-	imageSrc: {
-		backgroundPosition: "center 40%",
-		backgroundSize: "cover",
-		bottom: 0,
-		left: 0,
-		position: "absolute",
-		right: 0,
-		top: 0,
-	},
-	imageBackdrop: {
-		backgroundColor: theme.palette.common.black,
-		bottom: 0,
-		left: 0,
-		opacity: 0.4,
-		position: "absolute",
-		right: 0,
-		top: 0,
-		transition: theme.transitions.create("opacity"),
-	},
-	imageTitle: {
-		padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
-			theme.spacing(1) + 6
-		}px`,
-		position: "relative",
-	},
-	imageMarked: {
-		backgroundColor: theme.palette.common.white,
-		bottom: -3,
-		height: 3,
-		left: "calc(50% - 9px)",
-		position: "absolute",
-		transition: theme.transitions.create("opacity"),
-		width: 18,
-	},
-	iconContainer: {
-		display: "flex",
-		height: 30,
-		justifyContent: "space-evenly",
-		width: 160,
-	},
-	icon: {
-		height: 30,
-		width: 30,
-		"&:hover": {
-			stroke: "#37b9f1",
+		[theme.breakpoints.down("md")]: {
+			marginLeft: "-10px",
 		},
 	},
 	buttonB: {
