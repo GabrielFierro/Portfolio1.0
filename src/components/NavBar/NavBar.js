@@ -14,17 +14,11 @@ import "./NavBar.css";
 const useStyles = makeStyles((theme) => ({
 	typography: {
 		fontSize: "1.75rem",
-		backgroundColor: "lightred",
 		[theme.breakpoints.down("md")]: {
 			fontSize: "1.35rem",
-			backgroundColor: "lightblue",
 		},
 		[theme.breakpoints.down("sm")]: {
-			backgroundColor: "tomato",
 			fontSize: "0.85rem",
-		},
-		[theme.breakpoints.down("xs")]: {
-			backgroundColor: "teal",
 		},
 	},
 }));
