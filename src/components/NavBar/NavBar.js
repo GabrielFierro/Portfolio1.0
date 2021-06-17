@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import {
 	AppBar,
 	IconButton,
+	Grid,
 	makeStyles,
 	Menu,
 	MenuItem,
@@ -52,7 +53,7 @@ function NavBar() {
 	};
 
 	return (
-		<div className={classes.root}>
+		<Grid className={classes.root}>
 			<AppBar position="fixed">
 				<nav>
 					<Toolbar>
@@ -124,7 +125,7 @@ function NavBar() {
 										</Menu>
 									</>
 								) : (
-									<div style={{ marginRight: "2rem" }}>
+									<Grid style={{ marginRight: "2rem" }}>
 										<NavLink exact to="/">
 											Home
 										</NavLink>
@@ -140,14 +141,14 @@ function NavBar() {
 										<NavLink exact to="/contact">
 											Contacto
 										</NavLink>
-									</div>
+									</Grid>
 								)}
 							</Typography>
 						</ThemeProvider>
 					</Toolbar>
 				</nav>
 			</AppBar>
-		</div>
+		</Grid>
 	);
 }
 
