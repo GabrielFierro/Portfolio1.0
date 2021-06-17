@@ -7,7 +7,7 @@ import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
 	card: {
-		backgroundColor: "rgba(247, 247, 247, 0.9)",
+		backgroundColor: MyTheme.palette.primary.main,
 		height: "100%",
 		position: "absolute",
 		width: "50%",
