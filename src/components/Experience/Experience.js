@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 	},
 	skills_text: {
+		color: MyTheme.palette.primary.main,
 		alignItems: "center",
 		display: "flex",
 		fontSize: "3rem",
@@ -32,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: "2rem",
 		},
 	},
+	skills_text_light: {
+		color: MyTheme.palette.primary.main,
+	},
+	skills_text_dark: {
+		color: MyTheme.palette.primary.dark,
+	},
+
 	project_name: {
 		alignItems: "center",
 		display: "flex",
@@ -49,6 +57,12 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: "0px",
 		},
 	},
+	project_name_ligth: {
+		color: MyTheme.palette.primary.main,
+	},
+	project_name_dark: {
+		color: MyTheme.palette.primary.dark,
+	},
 	project_name_description: {
 		alignItems: "center",
 		display: "flex",
@@ -64,6 +78,12 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("xs")]: {
 			fontSize: "0.75rem",
 		},
+	},
+	description_text_light: {
+		color: MyTheme.palette.primary.main,
+	},
+	description_text_dark: {
+		color: MyTheme.palette.primary.dark,
 	},
 	description_container: {
 		height: "70%",
@@ -176,58 +196,113 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-function Experience() {
+function Experience(props) {
 	const classes = useStyles();
+	const darkMode = props.darkMode;
+
 	return (
 		<ThemeProvider theme={MyTheme}>
-			<Card />
+			<Card darkMode={darkMode} />
 			<Grid>
-				<Grid item xs={12} className={classes.description_container}>
-					<Box className={classes.title}>
-						<Typography
-							className={classes.skills_text}
-							style={MyTheme.typographyRubik}
-						>
-							Experiencia
-						</Typography>
-					</Box>
-				</Grid>
-				<Grid item xs={6}>
-					<Grid className={classes.left_container}>
-						<Typography
-							className={classes.project_name}
-							style={MyTheme.typographyRubik}
-						>
-							Code in magenta
-						</Typography>
-						<Grid container direction="row">
-							<Grid
-								container
-								direction="column"
-								className={classes.project_name_description}
-							>
-								<Grid className={classes.button}>
-									<Button
-										className={classes.informative_button}
-										style={MyTheme.palette.buttonPrimary}
-									>
-										<Typography className={classes.button_text}>
-											Octubre 2020 - Noviembre 2020
-										</Typography>
-									</Button>
-								</Grid>
+				{darkMode ? (
+					<Grid>
+						<Grid item xs={12} className={classes.description_container}>
+							<Box className={classes.title}>
 								<Typography
-									className={classes.description_text}
-									style={MyTheme.typographyKarla}
+									className={`${classes.skills_text} ${classes.skills_text_light}`}
+									style={MyTheme.typographyRubik}
 								>
-									Creación de una landing page fictiosa, cuyo objetivo es
-									compartir cursos, eventos y recursos para programadores que
-									inician, así como para aquellos más experimentados.
+									Experiencia
 								</Typography>
+							</Box>
+						</Grid>
+						<Grid item xs={6}>
+							<Grid className={classes.left_container}>
+								<Typography
+									className={`${classes.project_name} ${classes.project_name_ligth}`}
+									style={MyTheme.typographyRubik}
+								>
+									Code in magenta
+								</Typography>
+								<Grid container direction="row">
+									<Grid
+										container
+										direction="column"
+										className={classes.project_name_description}
+									>
+										<Grid className={classes.button}>
+											<Button
+												className={classes.informative_button}
+												style={MyTheme.palette.buttonPrimary}
+											>
+												<Typography className={classes.button_text}>
+													Octubre 2020 - Noviembre 2020
+												</Typography>
+											</Button>
+										</Grid>
+										<Typography
+											className={`${classes.description_text} ${classes.description_text_light}`}
+											style={MyTheme.typographyKarla}
+										>
+											Creación de una landing page fictiosa, cuyo objetivo es
+											compartir cursos, eventos y recursos para programadores
+											que inician, así como para aquellos más experimentados.
+										</Typography>
+									</Grid>
+								</Grid>
 							</Grid>
 						</Grid>
 					</Grid>
-				</Grid>
+				) : (
+					<Grid>
+						<Grid item xs={12} className={classes.description_container}>
+							<Box className={classes.title}>
+								<Typography
+									className={`${classes.skills_text} ${classes.skills_text_dark}`}
+									style={MyTheme.typographyRubik}
+								>
+									Experiencia
+								</Typography>
+							</Box>
+						</Grid>
+						<Grid item xs={6}>
+							<Grid className={classes.left_container}>
+								<Typography
+									className={`${classes.project_name} ${classes.project_name_dark}`}
+									style={MyTheme.typographyRubik}
+								>
+									Code in magenta
+								</Typography>
+								<Grid container direction="row">
+									<Grid
+										container
+										direction="column"
+										className={classes.project_name_description}
+									>
+										<Grid className={classes.button}>
+											<Button
+												className={classes.informative_button}
+												style={MyTheme.palette.buttonPrimary}
+											>
+												<Typography className={classes.button_text}>
+													Octubre 2020 - Noviembre 2020
+												</Typography>
+											</Button>
+										</Grid>
+										<Typography
+											className={`${classes.description_text} ${classes.description_text_dark}`}
+											style={MyTheme.typographyKarla}
+										>
+											Creación de una landing page fictiosa, cuyo objetivo es
+											compartir cursos, eventos y recursos para programadores
+											que inician, así como para aquellos más experimentados.
+										</Typography>
+									</Grid>
+								</Grid>
+							</Grid>
+						</Grid>
+					</Grid>
+				)}
 				<Grid item xs={6} className={classes.right_container}>
 					<Grid container>
 						<Grid className={classes.project_image}>

@@ -49,8 +49,7 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: "0px",
 		},
 	},
-	my_descriptionLight: {
-		color: MyTheme.palette.primary.main,
+	my_description: {
 		width: "100%",
 		marginTop: "-55px",
 		marginLeft: "10px",
@@ -70,26 +69,11 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: "0px",
 		},
 	},
+	my_descriptionLight: {
+		color: MyTheme.palette.primary.main,
+	},
 	my_descriptionDark: {
 		color: MyTheme.palette.primary.dark,
-		width: "100%",
-		marginTop: "-55px",
-		marginLeft: "10px",
-		fontSize: "1.5rem",
-		lineHeight: "1.2",
-		[theme.breakpoints.down("md")]: {
-			marginTop: "-5px",
-			fontSize: "1.35rem",
-		},
-		[theme.breakpoints.down("sm")]: {
-			fontSize: "1.20rem",
-			marginRight: "15px",
-		},
-		[theme.breakpoints.down("xs")]: {
-			fontSize: "0.9rem",
-			marginTop: "10px",
-			marginLeft: "0px",
-		},
 	},
 	properties_container: {
 		left: "5%",
@@ -109,17 +93,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 	property_text_light: {
 		color: MyTheme.palette.primary.main,
-		fontSize: "1.15rem",
-		[theme.breakpoints.down("md")]: {
-			fontSize: "1rem",
-		},
-		[theme.breakpoints.down("sm")]: {
-			fontSize: "0.6rem",
-			marginTop: "10px",
-		},
 	},
 	property_text_dark: {
 		color: MyTheme.palette.primary.dark,
+	},
+	property_text: {
+		color: MyTheme.palette.primary.main,
 		fontSize: "1.15rem",
 		[theme.breakpoints.down("md")]: {
 			fontSize: "1rem",
@@ -140,20 +119,11 @@ const useStyles = makeStyles((theme) => ({
 	},
 	skills_text_light: {
 		color: MyTheme.palette.primary.main,
-		fontSize: "3rem",
-		marginTop: "20px",
-		marginBottom: "15px",
-		[theme.breakpoints.down("sm")]: {
-			fontSize: "2.5rem",
-			marginTop: "40px",
-		},
-		[theme.breakpoints.down("xs")]: {
-			fontSize: "1.25rem",
-			marginTop: "110px",
-		},
 	},
 	skills_text_dark: {
 		color: MyTheme.palette.primary.dark,
+	},
+	skills_text: {
 		fontSize: "3rem",
 		marginTop: "20px",
 		marginBottom: "15px",
@@ -194,7 +164,7 @@ function About(props) {
 						<Grid item sm container direction="row">
 							<Grid className={classes.text_container}>
 								<Typography
-									className={classes.my_descriptionLight}
+									className={`${classes.my_description} ${classes.my_descriptionLight}`}
 									style={MyTheme.typographyKarla}
 								>
 									Me apasiona el desarrollo front-end, por lo que me capacito
@@ -206,7 +176,7 @@ function About(props) {
 								<Grid container direction="row" item xs sm="auto" md={3}>
 									<Location />
 									<Typography
-										className={classes.property_text_light}
+										className={`${classes.property_text} ${classes.property_text_light}`}
 										style={MyTheme.typographyKarla}
 									>
 										Argentina
@@ -215,7 +185,7 @@ function About(props) {
 								<Grid container direction="row" item xs={12} sm="auto" md={9}>
 									<Book />
 									<Typography
-										className={classes.property_text_light}
+										className={`${classes.property_text} ${classes.property_text_light}`}
 										style={MyTheme.typographyKarla}
 									>
 										Lic. en Ciencias de la Computación
@@ -239,7 +209,7 @@ function About(props) {
 							justifycontent="center"
 						>
 							<Typography
-								className={classes.skills_text_light}
+								className={`${classes.skills_text} ${classes.skills_text_light}`}
 								style={MyTheme.typographyRubik}
 							>
 								Habilidades
@@ -269,7 +239,7 @@ function About(props) {
 						<Grid item sm container direction="row">
 							<Grid className={classes.text_container}>
 								<Typography
-									className={classes.my_descriptionDark}
+									className={`${classes.my_description} ${classes.my_descriptionDark}`}
 									style={MyTheme.typographyKarla}
 								>
 									Me apasiona el desarrollo front-end, por lo que me capacito
@@ -281,7 +251,7 @@ function About(props) {
 								<Grid container direction="row" item xs sm="auto" md={3}>
 									<Location />
 									<Typography
-										className={classes.property_text_dark}
+										className={`${classes.property_text} ${classes.property_text_dark}`}
 										style={MyTheme.typographyKarla}
 									>
 										Argentina
@@ -290,7 +260,7 @@ function About(props) {
 								<Grid container direction="row" item xs={12} sm="auto" md={9}>
 									<Book />
 									<Typography
-										className={classes.property_text_dark}
+										className={`${classes.property_text} ${classes.property_text_dark}`}
 										style={MyTheme.typographyKarla}
 									>
 										Lic. en Ciencias de la Computación
@@ -314,7 +284,7 @@ function About(props) {
 							justifycontent="center"
 						>
 							<Typography
-								className={classes.skills_text_dark}
+								className={`${classes.skills_text} ${classes.skills_text_dark}`}
 								style={MyTheme.typographyRubik}
 							>
 								Habilidades
