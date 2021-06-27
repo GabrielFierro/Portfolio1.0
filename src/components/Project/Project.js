@@ -1,5 +1,6 @@
 /* Project.js */
 import { useState } from "react";
+import Slider from "react-slick";
 import {
 	Box,
 	Button,
@@ -7,7 +8,12 @@ import {
 	makeStyles,
 	ThemeProvider,
 	Typography,
+	useMediaQuery,
+	useTheme,
 } from "@material-ui/core";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "./Project.css";
 import MyTheme from "../../MyTheme";
 import Card from "../Card/Card";
 import CardImage from "./CardImage/CardImage";
@@ -29,7 +35,7 @@ const images = [
 		demo: "https://gabrielfierro.github.io/ProfileCardComponent/",
 		repository: "https://github.com/GabrielFierro/ProfileCardComponent",
 		title: "Profile card",
-		url: "/static/images/projects/profile-card.avif",
+		url: "/static/images/projects/profile-card.png",
 		width: "30%",
 	},
 	{
@@ -37,7 +43,7 @@ const images = [
 		demo: "https://gabrielfierro.github.io/TestimonialsGridSection/",
 		repository: "https://github.com/GabrielFierro/TestimonialsGridSection",
 		title: "Testimonial grid",
-		url: "/static/images/projects/testimonial-grid.avif",
+		url: "/static/images/projects/testimonial-grid.png",
 		width: "30%",
 	},
 	{
@@ -45,7 +51,7 @@ const images = [
 		demo: "https://gabrielfierro.github.io/Fylo-landing-page/",
 		repository: "https://github.com/GabrielFierro/Fylo-landing-page",
 		title: "Fylo Landing",
-		url: "/static/images/projects/fylo-landing.avif",
+		url: "/static/images/projects/fylo-landing.png",
 		width: "30%",
 	},
 	{
@@ -53,7 +59,7 @@ const images = [
 		demo: "https://github-profile-finder-gabrielfierro.vercel.app/",
 		repository: "https://github.com/GabrielFierro/GithubProfileFinder",
 		title: "GitHub Profile",
-		url: "/static/images/projects/github-profile-finder.avif",
+		url: "/static/images/projects/github-profile-finder.png",
 		width: "30%",
 	},
 	{
@@ -61,7 +67,7 @@ const images = [
 		demo: "https://gabrielfierro.github.io/React-Pokeball/",
 		repository: "https://github.com/GabrielFierro/React-Pokeball",
 		title: "Pokeballs",
-		url: "/static/images/projects/react-pokeballs.avif",
+		url: "/static/images/projects/react-pokeballs.png",
 		width: "30%",
 	},
 ];
@@ -129,8 +135,12 @@ const useStyles = makeStyles((theme) => ({
 		color: "#f7f7fe",
 		marginLeft: "25px",
 		width: "60%",
+		boxShadow: "5px 3px 10px #100f10",
 		"&:hover": {
 			backgroundColor: "#37b9f1",
+		},
+		[theme.breakpoints.down("xs")]: {
+			boxShadow: "none",
 		},
 	},
 	button_text: {
@@ -159,6 +169,16 @@ const useStyles = makeStyles((theme) => ({
 		minWidth: 300,
 		width: "100%",
 	},
+	projectImage: {
+		width: "90%",
+		objectFit: "cover",
+		border: "2px solid #100f10",
+		[theme.breakpoints.between("500px, 600px")]: {
+			width: "50%",
+			objectFit: "cover",
+			border: "2px solid #100f10",
+		},
+	},
 }));
 
 function Project() {
@@ -166,9 +186,13 @@ function Project() {
 	const [category, setCategory] = useState("");
 	const [display, setDisplay] = useState(true);
 	const mapped = images.map((obj) => obj.category);
-	const filteredImages = mapped.filter(
+	const filteredCategories = mapped.filter(
 		(type, index) => mapped.indexOf(type) === index
 	);
+	const filteredImages = images.filter((value) => value.category !== "Todos");
+
+	const theme = useTheme();
+	const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
 
 	// Use diferent states for each button on the categories
 
@@ -206,6 +230,45 @@ function Project() {
 		}
 	};
 
+	function SampleNextArrow(props) {
+		const { className, style, onClick } = props;
+		return (
+			<div
+				className={className}
+				style={{
+					...style,
+					display: "block",
+					backgroundColor: "#100f10",
+				}}
+				onClick={onClick}
+			/>
+		);
+	}
+
+	function SamplePrevArrow(props) {
+		const { className, style, onClick } = props;
+		return (
+			<div
+				className={className}
+				style={{ ...style, display: "block", background: "#37b9f1" }}
+				onClick={onClick}
+			/>
+		);
+	}
+
+	const settings = {
+		fade: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		arrows: true,
+		slidesToScroll: 1,
+		className: "slides",
+		centerMode: true,
+		nextArrow: <SampleNextArrow />,
+		prevArrow: <SamplePrevArrow />,
+	};
+
 	return (
 		<ThemeProvider theme={MyTheme}>
 			<Card />
@@ -227,7 +290,7 @@ function Project() {
 						justify="center"
 					>
 						<ThemeProvider theme={MyTheme}>
-							{filteredImages.map((category) => (
+							{filteredCategories.map((category) => (
 								<Grid
 									container
 									direction="row"
@@ -320,8 +383,24 @@ function Project() {
 					</Grid>
 				</Grid>
 			</Box>
-			{images.map((image, index) => (
-				<Box className={classes.projects_container} key={index}>
+			<Box className={classes.projects_container}>
+				{isMobile ? (
+					<div className="App">
+						<Slider {...settings}>
+							{filteredImages.map((image, index) => {
+								return (
+									<Grid key={index}>
+										<img
+											className={classes.projectImage}
+											alt={image.title}
+											src={image.url}
+										/>
+									</Grid>
+								);
+							})}
+						</Slider>
+					</div>
+				) : (
 					<div className={classes.root}>
 						{display || category === "Todos" ? (
 							<div className={classes.buttonB}>
@@ -436,8 +515,8 @@ function Project() {
 							</div>
 						)}
 					</div>
-				</Box>
-			))}
+				)}
+			</Box>
 		</ThemeProvider>
 	);
 }
