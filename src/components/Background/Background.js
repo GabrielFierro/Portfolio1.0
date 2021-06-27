@@ -1,11 +1,26 @@
 /* Background.js */
 import "./Background.css";
-import background from "../../assets/images/background/city-light-desktop.jpg";
+import BackgroundLight from "../../assets/images/background/city-light-desktop.jpg";
+import BackgroundDark from "../../assets/images/background/city-dark-desktop.jpg";
 
-function Background() {
+function Background(props) {
+	const darkMode = props.darkMode;
+
 	return (
 		<div className="container">
-			<img alt="City background" className="background" src={background}></img>
+			{darkMode ? (
+				<img
+					alt="City background"
+					className="background"
+					src={BackgroundDark}
+				/>
+			) : (
+				<img
+					alt="City background"
+					className="background"
+					src={BackgroundLight}
+				/>
+			)}
 		</div>
 	);
 }

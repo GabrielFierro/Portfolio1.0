@@ -49,7 +49,29 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: "0px",
 		},
 	},
-	my_description: {
+	my_descriptionLight: {
+		color: MyTheme.palette.primary.main,
+		width: "100%",
+		marginTop: "-55px",
+		marginLeft: "10px",
+		fontSize: "1.5rem",
+		lineHeight: "1.2",
+		[theme.breakpoints.down("md")]: {
+			marginTop: "-5px",
+			fontSize: "1.35rem",
+		},
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "1.20rem",
+			marginRight: "15px",
+		},
+		[theme.breakpoints.down("xs")]: {
+			fontSize: "0.9rem",
+			marginTop: "10px",
+			marginLeft: "0px",
+		},
+	},
+	my_descriptionDark: {
+		color: MyTheme.palette.primary.dark,
 		width: "100%",
 		marginTop: "-55px",
 		marginLeft: "10px",
@@ -85,7 +107,19 @@ const useStyles = makeStyles((theme) => ({
 			marginTop: "5px",
 		},
 	},
-	property_text: {
+	property_text_light: {
+		color: MyTheme.palette.primary.main,
+		fontSize: "1.15rem",
+		[theme.breakpoints.down("md")]: {
+			fontSize: "1rem",
+		},
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "0.6rem",
+			marginTop: "10px",
+		},
+	},
+	property_text_dark: {
+		color: MyTheme.palette.primary.dark,
 		fontSize: "1.15rem",
 		[theme.breakpoints.down("md")]: {
 			fontSize: "1rem",
@@ -104,7 +138,22 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: "5px",
 		fontSize: "2.25rem",
 	},
-	skills_text: {
+	skills_text_light: {
+		color: MyTheme.palette.primary.main,
+		fontSize: "3rem",
+		marginTop: "20px",
+		marginBottom: "15px",
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "2.5rem",
+			marginTop: "40px",
+		},
+		[theme.breakpoints.down("xs")]: {
+			fontSize: "1.25rem",
+			marginTop: "110px",
+		},
+	},
+	skills_text_dark: {
+		color: MyTheme.palette.primary.dark,
 		fontSize: "3rem",
 		marginTop: "20px",
 		marginBottom: "15px",
@@ -119,83 +168,164 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-function About() {
+function About(props) {
 	const classes = useStyles();
+	const darkMode = props.darkMode;
+
 	return (
 		<ThemeProvider theme={MyTheme}>
-			<Card />
-			<Grid
-				className={classes.section_container}
-				container
-				display="flex"
-				justify="center"
-				alignItems="center"
-			>
+			<Card darkMode={darkMode} />
+			{darkMode ? (
 				<Grid>
-					<CardMedia
-						title="Profile picture about me"
-						className={classes.media}
-						image={ProfilePicture}
-					/>
-				</Grid>
-				<Grid item sm container direction="row">
-					<Grid className={classes.text_container}>
-						<Typography
-							className={classes.my_description}
-							style={MyTheme.typographyKarla}
-						>
-							Me apasiona el desarrollo front-end, por lo que me capacito para
-							aprender sobre nuevas tecnologías, que me permitan crecer tanto a
-							nivel personal, como profesional.
-						</Typography>
-					</Grid>
-					<Grid className={classes.properties_container} container>
-						<Grid container direction="row" item xs sm="auto" md={3}>
-							<Location />
-							<Typography
-								className={classes.property_text}
-								style={MyTheme.typographyKarla}
-							>
-								Argentina
-							</Typography>
-						</Grid>
-						<Grid container direction="row" item xs={12} sm="auto" md={9}>
-							<Book />
-							<Typography
-								className={classes.property_text}
-								style={MyTheme.typographyKarla}
-							>
-								Lic. en Ciencias de la Computación
-							</Typography>
-						</Grid>
-					</Grid>
-				</Grid>
-			</Grid>
-			<Grid
-				container
-				item
-				xs
-				direction="column"
-				className={classes.skills_container}
-			>
-				<Grid
-					container
-					direction="column"
-					display="flex"
-					alignItems="center"
-					justifycontent="center"
-				>
-					<Typography
-						className={classes.skills_text}
-						style={MyTheme.typographyRubik}
+					<Grid
+						className={classes.section_container}
+						container
+						display="flex"
+						justify="center"
+						alignItems="center"
 					>
-						Habilidades
-					</Typography>
+						<Grid>
+							<CardMedia
+								title="Profile picture about me"
+								className={classes.media}
+								image={ProfilePicture}
+							/>
+						</Grid>
+						<Grid item sm container direction="row">
+							<Grid className={classes.text_container}>
+								<Typography
+									className={classes.my_descriptionLight}
+									style={MyTheme.typographyKarla}
+								>
+									Me apasiona el desarrollo front-end, por lo que me capacito
+									para aprender sobre nuevas tecnologías, que me permitan crecer
+									tanto a nivel personal, como profesional.
+								</Typography>
+							</Grid>
+							<Grid className={classes.properties_container} container>
+								<Grid container direction="row" item xs sm="auto" md={3}>
+									<Location />
+									<Typography
+										className={classes.property_text_light}
+										style={MyTheme.typographyKarla}
+									>
+										Argentina
+									</Typography>
+								</Grid>
+								<Grid container direction="row" item xs={12} sm="auto" md={9}>
+									<Book />
+									<Typography
+										className={classes.property_text_light}
+										style={MyTheme.typographyKarla}
+									>
+										Lic. en Ciencias de la Computación
+									</Typography>
+								</Grid>
+							</Grid>
+						</Grid>
+					</Grid>
+					<Grid
+						container
+						item
+						xs
+						direction="column"
+						className={classes.skills_container}
+					>
+						<Grid
+							container
+							direction="column"
+							display="flex"
+							alignItems="center"
+							justifycontent="center"
+						>
+							<Typography
+								className={classes.skills_text_light}
+								style={MyTheme.typographyRubik}
+							>
+								Habilidades
+							</Typography>
+						</Grid>
+						<Grid container direction="row">
+							<LogoContainer />
+						</Grid>
+					</Grid>
 				</Grid>
-				<Grid container direction="row">
-					<LogoContainer />
+			) : (
+				<Grid>
+					<Grid
+						className={classes.section_container}
+						container
+						display="flex"
+						justify="center"
+						alignItems="center"
+					>
+						<Grid>
+							<CardMedia
+								title="Profile picture about me"
+								className={classes.media}
+								image={ProfilePicture}
+							/>
+						</Grid>
+						<Grid item sm container direction="row">
+							<Grid className={classes.text_container}>
+								<Typography
+									className={classes.my_descriptionDark}
+									style={MyTheme.typographyKarla}
+								>
+									Me apasiona el desarrollo front-end, por lo que me capacito
+									para aprender sobre nuevas tecnologías, que me permitan crecer
+									tanto a nivel personal, como profesional.
+								</Typography>
+							</Grid>
+							<Grid className={classes.properties_container} container>
+								<Grid container direction="row" item xs sm="auto" md={3}>
+									<Location />
+									<Typography
+										className={classes.property_text_dark}
+										style={MyTheme.typographyKarla}
+									>
+										Argentina
+									</Typography>
+								</Grid>
+								<Grid container direction="row" item xs={12} sm="auto" md={9}>
+									<Book />
+									<Typography
+										className={classes.property_text_dark}
+										style={MyTheme.typographyKarla}
+									>
+										Lic. en Ciencias de la Computación
+									</Typography>
+								</Grid>
+							</Grid>
+						</Grid>
+					</Grid>
+					<Grid
+						container
+						item
+						xs
+						direction="column"
+						className={classes.skills_container}
+					>
+						<Grid
+							container
+							direction="column"
+							display="flex"
+							alignItems="center"
+							justifycontent="center"
+						>
+							<Typography
+								className={classes.skills_text_dark}
+								style={MyTheme.typographyRubik}
+							>
+								Habilidades
+							</Typography>
+						</Grid>
+						<Grid container direction="row">
+							<LogoContainer />
+						</Grid>
+					</Grid>
 				</Grid>
-			</Grid>
+			)}
 		</ThemeProvider>
 	);
 }
