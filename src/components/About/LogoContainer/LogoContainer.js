@@ -5,7 +5,7 @@ import CssLogo from "../../../assets/images/icons/css-logo.svg";
 import TailwindLogo from "../../../assets/images/icons/tailwind-logo.svg";
 import BootstrapLogo from "../../../assets/images/icons/bootstrap-logo.svg";
 import PythonLogo from "../../../assets/images/icons/python-logo.svg";
-import FlaskLogo from "../../../assets/images/icons/flask-logo.svg";
+import ReactLogo from "../../../assets/images/icons/react-icon.svg";
 import JavascriptLogo from "../../../assets/images/icons/javascript-logo.svg";
 import GitLogo from "../../../assets/images/icons/git-icon.svg";
 import Logo from "../Logo/Logo";
@@ -24,8 +24,8 @@ function LogoContainer() {
 			<Logo alt="Tailwind logo" src={TailwindLogo}></Logo>
 			<Logo alt="Bootstrap logo" src={BootstrapLogo}></Logo>
 			<Logo alt="Python logo" src={PythonLogo}></Logo>
-			<Logo alt="Flask logo" src={FlaskLogo}></Logo>
 			<Logo alt="Javascript logo" src={JavascriptLogo}></Logo>
+			<Logo alt="React logo" src={ReactLogo}></Logo>
 			<Logo alt="Git logo" src={GitLogo}></Logo>
 		</Box>
 	);
