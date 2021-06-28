@@ -5,7 +5,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
-	card: {
+	cardLight: {
+		backgroundColor: MyTheme.palette.primary.main,
+		height: "100%",
+		position: "absolute",
+		width: "50%",
+		left: "0%",
+		[theme.breakpoints.down("xs")]: {
+			left: "15%",
+			width: "70%",
+		},
+	},
+	cardDark: {
 		backgroundColor: MyTheme.palette.primary.dark,
 		height: "100%",
 		position: "absolute",
@@ -16,13 +27,6 @@ const useStyles = makeStyles((theme) => ({
 			width: "70%",
 		},
 	},
-	cardLight: {
-		backgroundColor: MyTheme.palette.primary.main,
-	},
-	cardDark: {
-		backgroundColor: MyTheme.palette.primary.dark,
-	},
-
 	title: {
 		color: "#f7f7fe",
 		letterSpacing: "-0.00833em",
@@ -97,7 +101,7 @@ function Presentation(props) {
 						item
 						xs
 						direction="column"
-						className={`${classes.card} ${classes.cardDark}`}
+						className={classes.cardDark}
 					>
 						<Typography
 							variant="h2"
@@ -131,7 +135,7 @@ function Presentation(props) {
 						item
 						xs
 						direction="column"
-						className={`${classes.card} ${classes.cardLight}`}
+						className={classes.cardLight}
 					>
 						<Typography
 							variant="h2"
