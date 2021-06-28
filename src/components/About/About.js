@@ -91,14 +91,8 @@ const useStyles = makeStyles((theme) => ({
 			marginTop: "5px",
 		},
 	},
-	property_text_light: {
-		color: MyTheme.palette.primary.main,
-	},
-	property_text_dark: {
-		color: MyTheme.palette.primary.dark,
-	},
+
 	property_text: {
-		color: MyTheme.palette.primary.main,
 		fontSize: "1.15rem",
 		[theme.breakpoints.down("md")]: {
 			fontSize: "1rem",
@@ -107,6 +101,12 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: "0.6rem",
 			marginTop: "10px",
 		},
+	},
+	property_text_light: {
+		color: MyTheme.palette.primary.main,
+	},
+	property_text_dark: {
+		color: MyTheme.palette.primary.dark,
 	},
 	skills_container: {
 		left: "15%",
