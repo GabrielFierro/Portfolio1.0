@@ -79,22 +79,12 @@ const useStyles = makeStyles((theme) => ({
 	},
 	skills_text_light: {
 		color: MyTheme.palette.primary.main,
-		alignItems: "center",
-		display: "flex",
-		fontSize: "3rem",
-		justifyContent: "center",
-		[theme.breakpoints.down("md")]: {
-			fontSize: "2.65rem",
-		},
-		[theme.breakpoints.down("sm")]: {
-			fontSize: "2.35rem",
-		},
-		[theme.breakpoints.down("xs")]: {
-			fontSize: "2rem",
-		},
 	},
-	skills_text_dark: {
+	skill_text_dark: {
 		color: MyTheme.palette.primary.dark,
+	},
+	skills_text: {
+		color: MyTheme.palette.primary.main,
 		alignItems: "center",
 		display: "flex",
 		fontSize: "3rem",
@@ -109,6 +99,7 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: "2rem",
 		},
 	},
+
 	description_container: {
 		height: "5%",
 		left: "12%",
@@ -330,14 +321,14 @@ function Project(props) {
 			<Box className={classes.title}>
 				{darkMode ? (
 					<Typography
-						className={classes.skills_text_light}
+						className={`${classes.skills_text} ${classes.skills_text_light}`}
 						style={MyTheme.typographyRubik}
 					>
 						Proyectos
 					</Typography>
 				) : (
 					<Typography
-						className={classes.skills_text_dark}
+						className={`${classes.skills_text} ${classes.skills_text_dark}`}
 						style={MyTheme.typographyRubik}
 					>
 						Proyectos
@@ -431,7 +422,7 @@ function Project(props) {
 													onClick={() => {
 														setCategory(category);
 														setDisplay(false);
-														handleButtonCategoryDark(category);
+														handleButtonCategoryLight(category);
 													}}
 													size="small"
 													style={{ backgroundColor: `${designBackground}` }}
