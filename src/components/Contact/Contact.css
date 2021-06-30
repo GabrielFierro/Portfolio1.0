@@ -56,3 +56,11 @@
 	color: #100f10;
 	opacity: 1;
 }
+
+#outlined-basic::placeholder {
+	color: #f7f7fe;
+	font-weight: 700;
+	font-family: "Rubik";
+	padding-left: "15px";
+	opacity: 1;
+}
