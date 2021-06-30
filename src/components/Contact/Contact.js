@@ -285,7 +285,7 @@ function Contact(props) {
 									href="https://www.linkedin.com/in/gabriel-fierro-2020/"
 									onClick={preventDefault}
 								>
-									<LinkedInIcon className={classes.icon} />
+									<LinkedInIcon darkMode={darkMode} className={classes.icon} />
 								</Link>
 							</Grid>
 							<Grid container className={classes.iconSpace}>
@@ -293,7 +293,7 @@ function Contact(props) {
 									href="https://github.com/GabrielFierro/"
 									onClick={preventDefault}
 								>
-									<GitHubIcon className={classes.icon} />
+									<GitHubIcon darkMode={darkMode} className={classes.icon} />
 								</Link>
 							</Grid>
 							<Grid container className={classes.iconSpace}>
@@ -301,7 +301,7 @@ function Contact(props) {
 									href="https://twitter.com/f_gabriel01"
 									onClick={preventDefault}
 								>
-									<TwitterIcon className={classes.icon} />
+									<TwitterIcon darkMode={darkMode} className={classes.icon} />
 								</Link>
 							</Grid>
 						</Grid>
