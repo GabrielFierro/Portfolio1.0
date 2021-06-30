@@ -30,14 +30,17 @@ const useStyles = makeStyles((theme) => ({
 		marginBottom: "2rem",
 		position: "relative",
 		width: "100%",
-		backgroundColor: MyTheme.palette.primary.main,
 		height: "60px",
 	},
+	iconContainerLight: {
+		backgroundColor: MyTheme.palette.primary.main,
+	},
+	iconContainerDark: {
+		backgroundColor: "#2a2a2a",
+	},
 	textFieldName: {
+		margin: "0.7em 0.7em 1em 1.2em",
 		width: "46%",
-		marginBottom: "0.5em",
-		marginLeft: "1.2em",
-		marginTop: "10px",
 		[theme.breakpoints.down("md")]: {
 			width: "94%",
 			marginLeft: "1.2em",
@@ -53,9 +56,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	textFieldSurname: {
 		width: "46%",
-		marginBottom: "0.5em",
-		marginLeft: "0.2em",
-		marginTop: "10px",
+		margin: "0.7em 0.5em 1em 0.2em",
 		[theme.breakpoints.down("md")]: {
 			width: "94%",
 			marginLeft: "1.2em",
@@ -75,10 +76,10 @@ const useStyles = makeStyles((theme) => ({
 		marginBottom: "15px",
 	},
 	iconSpace: {
-		width: "50px",
+		width: "55px",
 		height: "50px",
 		marginLeft: "30px",
-		marginTop: "5px",
+		marginTop: "3px",
 		[theme.breakpoints.down("sm")]: {
 			width: "45px",
 			height: "45px",
@@ -112,45 +113,47 @@ const useStyles = makeStyles((theme) => ({
 		width: "50px",
 		height: "50px",
 		marginTop: "4px",
-		marginLeft: "30px",
+		marginLeft: "40px",
 		[theme.breakpoints.down("sm")]: {
 			marginLeft: "20px",
 			marginTop: "4px",
 		},
 	},
-	gridMarginLeft: {
-		marginLeft: "0px",
-		[theme.breakpoints.down("xs")]: {
-			marginLeft: "10px",
-		},
-	},
 	form: {
-		backgroundColor: MyTheme.palette.primary.main,
 		border: "2px solid #100f10",
-		width: "100%",
+		padding: "2px",
+		width: "99%",
 		[theme.breakpoints.down("md")]: {
 			marginTop: "-25px",
-			width: "100%",
+		},
+		[theme.breakpoints.down("sm")]: {
+			padding: "0",
 		},
 	},
+	formLight: {
+		backgroundColor: MyTheme.palette.primary.main,
+	},
+	formDark: {
+		backgroundColor: "#2a2a2a",
+	},
 	textFieldInput: {
-		marginBottom: "0.5em",
+		marginBottom: "1em",
 		border: "1px solid #100f10",
-		marginRight: "2em",
+		marginRight: "0",
 		width: "94%",
 		marginLeft: "1.2em",
 		[theme.breakpoints.down("md")]: {
-			width: "94%",
 			marginLeft: "1.2em",
 		},
 		[theme.breakpoints.down("sm")]: {
-			width: "93%",
 			marginLeft: "1em",
 		},
 		[theme.breakpoints.down("xs")]: {
-			width: "93%",
 			marginLeft: "0.5em",
 		},
+	},
+	textFieldInputDark: {
+		border: "0",
 	},
 	skills_text: {
 		marginTop: "10px",
@@ -169,6 +172,12 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: "2rem",
 			marginTop: "20px",
 		},
+	},
+	skills_text_light: {
+		color: MyTheme.palette.primary.main,
+	},
+	skills_text_dark: {
+		color: MyTheme.palette.primary.dark,
 	},
 	send_button: {
 		backgroundColor: "#37b9f1",
@@ -198,7 +207,6 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "#f7f7fe",
 		border: "2px solid #37b9f1",
 		borderRadius: "5px",
-		color: "#100f10",
 		cursor: "pointer",
 		fontSize: "20px",
 		padding: "7px",
@@ -218,11 +226,18 @@ const useStyles = makeStyles((theme) => ({
 			width: "35%",
 		},
 	},
+	textField: {
+		background: "#3a3a3a",
+	},
+	input: {
+		color: "white",
+	},
 }));
 
-function Contact() {
+function Contact(props) {
 	const classes = useStyles();
 	const preventDefault = (event) => event.preventDefault();
+	const darkMode = props.darkMode;
 
 	function sendMessage(e) {
 		e.preventDefault();
@@ -238,7 +253,6 @@ function Contact() {
 				(result) => {
 					alert("Tu información se ha enviado exitosamente!");
 					e.target.reset();
-					console.log(result.text);
 				},
 				(error) => {
 					console.log(error.text);
@@ -248,116 +262,251 @@ function Contact() {
 
 	return (
 		<ThemeProvider theme={MyTheme}>
-			<Card />
-			<Grid className={classes.section} container direction="column">
-				<Typography
-					className={classes.skills_text}
-					style={MyTheme.typographyRubik}
-				>
-					Contacto
-				</Typography>
-				<Grid container direction="column" className={classes.iconContainer}>
-					<Grid container className={classes.linkIcon}>
-						<LinkIcon />
+			<Card darkMode={darkMode} />
+			{darkMode ? (
+				<Grid className={classes.section} container direction="column">
+					<Typography
+						className={`${classes.skills_text} ${classes.skills_text_light}`}
+						style={MyTheme.typographyRubik}
+					>
+						Contacto
+					</Typography>
+					<Grid
+						container
+						direction="column"
+						className={`${classes.iconContainer} ${classes.iconContainerDark}`}
+					>
+						<Grid container className={classes.linkIcon}>
+							<LinkIcon darkMode={darkMode} />
+						</Grid>
+						<Grid container>
+							<Grid container className={classes.iconSpace}>
+								<Link
+									href="https://www.linkedin.com/in/gabriel-fierro-2020/"
+									onClick={preventDefault}
+								>
+									<LinkedInIcon className={classes.icon} />
+								</Link>
+							</Grid>
+							<Grid container className={classes.iconSpace}>
+								<Link
+									href="https://github.com/GabrielFierro/"
+									onClick={preventDefault}
+								>
+									<GitHubIcon className={classes.icon} />
+								</Link>
+							</Grid>
+							<Grid container className={classes.iconSpace}>
+								<Link
+									href="https://twitter.com/f_gabriel01"
+									onClick={preventDefault}
+								>
+									<TwitterIcon className={classes.icon} />
+								</Link>
+							</Grid>
+						</Grid>
 					</Grid>
-					<Grid container>
-						<Grid container className={classes.iconSpace}>
-							<Link
-								href="https://www.linkedin.com/in/gabriel-fierro-2020/"
-								onClick={preventDefault}
-							>
-								<LinkedInIcon className={classes.icon} />
-							</Link>
-						</Grid>
-						<Grid container className={classes.iconSpace}>
-							<Link
-								href="https://github.com/GabrielFierro/"
-								onClick={preventDefault}
-							>
-								<GitHubIcon className={classes.icon} />
-							</Link>
-						</Grid>
-						<Grid container className={classes.iconSpace}>
-							<Link
-								href="https://twitter.com/f_gabriel01"
-								onClick={preventDefault}
-							>
-								<TwitterIcon className={classes.icon} />
-							</Link>
-						</Grid>
-					</Grid>
+					<form
+						className={`${classes.form} ${classes.formDark}`}
+						container
+						direction="column"
+						alignItems="center"
+						justify="center"
+						onSubmit={sendMessage}
+					>
+						<TextField
+							id="outlined-basic"
+							placeholder="Nombre"
+							minLength="2"
+							maxLength="30"
+							required
+							size="small"
+							type="text"
+							variant="outlined"
+							name="name"
+							className={`${classes.textField} ${classes.textFieldName}`}
+							InputProps={{
+								className: classes.input,
+							}}
+							style={MyTheme.typographyRubik}
+						/>
+						<TextField
+							id="outlined-basic"
+							placeholder="Apellido"
+							minLength="2"
+							maxlength="30"
+							required
+							size="small"
+							type="text"
+							variant="outlined"
+							name="surname"
+							className={`${classes.textField} ${classes.textFieldSurname}`}
+							InputProps={{
+								className: classes.input,
+							}}
+							style={MyTheme.typographyRubik}
+						/>
+						<TextField
+							id="outlined-basic"
+							placeholder="Email"
+							minLength="12"
+							maxlength="50"
+							required
+							size="small"
+							type="email"
+							variant="outlined"
+							name="email"
+							className={`${classes.textField} ${classes.textFieldInput} ${classes.textFieldInputDark}`}
+							InputProps={{
+								className: classes.input,
+							}}
+							style={MyTheme.typographyRubik}
+						/>
+						<TextField
+							id="outlined-basic"
+							placeholder="Mensaje"
+							minLength="10"
+							required
+							type="text"
+							variant="outlined"
+							name="feedback"
+							className={`${classes.textField} ${classes.textFieldInput}  ${classes.textFieldInputDark}`}
+							InputProps={{
+								className: classes.input,
+							}}
+						/>
+						<Box className={classes.button_container}>
+							<input
+								type="submit"
+								className={classes.send_button}
+								value="Enviar"
+								style={MyTheme.typographyRubik}
+							/>
+							<input
+								type="reset"
+								className={classes.cancel_button}
+								value="Cancelar"
+								style={MyTheme.typographyKarla}
+							/>
+						</Box>
+					</form>
 				</Grid>
-				<form
-					className={classes.form}
-					container
-					direction="column"
-					alignItems="center"
-					justify="center"
-					onSubmit={sendMessage}
-				>
-					<TextField
-						className={classes.textFieldName}
-						id="custom-name-field"
-						placeholder="Nombre"
-						minLength="3"
-						maxLength="30"
-						required
-						size="small"
-						style={{ marginRight: "0.7em", border: "1px solid #100f10" }}
-						testID="change-placeholder-color"
-						type="text"
-						variant="outlined"
-						name="name"
-					/>
-					<TextField
-						className={classes.textFieldSurname}
-						id="custom-surname-field"
-						placeholder="Apellido"
-						minLength="2"
-						maxlength="30"
-						required
-						size="small"
-						style={{ border: "1px solid #100f10" }}
-						type="text"
-						variant="outlined"
-						name="surname"
-					/>
-					<TextField
-						className={classes.textFieldInput}
-						id="custom-email-field"
-						placeholder="Email"
-						minLength="12"
-						maxlength="50"
-						required
-						size="small"
-						type="email"
-						variant="outlined"
-						name="email"
-					/>
-					<TextField
-						className={classes.textFieldInput}
-						id="custom-message-field"
-						placeholder="Mensaje"
-						minLength="10"
-						required
-						type="text"
-						variant="outlined"
-						name="feedback"
-					/>
-					<Box className={classes.button_container}>
-						<input
-							type="submit"
-							className={classes.send_button}
-							value="Enviar"
+			) : (
+				<Grid className={classes.section} container direction="column">
+					<Typography
+						className={`${classes.skills_text} ${classes.skills_text_light}`}
+						style={MyTheme.typographyRubik}
+					>
+						Contacto
+					</Typography>
+					<Grid
+						container
+						direction="column"
+						className={`${classes.iconContainer} ${classes.iconContainerLight}`}
+					>
+						<Grid container className={classes.linkIcon}>
+							<LinkIcon />
+						</Grid>
+						<Grid container>
+							<Grid container className={classes.iconSpace}>
+								<Link
+									href="https://www.linkedin.com/in/gabriel-fierro-2020/"
+									onClick={preventDefault}
+								>
+									<LinkedInIcon className={classes.icon} />
+								</Link>
+							</Grid>
+							<Grid container className={classes.iconSpace}>
+								<Link
+									href="https://github.com/GabrielFierro/"
+									onClick={preventDefault}
+								>
+									<GitHubIcon className={classes.icon} />
+								</Link>
+							</Grid>
+							<Grid container className={classes.iconSpace}>
+								<Link
+									href="https://twitter.com/f_gabriel01"
+									onClick={preventDefault}
+								>
+									<TwitterIcon className={classes.icon} />
+								</Link>
+							</Grid>
+						</Grid>
+					</Grid>
+					<form
+						className={`${classes.form} ${classes.formLight}`}
+						container
+						direction="column"
+						alignItems="center"
+						justify="center"
+						onSubmit={sendMessage}
+					>
+						<TextField
+							className={classes.textFieldName}
+							id="custom-name-field"
+							placeholder="Nombre"
+							minLength="3"
+							maxLength="30"
+							required
+							size="small"
+							style={{ border: "1px solid #100f10" }}
+							type="text"
+							variant="outlined"
+							name="name"
 						/>
-						<input
-							type="reset"
-							className={classes.cancel_button}
-							value="Cancelar"
+						<TextField
+							className={classes.textFieldSurname}
+							id="custom-surname-field"
+							placeholder="Apellido"
+							minLength="2"
+							maxlength="30"
+							required
+							size="small"
+							style={{ border: "1px solid #100f10" }}
+							type="text"
+							variant="outlined"
+							name="surname"
 						/>
-					</Box>
-				</form>
-			</Grid>
+						<TextField
+							className={classes.textFieldInput}
+							id="custom-email-field"
+							placeholder="Email"
+							minLength="12"
+							maxlength="50"
+							required
+							size="small"
+							type="email"
+							variant="outlined"
+							name="email"
+						/>
+						<TextField
+							className={classes.textFieldInput}
+							id="custom-message-field"
+							placeholder="Mensaje"
+							minLength="10"
+							required
+							type="text"
+							variant="outlined"
+							name="feedback"
+						/>
+						<Box className={classes.button_container}>
+							<input
+								type="submit"
+								className={classes.send_button}
+								value="Enviar"
+								style={MyTheme.typographyRubik}
+							/>
+							<input
+								type="reset"
+								className={classes.cancel_button}
+								value="Cancelar"
+								style={MyTheme.typographyKarla}
+							/>
+						</Box>
+					</form>
+				</Grid>
+			)}
 		</ThemeProvider>
 	);
 }
