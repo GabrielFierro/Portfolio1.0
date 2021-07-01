@@ -64,6 +64,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	switch: {
 		marginLeft: "100px",
+		[theme.breakpoints.down("sm")]: {
+			marginLeft: "0",
+		},
 	},
 	switchBase: {
 		color: "#f7f7fe	",
