@@ -62,6 +62,34 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 		zIndex: -1,
 	},
+	switch: {
+		marginLeft: "100px",
+	},
+	switchBase: {
+		color: "#f7f7fe	",
+		"&$checked": {
+			color: "#37b9f1",
+			"&:hover": {
+				color: "#f7f7fe",
+				backgroundColor: "#37b9f1",
+			},
+		},
+		"&$checked + $track": {
+			backgroundColor: "#37b9f1",
+		},
+		"&:hover": {
+			color: "#f7f7fe",
+			backgroundColor: "#37b9f1",
+		},
+	},
+	checked: {},
+	track: {
+		backgroundColor: "#f7f7fe",
+		"&:hover": {
+			color: "#37b9f1",
+			backgroundColor: "#37b9f1",
+		},
+	},
 }));
 
 function App() {
@@ -171,7 +199,11 @@ function App() {
 											</Menu>
 										</>
 									) : (
-										<Grid style={{ marginRight: "2rem" }}>
+										<Grid
+											container
+											justify="center"
+											style={{ marginLeft: "100px" }}
+										>
 											<NavLink exact to="/">
 												Home
 											</NavLink>
@@ -191,6 +223,12 @@ function App() {
 									)}
 								</Typography>
 								<MaterialSwitch
+									classes={{
+										root: classes.switch,
+										switchBase: classes.switchBase,
+										track: classes.track,
+										checked: classes.checked,
+									}}
 									checked={darkMode}
 									onChange={() => {
 										handleDarkMode();
