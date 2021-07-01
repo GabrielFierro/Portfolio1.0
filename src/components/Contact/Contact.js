@@ -1,5 +1,4 @@
 /* Contact.js */
-import { useState } from "react";
 import emailjs from "emailjs-com";
 import "./Contact.css";
 import Card from "../Card/Card";
