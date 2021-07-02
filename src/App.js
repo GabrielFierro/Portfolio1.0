@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) => ({
 	switch: {
 		marginLeft: "100px",
 		[theme.breakpoints.down("sm")]: {
-			marginLeft: "0",
+			marginLeft: "-25px",
 		},
 	},
 	switchBase: {
@@ -80,18 +80,10 @@ const useStyles = makeStyles((theme) => ({
 		"&$checked + $track": {
 			backgroundColor: "#37b9f1",
 		},
-		"&:hover": {
-			color: "#f7f7fe",
-			backgroundColor: "#37b9f1",
-		},
 	},
 	checked: {},
 	track: {
 		backgroundColor: "#f7f7fe",
-		"&:hover": {
-			color: "#37b9f1",
-			backgroundColor: "#37b9f1",
-		},
 	},
 }));
 
