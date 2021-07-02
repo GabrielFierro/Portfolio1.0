@@ -11,6 +11,8 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@material-ui/core";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./Project.css";
 import MyTheme from "../../MyTheme";
 import Card from "../Card/Card";
@@ -33,7 +35,7 @@ const images = [
 		demo: "https://gabrielfierro.github.io/ProfileCardComponent/",
 		repository: "https://github.com/GabrielFierro/ProfileCardComponent",
 		title: "Profile card",
-		url: "/static/images/projects/profile-card.png",
+		url: "/static/images/projects/profile-card.avif",
 		width: "30%",
 	},
 	{
@@ -41,7 +43,7 @@ const images = [
 		demo: "https://gabrielfierro.github.io/TestimonialsGridSection/",
 		repository: "https://github.com/GabrielFierro/TestimonialsGridSection",
 		title: "Testimonial grid",
-		url: "/static/images/projects/testimonial-grid.png",
+		url: "/static/images/projects/testimonial-grid.avif",
 		width: "30%",
 	},
 	{
@@ -49,7 +51,7 @@ const images = [
 		demo: "https://gabrielfierro.github.io/Fylo-landing-page/",
 		repository: "https://github.com/GabrielFierro/Fylo-landing-page",
 		title: "Fylo Landing",
-		url: "/static/images/projects/fylo-landing.png",
+		url: "/static/images/projects/fylo-landing.avif",
 		width: "30%",
 	},
 	{
@@ -57,7 +59,7 @@ const images = [
 		demo: "https://github-profile-finder-gabrielfierro.vercel.app/",
 		repository: "https://github.com/GabrielFierro/GithubProfileFinder",
 		title: "GitHub Profile",
-		url: "/static/images/projects/github-profile-finder.png",
+		url: "/static/images/projects/github-profile-finder.avif",
 		width: "30%",
 	},
 	{
@@ -65,7 +67,7 @@ const images = [
 		demo: "https://gabrielfierro.github.io/React-Pokeball/",
 		repository: "https://github.com/GabrielFierro/React-Pokeball",
 		title: "Pokeballs",
-		url: "/static/images/projects/react-pokeballs.png",
+		url: "/static/images/projects/react-pokeballs.avif",
 		width: "30%",
 	},
 ];
@@ -181,14 +183,47 @@ const useStyles = makeStyles((theme) => ({
 		minWidth: 300,
 		width: "100%",
 	},
+	image: {
+		border: "3px solid #100f10",
+		borderRadius: "5px",
+	},
 	projectImage: {
-		width: "90%",
+		width: "100%",
+		objectFit: "contain",
+		marginTop: "40px",
+		border: "3px solid #100f10",
+	},
+	projectImageExtraSmall: {
+		margin: "15px 0 0 80px",
+		width: "67%",
 		objectFit: "cover",
-		border: "2px solid #100f10",
-		[theme.breakpoints.between("500px, 600px")]: {
-			width: "50%",
-			objectFit: "cover",
-			border: "2px solid #100f10",
+		[theme.breakpoints.down("560")]: {
+			width: "70%",
+			marginLeft: "60px",
+		},
+		[theme.breakpoints.down("500")]: {
+			width: "80%",
+			marginLeft: "35px",
+		},
+		[theme.breakpoints.down("460")]: {
+			width: "85%",
+			marginLeft: "25px",
+		},
+		[theme.breakpoints.down("430")]: {
+			width: "90%",
+			marginLeft: "20px",
+		},
+		[theme.breakpoints.down("400")]: {
+			width: "100%",
+			marginLeft: "5px",
+		},
+		[theme.breakpoints.down("360")]: {
+			width: "110%",
+			marginLeft: "-15px",
+		},
+		[theme.breakpoints.down("330")]: {
+			width: "120%",
+			marginLeft: "-25px",
 		},
 	},
 }));
@@ -204,8 +239,8 @@ function Project(props) {
 	const filteredImages = images.filter((value) => value.category !== "Todos");
 
 	const theme = useTheme();
-	const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
-
+	const isMobileSmall = useMediaQuery(theme.breakpoints.down("sm"));
+	const isMobileExtraSmall = useMediaQuery(theme.breakpoints.down("xs"));
 	const darkMode = props.darkMode;
 
 	// Use diferent states for each button on the categories
@@ -284,7 +319,7 @@ function Project(props) {
 				style={{
 					...style,
 					display: "block",
-					backgroundColor: "#100f10",
+					background: "#37b9f1",
 				}}
 				onClick={onClick}
 			/>
@@ -303,14 +338,16 @@ function Project(props) {
 	}
 
 	const settings = {
+		className: "slides",
 		fade: true,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 1,
 		arrows: true,
-		slidesToScroll: 1,
-		className: "slides",
+		swipeToSlide: true,
 		centerMode: true,
+		dots: true,
+		adaptiveHeight: true,
 		nextArrow: <SampleNextArrow />,
 		prevArrow: <SamplePrevArrow />,
 	};
@@ -318,6 +355,7 @@ function Project(props) {
 	return (
 		<ThemeProvider theme={MyTheme}>
 			<Card darkMode={darkMode} />
+			{/* Begin of the title component */}
 			<Box className={classes.title}>
 				{darkMode ? (
 					<Typography
@@ -335,6 +373,8 @@ function Project(props) {
 					</Typography>
 				)}
 			</Box>
+			{/* End of the title component*/}
+			{/* Begin of the button component */}
 			<Box className={classes.description_container}>
 				<Grid container xs sm item direction="row">
 					<Grid
@@ -345,6 +385,8 @@ function Project(props) {
 						justify="center"
 					>
 						<ThemeProvider theme={MyTheme}>
+							{/* From the filteredCategories array display the buttons
+							for dark and light mode */}
 							{filteredCategories.map((category) => (
 								<Grid
 									container
@@ -354,6 +396,7 @@ function Project(props) {
 								>
 									{category === "Todos" ? (
 										<Grid container>
+											{/* If the dark mode value is true, display the buttons with the styles for the dark mode */}
 											{darkMode ? (
 												<Button
 													className={`${classes.button} ${classes.button_dark}`}
@@ -531,21 +574,30 @@ function Project(props) {
 				</Grid>
 			</Box>
 			<Box className={classes.projects_container}>
-				{isMobile ? (
+				{isMobileSmall ? (
 					<div className="App">
-						<Slider {...settings}>
-							{filteredImages.map((image, index) => {
-								return (
-									<Grid key={index}>
+						{isMobileExtraSmall ? (
+							<Slider {...settings} className={classes.projectImageExtraSmall}>
+								<img
+									className={classes.image}
+									src="/static/images/projects/github-profile-finder.png"
+									alt="GithubPF"
+								/>
+							</Slider>
+						) : (
+							<Slider {...settings}>
+								{filteredImages.map((image, index) => {
+									return (
 										<img
 											className={classes.projectImage}
 											alt={image.title}
 											src={image.url}
+											key={index}
 										/>
-									</Grid>
-								);
-							})}
-						</Slider>
+									);
+								})}
+							</Slider>
+						)}
 					</div>
 				) : (
 					<div className={classes.root}>
