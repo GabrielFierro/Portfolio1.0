@@ -82,7 +82,7 @@ const useStyles = makeStyles((theme) => ({
 	skills_text_light: {
 		color: MyTheme.palette.primary.main,
 	},
-	skill_text_dark: {
+	skills_text_dark: {
 		color: MyTheme.palette.primary.dark,
 	},
 	skills_text: {
@@ -186,45 +186,19 @@ const useStyles = makeStyles((theme) => ({
 	image: {
 		border: "3px solid #100f10",
 		borderRadius: "5px",
+		width: "100%",
+		height: "100%",
 	},
 	projectImage: {
 		width: "100%",
-		objectFit: "contain",
-		marginTop: "40px",
+		objectFit: "cover",
+		marginTop: "15px",
 		border: "3px solid #100f10",
 	},
 	projectImageExtraSmall: {
-		margin: "15px 0 0 80px",
-		width: "67%",
+		margin: "15px 0 0 40px",
+		width: "100%",
 		objectFit: "cover",
-		[theme.breakpoints.down("560")]: {
-			width: "70%",
-			marginLeft: "60px",
-		},
-		[theme.breakpoints.down("500")]: {
-			width: "80%",
-			marginLeft: "35px",
-		},
-		[theme.breakpoints.down("460")]: {
-			width: "85%",
-			marginLeft: "25px",
-		},
-		[theme.breakpoints.down("430")]: {
-			width: "90%",
-			marginLeft: "20px",
-		},
-		[theme.breakpoints.down("400")]: {
-			width: "100%",
-			marginLeft: "5px",
-		},
-		[theme.breakpoints.down("360")]: {
-			width: "110%",
-			marginLeft: "-15px",
-		},
-		[theme.breakpoints.down("330")]: {
-			width: "120%",
-			marginLeft: "-25px",
-		},
 	},
 }));
 
@@ -583,6 +557,16 @@ function Project(props) {
 									src="/static/images/projects/github-profile-finder.png"
 									alt="GithubPF"
 								/>
+								<img
+									className={classes.image}
+									src="/static/images/projects/fylo-landing.jpg"
+									alt="Fylo Landing"
+								/>
+								<img
+									className={classes.image}
+									src="/static/images/projects/huddle-landing.avif"
+									alt="Huddle landing"
+								/>
 							</Slider>
 						) : (
 							<Slider {...settings}>
@@ -615,7 +599,7 @@ function Project(props) {
 									category={category}
 									demo="https://gabrielfierro.github.io/ProfileCardComponent/"
 									repository="https://github.com/GabrielFierro/ProfileCardComponent"
-									title="Profile"
+									title="Profile card"
 									url="/static/images/projects/profile-card.avif"
 									width="100%"
 								/>
