@@ -7,7 +7,7 @@ import {
 	Typography,
 } from "@material-ui/core";
 import MyTheme from "../../../MyTheme";
-import { ReactComponent as LinkIcon } from "../../../assets/images/icons/link.svg";
+import GitHubIcon from "./Screens/GitHubIcon/GitHubIcon";
 import { ReactComponent as WorldWideWeb } from "../../../assets/images/icons/worldwideweb.svg";
 
 const useStyles = makeStyles((theme) => ({
@@ -37,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
 			height: 135,
 			left: "10%",
 		},
-
 		[theme.breakpoints.down("sm")]: {
 			height: 120,
 			left: "25%",
@@ -133,14 +132,12 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	icon: {
-		width: 30,
-		height: 30,
+		width: 40,
+		height: 40,
+		stroke: "#f7f7fe",
+		color: "#f7f7fe",
 		"&:hover": {
 			stroke: "#37b9f1",
-		},
-		[theme.breakpoints.down("xs")]: {
-			width: 25,
-			height: 25,
 		},
 	},
 }));
@@ -182,7 +179,7 @@ function CardImage(props) {
 								<WorldWideWeb className={classes.icon} />
 							</Link>
 							<Link href={props.repository} onClick={preventDefault}>
-								<LinkIcon className={classes.icon} />
+								<GitHubIcon className={classes.icon} />
 							</Link>
 						</Grid>
 					</Typography>
