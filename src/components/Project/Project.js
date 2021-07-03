@@ -101,7 +101,6 @@ const useStyles = makeStyles((theme) => ({
 			fontSize: "2rem",
 		},
 	},
-
 	description_container: {
 		height: "5%",
 		left: "12%",
@@ -138,7 +137,6 @@ const useStyles = makeStyles((theme) => ({
 			width: "20%",
 		},
 	},
-
 	button: {
 		color: "#f7f7fe",
 		marginLeft: "25px",
@@ -174,7 +172,15 @@ const useStyles = makeStyles((theme) => ({
 		minWidth: 300,
 		width: "100%",
 		[theme.breakpoints.down("md")]: {
-			marginLeft: "-10px",
+			marginLeft: "50px",
+			minWidth: 350,
+		},
+		[theme.breakpoints.down("1050")]: {
+			marginLeft: "0",
+		},
+		[theme.breakpoints.down("1000")]: {
+			marginLeft: "-15px",
+			minWidth: 300,
 		},
 	},
 	buttonB: {
