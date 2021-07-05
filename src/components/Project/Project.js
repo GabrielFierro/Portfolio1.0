@@ -86,7 +86,6 @@ const useStyles = makeStyles((theme) => ({
 		color: MyTheme.palette.primary.dark,
 	},
 	skills_text: {
-		color: MyTheme.palette.primary.main,
 		alignItems: "center",
 		display: "flex",
 		fontSize: "3rem",
@@ -189,22 +188,76 @@ const useStyles = makeStyles((theme) => ({
 		minWidth: 300,
 		width: "100%",
 	},
-	image: {
-		border: "3px solid #100f10",
-		borderRadius: "5px",
-		width: "100%",
-		height: "100%",
-	},
+
 	projectImage: {
-		width: "100%",
-		objectFit: "cover",
 		marginTop: "15px",
+		objectFit: "contain",
+		width: "100%",
+	},
+	projectImageCarousel: {
 		border: "3px solid #100f10",
+		margin: "15px 0 0 115px",
+		objectFit: "cover",
+		width: "65%",
+		[theme.breakpoints.down("800")]: {
+			margin: "15px 0 0 70px",
+			width: "75%",
+		},
+		[theme.breakpoints.down("700")]: {
+			margin: "15px 0 0 35px",
+			width: "85%",
+		},
 	},
 	projectImageExtraSmall: {
-		margin: "15px 0 0 40px",
-		width: "100%",
+		margin: "15px 0 0 50px",
 		objectFit: "cover",
+		width: "70%",
+	},
+	image: {
+		border: "1px solid #100f10",
+		borderRadius: "5px",
+		width: "100%",
+	},
+	button_primary: {
+		boxShadow: "1px 1px 8px #100f10",
+		margin: "0 25px 0 30px",
+		width: "30%",
+		"&:hover": {
+			boxShadow: "3px 3px 10px #37b9f1",
+		},
+	},
+	button_text_primary: {
+		color: "#f7f7fe",
+		fontSize: "1.75rem",
+		paddingTop: "3px",
+		[theme.breakpoints.down("md")]: {
+			fontSize: "0.75rem",
+		},
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "0.5rem",
+			paddingTop: "0px",
+		},
+	},
+	button_image: {
+		margin: "50px 0 0 50px",
+		width: "100%",
+	},
+	button_secondary: {
+		boxShadow: "1px 1px 8px #100f10",
+		width: "30%",
+		"&:hover": {
+			boxShadow: "3px 3px 10px #37b9f1",
+		},
+	},
+	button_text_secondary: {
+		color: "#100f10",
+		fontSize: "1.75rem",
+		[theme.breakpoints.down("md")]: {
+			fontSize: "0.75rem",
+		},
+		[theme.breakpoints.down("sm")]: {
+			fontSize: "0.5rem",
+		},
 	},
 }));
 
@@ -553,29 +606,73 @@ function Project(props) {
 					</Grid>
 				</Grid>
 			</Box>
+			{/* From display the project images, first in mobile devices and then in large devices */}
 			<Box className={classes.projects_container}>
 				{isMobileSmall ? (
 					<div className="App">
 						{isMobileExtraSmall ? (
-							<Slider {...settings} className={classes.projectImageExtraSmall}>
-								<img
-									className={classes.image}
-									src="/static/images/projects/github-profile-finder.png"
-									alt="GithubPF"
-								/>
-								<img
-									className={classes.image}
-									src="/static/images/projects/fylo-landing.jpg"
-									alt="Fylo Landing"
-								/>
-								<img
-									className={classes.image}
-									src="/static/images/projects/huddle-landing.avif"
-									alt="Huddle landing"
-								/>
-							</Slider>
+							<Grid>
+								<Slider
+									{...settings}
+									className={classes.projectImageExtraSmall}
+								>
+									<img
+										className={classes.image}
+										src="/static/images/projects/github-profile-finder.png"
+										alt="GithubPF"
+									/>
+									<img
+										className={classes.image}
+										src="/static/images/projects/fylo-landing.jpg"
+										alt="Fylo Landing"
+									/>
+									<img
+										className={classes.image}
+										src="/static/images/projects/mobile-design.jpg"
+										alt="Profile card"
+									/>
+									<img
+										className={classes.image}
+										src="/static/images/projects/testimonial-grid.png"
+										alt="Testimonial grid"
+									/>
+								</Slider>
+								<Grid item spacing={3}>
+									<Grid
+										container
+										direction="row"
+										className={classes.button_image}
+										item
+										xs={10}
+										sm={6}
+									>
+										<Button
+											className={classes.button_primary}
+											href={"https://magentateam.github.io/landingOng/public/"}
+											target="_blank"
+											rel="noopener noreferrer"
+											style={MyTheme.palette.buttonPrimary}
+										>
+											<Typography className={classes.button_text_primary}>
+												Demo
+											</Typography>
+										</Button>
+										<Button
+											className={classes.button_secondary}
+											href={"https://github.com/magentateam/landingOng"}
+											target="_blank"
+											rel="noopener noreferrer"
+											style={MyTheme.palette.buttonSecondary}
+										>
+											<Typography className={classes.button_text_secondary}>
+												Repositorio
+											</Typography>
+										</Button>
+									</Grid>
+								</Grid>
+							</Grid>
 						) : (
-							<Slider {...settings}>
+							<Slider {...settings} className={classes.projectImageCarousel}>
 								{filteredImages.map((image, index) => {
 									return (
 										<img
