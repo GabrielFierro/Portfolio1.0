@@ -28,6 +28,7 @@ const images = [
 		repository: "https://github.com/GabrielFierro/Huddle-landing-page",
 		title: "Huddle landing",
 		url: "/static/images/projects/huddle-landing.avif",
+		urlResponsive: "/static/images/projects/huddle-landing-mobile.avif",
 		width: "30%",
 	},
 	{
@@ -36,6 +37,7 @@ const images = [
 		repository: "https://github.com/GabrielFierro/ProfileCardComponent",
 		title: "Profile card",
 		url: "/static/images/projects/profile-card.avif",
+		urlResponsive: "/static/images/projects/profile-card-mobile.avif",
 		width: "30%",
 	},
 	{
@@ -44,6 +46,7 @@ const images = [
 		repository: "https://github.com/GabrielFierro/TestimonialsGridSection",
 		title: "Testimonial grid",
 		url: "/static/images/projects/testimonial-grid.avif",
+		urlResponsive: "/static/images/projects/testimonial-grid-mobile.avif",
 		width: "30%",
 	},
 	{
@@ -52,6 +55,7 @@ const images = [
 		repository: "https://github.com/GabrielFierro/Fylo-landing-page",
 		title: "Fylo Landing",
 		url: "/static/images/projects/fylo-landing.avif",
+		urlResponsive: "/static/images/projects/fylo-landing-mobile.avif",
 		width: "30%",
 	},
 	{
@@ -60,6 +64,7 @@ const images = [
 		repository: "https://github.com/GabrielFierro/GithubProfileFinder",
 		title: "GitHub Profile",
 		url: "/static/images/projects/github-profile-finder.avif",
+		urlResponsive: "/static/images/projects/github-profile-finder-mobile.avif",
 		width: "30%",
 	},
 	{
@@ -68,6 +73,7 @@ const images = [
 		repository: "https://github.com/GabrielFierro/React-Pokeball",
 		title: "Pokeballs",
 		url: "/static/images/projects/react-pokeballs.avif",
+		urlResponsive: "/static/images/projects/react-pokeballs-mobile.avif",
 		width: "30%",
 	},
 ];
@@ -188,14 +194,13 @@ const useStyles = makeStyles((theme) => ({
 		minWidth: 300,
 		width: "100%",
 	},
-
 	projectImage: {
 		marginTop: "15px",
-		objectFit: "contain",
+		objectFit: "cover",
 		width: "100%",
 	},
 	projectImageCarousel: {
-		border: "3px solid #100f10",
+		border: "4px solid #100f10",
 		margin: "15px 0 0 115px",
 		objectFit: "cover",
 		width: "65%",
@@ -211,12 +216,24 @@ const useStyles = makeStyles((theme) => ({
 	projectImageExtraSmall: {
 		margin: "15px 0 0 50px",
 		objectFit: "cover",
-		width: "70%",
+		width: "75%",
+		[theme.breakpoints.down("550")]: {
+			margin: "15px 0 0 30px",
+			width: "80%",
+		},
+		[theme.breakpoints.down("500")]: {
+			margin: "15px 0 0 25px",
+			width: "85%",
+		},
+		[theme.breakpoints.down("400")]: {
+			margin: "15px 0 0 20px",
+		},
 	},
 	image: {
-		border: "1px solid #100f10",
-		borderRadius: "5px",
+		border: "3px solid #100f10",
+		borderRadius: "6px",
 		width: "100%",
+		marginTop: "30px",
 	},
 	button_primary: {
 		boxShadow: "1px 1px 8px #100f10",
@@ -239,8 +256,14 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	button_image: {
-		margin: "50px 0 0 50px",
+		margin: "40px 0 0 45px",
 		width: "100%",
+		[theme.breakpoints.down(400)]: {
+			margin: "40px 0 0 35px",
+		},
+		[theme.breakpoints.down(350)]: {
+			margin: "40px 0 0 25px",
+		},
 	},
 	button_secondary: {
 		boxShadow: "1px 1px 8px #100f10",
@@ -250,7 +273,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	button_text_secondary: {
-		color: "#100f10",
+		color: "#f7f7fe",
 		fontSize: "1.75rem",
 		[theme.breakpoints.down("md")]: {
 			fontSize: "0.75rem",
@@ -364,7 +387,11 @@ function Project(props) {
 		return (
 			<div
 				className={className}
-				style={{ ...style, display: "block", background: "#37b9f1" }}
+				style={{
+					...style,
+					display: "block",
+					background: "#37b9f1",
+				}}
 				onClick={onClick}
 			/>
 		);
@@ -612,31 +639,74 @@ function Project(props) {
 					<div className="App">
 						{isMobileExtraSmall ? (
 							<Grid>
-								<Slider
-									{...settings}
-									className={classes.projectImageExtraSmall}
-								>
-									<img
-										className={classes.image}
-										src="/static/images/projects/github-profile-finder.png"
-										alt="GithubPF"
-									/>
-									<img
-										className={classes.image}
-										src="/static/images/projects/fylo-landing.jpg"
-										alt="Fylo Landing"
-									/>
-									<img
-										className={classes.image}
-										src="/static/images/projects/mobile-design.jpg"
-										alt="Profile card"
-									/>
-									<img
-										className={classes.image}
-										src="/static/images/projects/testimonial-grid.png"
-										alt="Testimonial grid"
-									/>
-								</Slider>
+								{display || category === "Todos" ? (
+									<Slider
+										{...settings}
+										className={classes.projectImageExtraSmall}
+									>
+										{filteredImages.map((image, index) => {
+											return (
+												<img
+													className={classes.projectImage}
+													alt={image.title}
+													src={image.urlResponsive}
+													key={index}
+												/>
+											);
+										})}
+									</Slider>
+								) : null}
+								{category === "Diseño" ? (
+									<Slider
+										{...settings}
+										className={classes.projectImageExtraSmall}
+									>
+										<img
+											className={classes.image}
+											src="/static/images/projects/huddle-landing-mobile.avif"
+											alt="Huddle landing"
+										/>
+										<img
+											className={classes.image}
+											src="/static/images/projects/profile-card-mobile.avif"
+											alt="Profile card"
+										/>
+										<img
+											className={classes.image}
+											src="/static/images/projects/testimonial-grid-mobile.avif"
+											alt="Testimonial grid"
+										/>
+										<img
+											className={classes.image}
+											src="/static/images/projects/fylo-landing-mobile.avif"
+											alt="Fylo Landing"
+										/>
+									</Slider>
+								) : null}
+								{category === "API" ? (
+									<Slider
+										{...settings}
+										className={classes.projectImageExtraSmall}
+									>
+										<img
+											className={classes.image}
+											src="/static/images/projects/github-profile-finder-mobile.avif"
+											alt="GithubPF"
+										/>
+									</Slider>
+								) : null}
+								{category === "React" ? (
+									<Slider
+										{...settings}
+										className={classes.projectImageExtraSmall}
+									>
+										<img
+											className={classes.image}
+											src="/static/images/projects/react-pokeballs-mobile.avif"
+											alt="React pokeballs"
+										/>
+									</Slider>
+								) : null}
 								<Grid item spacing={3}>
 									<Grid
 										container
@@ -662,7 +732,7 @@ function Project(props) {
 											href={"https://github.com/magentateam/landingOng"}
 											target="_blank"
 											rel="noopener noreferrer"
-											style={MyTheme.palette.buttonSecondary}
+											style={MyTheme.palette.buttonPrimary}
 										>
 											<Typography className={classes.button_text_secondary}>
 												Repositorio
