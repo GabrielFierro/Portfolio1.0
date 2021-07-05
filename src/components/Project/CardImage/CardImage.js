@@ -95,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
 		transition: theme.transitions.create("opacity"),
 	},
 	imageTitle: {
-		fontSize: "1.5rem",
+		fontSize: "1.4rem",
 		position: "relative",
 		padding: `${theme.spacing(2)}px ${theme.spacing(4)}px ${
 			theme.spacing(1) + 6
