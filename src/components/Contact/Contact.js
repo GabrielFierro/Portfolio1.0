@@ -175,9 +175,6 @@ const useStyles = makeStyles((theme) => ({
 	skills_text_light: {
 		color: MyTheme.palette.primary.main,
 	},
-	skills_text_dark: {
-		color: MyTheme.palette.primary.dark,
-	},
 	send_button: {
 		backgroundColor: "#37b9f1",
 		border: "2px solid #37b9f1",
