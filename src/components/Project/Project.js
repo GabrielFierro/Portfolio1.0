@@ -196,6 +196,8 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 	},
 	projectImage: {
+		border: "3px solid #100f10",
+		borderRadius: "6px",
 		marginTop: "15px",
 		objectFit: "cover",
 		width: "100%",
@@ -215,7 +217,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	projectImageExtraSmall: {
-		margin: "15px 0 0 50px",
+		margin: "10px 0 0 50px",
 		objectFit: "cover",
 		width: "75%",
 		[theme.breakpoints.down("550")]: {
@@ -247,7 +249,7 @@ const useStyles = makeStyles((theme) => ({
 		border: "3px solid #100f10",
 		borderRadius: "6px",
 		width: "100%",
-		marginTop: "30px",
+		marginTop: "15px",
 	},
 	button_primary: {
 		boxShadow: "1px 1px 8px #100f10",
@@ -304,6 +306,8 @@ function Project(props) {
 	const isMobileSmall = useMediaQuery(theme.breakpoints.down("sm"));
 	const isMobileExtraSmall = useMediaQuery(theme.breakpoints.down("xs"));
 	const darkMode = props.darkMode;
+
+	const [activeSlide, setActiveSlide] = useState(0);
 
 	// Use diferent states for each button on the categories
 
@@ -376,7 +380,7 @@ function Project(props) {
 	function SampleNextArrow(props) {
 		const { className, style, onClick } = props;
 		return (
-			<div
+			<Grid
 				className={className}
 				style={{
 					...style,
@@ -391,7 +395,7 @@ function Project(props) {
 	function SamplePrevArrow(props) {
 		const { className, style, onClick } = props;
 		return (
-			<div
+			<Grid
 				className={className}
 				style={{
 					...style,
@@ -416,7 +420,12 @@ function Project(props) {
 		adaptiveHeight: true,
 		nextArrow: <SampleNextArrow />,
 		prevArrow: <SamplePrevArrow />,
+		beforeChange: (current, next) => handleBeforeChange(current, next),
 	};
+
+	function handleBeforeChange(current, next) {
+		setActiveSlide(next);
+	}
 
 	return (
 		<ThemeProvider theme={MyTheme}>
@@ -470,6 +479,7 @@ function Project(props) {
 														setCategory(category);
 														setDisplay(false);
 														handleButtonCategoryDark(category);
+														setActiveSlide(0);
 													}}
 													size="small"
 													style={{ backgroundColor: `${defaultBackground}` }}
@@ -489,6 +499,7 @@ function Project(props) {
 														setCategory(category);
 														setDisplay(false);
 														handleButtonCategoryLight(category);
+														setActiveSlide(0);
 													}}
 													size="small"
 													style={{ backgroundColor: `${defaultBackground}` }}
@@ -513,6 +524,7 @@ function Project(props) {
 														setCategory(category);
 														setDisplay(false);
 														handleButtonCategoryDark(category);
+														setActiveSlide(0);
 													}}
 													size="small"
 													style={{ backgroundColor: `${designBackgroundDark}` }}
@@ -532,6 +544,7 @@ function Project(props) {
 														setCategory(category);
 														setDisplay(false);
 														handleButtonCategoryLight(category);
+														setActiveSlide(0);
 													}}
 													size="small"
 													style={{ backgroundColor: `${designBackground}` }}
@@ -556,6 +569,7 @@ function Project(props) {
 														setCategory(category);
 														setDisplay(false);
 														handleButtonCategoryDark(category);
+														setActiveSlide(0);
 													}}
 													size="small"
 													style={{ backgroundColor: `${apiBackgroundDark}` }}
@@ -575,6 +589,7 @@ function Project(props) {
 														setCategory(category);
 														setDisplay(false);
 														handleButtonCategoryLight(category);
+														setActiveSlide(0);
 													}}
 													size="small"
 													style={{ backgroundColor: `${apiBackground}` }}
@@ -599,6 +614,7 @@ function Project(props) {
 														setCategory(category);
 														setDisplay(false);
 														handleButtonCategoryDark(category);
+														setActiveSlide(0);
 													}}
 													size="small"
 													style={{ backgroundColor: `${reactBackgroundDark}` }}
@@ -618,6 +634,7 @@ function Project(props) {
 														setCategory(category);
 														setDisplay(false);
 														handleButtonCategoryLight(category);
+														setActiveSlide(0);
 													}}
 													size="small"
 													style={{ backgroundColor: `${reactBackground}` }}
@@ -642,78 +659,89 @@ function Project(props) {
 			{/* From display the project images, first in mobile devices and then in large devices */}
 			<Box className={classes.projects_container}>
 				{isMobileSmall ? (
-					<div className="App">
+					<Grid className="App">
 						{isMobileExtraSmall ? (
 							<Grid>
 								{display || category === "Todos" ? (
-									<Slider
-										{...settings}
-										className={classes.projectImageExtraSmall}
-									>
-										{filteredImages.map((image, index) => {
-											return (
-												<img
-													className={classes.projectImage}
-													alt={image.title}
-													src={image.urlResponsive}
-													key={index}
-												/>
-											);
-										})}
-									</Slider>
+									<Grid>
+										<Slider
+											{...settings}
+											className={classes.projectImageExtraSmall}
+										>
+											{filteredImages.map((image, index) => {
+												return (
+													<img
+														className={classes.projectImage}
+														alt={image.title}
+														src={image.urlResponsive}
+														key={index}
+													/>
+												);
+											})}
+										</Slider>
+										<Buttons id={activeSlide} />
+									</Grid>
 								) : null}
 								{category === "Diseño" ? (
-									<Slider
-										{...settings}
-										className={classes.projectImageExtraSmall}
-									>
-										<img
-											className={classes.image}
-											src="/static/images/projects/huddle-landing-mobile.avif"
-											alt="Huddle landing"
-										/>
-										<img
-											className={classes.image}
-											src="/static/images/projects/profile-card-mobile.avif"
-											alt="Profile card"
-										/>
-										<img
-											className={classes.image}
-											src="/static/images/projects/testimonial-grid-mobile.avif"
-											alt="Testimonial grid"
-										/>
-										<img
-											className={classes.image}
-											src="/static/images/projects/fylo-landing-mobile.avif"
-											alt="Fylo Landing"
-										/>
-									</Slider>
+									<Grid>
+										<Slider
+											{...settings}
+											className={classes.projectImageExtraSmall}
+										>
+											<img
+												className={classes.image}
+												src="/static/images/projects/huddle-landing-mobile.avif"
+												alt="Huddle landing"
+											/>
+											<img
+												className={classes.image}
+												src="/static/images/projects/profile-card-mobile.avif"
+												alt="Profile card"
+											/>
+											<img
+												className={classes.image}
+												src="/static/images/projects/testimonial-grid-mobile.avif"
+												alt="Testimonial grid"
+											/>
+											<img
+												className={classes.image}
+												src="/static/images/projects/fylo-landing-mobile.avif"
+												alt="Fylo Landing"
+											/>
+										</Slider>
+										<Buttons id={activeSlide} />
+									</Grid>
 								) : null}
 								{category === "API" ? (
-									<Slider
-										{...settings}
-										className={classes.projectImageExtraSmall}
-									>
-										<img
-											className={classes.image}
-											src="/static/images/projects/github-profile-finder-mobile.avif"
-											alt="GithubPF"
-										/>
-									</Slider>
+									<Grid>
+										<Slider
+											{...settings}
+											className={classes.projectImageExtraSmall}
+										>
+											<img
+												className={classes.image}
+												src="/static/images/projects/github-profile-finder-mobile.avif"
+												alt="GithubPF"
+											/>
+										</Slider>
+										<Buttons id={4} />
+									</Grid>
 								) : null}
 								{category === "React" ? (
-									<Slider
-										{...settings}
-										className={classes.projectImageExtraSmall}
-									>
-										<img
-											className={classes.image}
-											src="/static/images/projects/react-pokeballs-mobile.avif"
-											alt="React pokeballs"
-										/>
-									</Slider>
+									<Grid>
+										<Slider
+											{...settings}
+											className={classes.projectImageExtraSmall}
+										>
+											<img
+												className={classes.image}
+												src="/static/images/projects/react-pokeballs-mobile.avif"
+												alt="React pokeballs"
+											/>
+										</Slider>
+										<Buttons id={5} />
+									</Grid>
 								) : null}
-								<Buttons />
 							</Grid>
 						) : (
 							<Slider {...settings} className={classes.projectImageCarousel}>
@@ -729,11 +757,11 @@ function Project(props) {
 								})}
 							</Slider>
 						)}
-					</div>
+					</Grid>
 				) : (
-					<div className={classes.root}>
+					<Grid className={classes.root}>
 						{display || category === "Todos" ? (
-							<div className={classes.buttonB}>
+							<Grid className={classes.buttonB}>
 								<CardImage
 									category={category}
 									demo="https://gabrielfierro.github.io/Huddle-landing-page/"
@@ -782,10 +810,10 @@ function Project(props) {
 									url="/static/images/projects/react-pokeballs.avif"
 									width="100%"
 								/>
-							</div>
+							</Grid>
 						) : null}
 						{category === "Diseño" && (
-							<div className={classes.buttonB}>
+							<Grid className={classes.buttonB}>
 								<CardImage
 									category={category}
 									demo="https://gabrielfierro.github.io/Huddle-landing-page/"
@@ -818,10 +846,10 @@ function Project(props) {
 									url="/static/images/projects/fylo-landing.avif"
 									width="100%"
 								/>
-							</div>
+							</Grid>
 						)}
 						{category === "API" && (
-							<div className={classes.buttonB}>
+							<Grid className={classes.buttonB}>
 								<CardImage
 									category={category}
 									demo="https://github-profile-finder-gabrielfierro.vercel.app/"
@@ -830,10 +858,10 @@ function Project(props) {
 									url="/static/images/projects/github-profile-finder.avif"
 									width="100%"
 								/>
-							</div>
+							</Grid>
 						)}
 						{category === "React" && (
-							<div className={classes.buttonB}>
+							<Grid className={classes.buttonB}>
 								<CardImage
 									category={category}
 									demo="https://gabrielfierro.github.io/React-Pokeball/"
@@ -842,9 +870,9 @@ function Project(props) {
 									url="/static/images/projects/react-pokeballs.avif"
 									width="100%"
 								/>
-							</div>
+							</Grid>
 						)}
-					</div>
+					</Grid>
 				)}
 			</Box>
 		</ThemeProvider>
