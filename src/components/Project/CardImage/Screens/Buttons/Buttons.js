@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Button, Grid, makeStyles, Typography } from "@material-ui/core";
 import MyTheme from "../../../../../MyTheme";
 
@@ -44,8 +44,43 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-function Buttons() {
+function Buttons(props) {
 	const classes = useStyles();
+	const value = props.id;
+	const [demo, setDemo] = useState("");
+	const [repository, setRepository] = useState("");
+
+	const handleDemo = (value) => {
+		switch (value) {
+			case 1:
+				setDemo("https://gabrielfierro.github.io/ProfileCardComponent/");
+				setRepository("https://github.com/GabrielFierro/ProfileCardComponent");
+				break;
+			case 2:
+				setDemo("https://gabrielfierro.github.io/TestimonialsGridSection/");
+				setRepository(
+					"https://github.com/GabrielFierro/TestimonialsGridSection"
+				);
+				break;
+			case 3:
+				setDemo("https://gabrielfierro.github.io/Fylo-landing-page/");
+				setRepository("https://github.com/GabrielFierro/Fylo-landing-page");
+				break;
+			case 4:
+				setDemo("https://github-profile-finder-gabrielfierro.vercel.app/");
+				setRepository("https://github.com/GabrielFierro/GithubProfileFinder");
+				break;
+			case 5:
+				setDemo("https://gabrielfierro.github.io/React-Pokeball/");
+				setRepository("https://github.com/GabrielFierro/React-Pokeball");
+				break;
+			default:
+				setDemo("https://gabrielfierro.github.io/Huddle-landing-page/");
+				setRepository("https://github.com/GabrielFierro/Huddle-landing-page");
+				break;
+		}
+	};
+
 	return (
 		<Grid
 			container
@@ -57,19 +92,25 @@ function Buttons() {
 		>
 			<Button
 				className={classes.button_primary}
-				href={"https://magentateam.github.io/landingOng/public/"}
+				href={demo}
 				target="_blank"
 				rel="noopener noreferrer"
 				style={MyTheme.palette.buttonPrimary}
+				onClick={() => {
+					handleDemo(value);
+				}}
 			>
 				<Typography className={classes.button_primary_text}>Demo</Typography>
 			</Button>
 			<Button
 				className={classes.button_primary}
-				href={"https://magentateam.github.io/landingOng/public/"}
+				href={repository}
 				target="_blank"
 				rel="noopener noreferrer"
 				style={MyTheme.palette.buttonPrimary}
+				onClick={() => {
+					handleDemo(value);
+				}}
 			>
 				<Typography className={classes.button_primary_text}>
 					Repositorio
