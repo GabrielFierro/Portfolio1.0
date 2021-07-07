@@ -147,7 +147,7 @@ function CardImage(props) {
 	const preventDefault = (event) => event.preventDefault();
 
 	return (
-		<div className={classes.root}>
+		<Grid className={classes.root}>
 			<ButtonBase
 				focusRipple
 				key={props.category}
@@ -185,7 +185,7 @@ function CardImage(props) {
 					</Typography>
 				</span>
 			</ButtonBase>
-		</div>
+		</Grid>
 	);
 }
 
