@@ -17,6 +17,7 @@ import "./Project.css";
 import MyTheme from "../../MyTheme";
 import Card from "../Card/Card";
 import CardImage from "./CardImage/CardImage";
+import Buttons from "./CardImage/Screens/Buttons/Buttons";
 
 const images = [
 	{
@@ -163,7 +164,7 @@ const useStyles = makeStyles((theme) => ({
 	button_text: {
 		fontSize: "1rem",
 		[theme.breakpoints.down("sm")]: {
-			fontSize: "0.75rem",
+			fontSize: "0.85rem",
 		},
 		[theme.breakpoints.down("xs")]: {
 			fontSize: "0.5rem",
@@ -225,8 +226,21 @@ const useStyles = makeStyles((theme) => ({
 			margin: "15px 0 0 25px",
 			width: "85%",
 		},
-		[theme.breakpoints.down("400")]: {
+		[theme.breakpoints.down("450")]: {
 			margin: "15px 0 0 20px",
+			width: "90%",
+		},
+		[theme.breakpoints.down("400")]: {
+			margin: "15px 0 0 5px",
+			width: "100%",
+		},
+		[theme.breakpoints.down("375")]: {
+			margin: "15px 0 0 0",
+			width: "105%",
+		},
+		[theme.breakpoints.down("350")]: {
+			margin: "15px 0 0 -15px",
+			width: "115%",
 		},
 	},
 	image: {
@@ -237,49 +251,41 @@ const useStyles = makeStyles((theme) => ({
 	},
 	button_primary: {
 		boxShadow: "1px 1px 8px #100f10",
-		margin: "0 25px 0 30px",
-		width: "30%",
+		margin: "0 10px 0 15px",
+		width: "34%",
+		[theme.breakpoints.down(430)]: {
+			width: "40%",
+			margin: "0 5px 0 10px",
+		},
+		[theme.breakpoints.down(350)]: {
+			width: "43%",
+			margin: "0 5px 0 5px",
+		},
 		"&:hover": {
 			boxShadow: "3px 3px 10px #37b9f1",
 		},
 	},
-	button_text_primary: {
+	button_primary_text: {
+		fontSize: "0.9rem",
 		color: "#f7f7fe",
-		fontSize: "1.75rem",
-		paddingTop: "3px",
-		[theme.breakpoints.down("md")]: {
-			fontSize: "0.75rem",
-		},
-		[theme.breakpoints.down("sm")]: {
-			fontSize: "0.5rem",
-			paddingTop: "0px",
+		[theme.breakpoints.down(475)]: {
+			fontSize: "0.85rem",
 		},
 	},
 	button_image: {
-		margin: "40px 0 0 45px",
-		width: "100%",
-		[theme.breakpoints.down(400)]: {
+		margin: "35px 0 0 50px",
+		width: "95%",
+		[theme.breakpoints.down(550)]: {
+			margin: "40px 0 0 40px",
+		},
+		[theme.breakpoints.down(475)]: {
 			margin: "40px 0 0 35px",
 		},
+		[theme.breakpoints.down(425)]: {
+			margin: "40px 0 0 20px",
+		},
 		[theme.breakpoints.down(350)]: {
-			margin: "40px 0 0 25px",
-		},
-	},
-	button_secondary: {
-		boxShadow: "1px 1px 8px #100f10",
-		width: "30%",
-		"&:hover": {
-			boxShadow: "3px 3px 10px #37b9f1",
-		},
-	},
-	button_text_secondary: {
-		color: "#f7f7fe",
-		fontSize: "1.75rem",
-		[theme.breakpoints.down("md")]: {
-			fontSize: "0.75rem",
-		},
-		[theme.breakpoints.down("sm")]: {
-			fontSize: "0.5rem",
+			margin: "40px 0 0 10px",
 		},
 	},
 }));
@@ -374,8 +380,8 @@ function Project(props) {
 				className={className}
 				style={{
 					...style,
-					display: "block",
-					background: "#37b9f1",
+					marginRight: "50px",
+					position: "absolute",
 				}}
 				onClick={onClick}
 			/>
@@ -389,8 +395,8 @@ function Project(props) {
 				className={className}
 				style={{
 					...style,
-					display: "block",
-					background: "#37b9f1",
+					marginLeft: "50px",
+					position: "absolute",
 				}}
 				onClick={onClick}
 			/>
@@ -707,39 +713,7 @@ function Project(props) {
 										/>
 									</Slider>
 								) : null}
-								<Grid item spacing={3}>
-									<Grid
-										container
-										direction="row"
-										className={classes.button_image}
-										item
-										xs={10}
-										sm={6}
-									>
-										<Button
-											className={classes.button_primary}
-											href={"https://magentateam.github.io/landingOng/public/"}
-											target="_blank"
-											rel="noopener noreferrer"
-											style={MyTheme.palette.buttonPrimary}
-										>
-											<Typography className={classes.button_text_primary}>
-												Demo
-											</Typography>
-										</Button>
-										<Button
-											className={classes.button_secondary}
-											href={"https://github.com/magentateam/landingOng"}
-											target="_blank"
-											rel="noopener noreferrer"
-											style={MyTheme.palette.buttonPrimary}
-										>
-											<Typography className={classes.button_text_secondary}>
-												Repositorio
-											</Typography>
-										</Button>
-									</Grid>
-								</Grid>
+								<Buttons />
 							</Grid>
 						) : (
 							<Slider {...settings} className={classes.projectImageCarousel}>
