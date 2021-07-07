@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 
 function GitHubIcon() {
 	return (
-		<Grid class="icon-hover">
+		<Grid>
 			<svg
 				width="40"
 				height="40"
