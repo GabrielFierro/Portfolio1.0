@@ -744,19 +744,86 @@ function Project(props) {
 							</Grid>
 						) : (
 							<Grid>
-								<Slider {...settings} className={classes.projectImageCarousel}>
-									{filteredImages.map((image, index) => {
-										return (
+								{display || category === "Todos" ? (
+									<Grid>
+										<Slider
+											{...settings}
+											className={classes.projectImageCarousel}
+										>
+											{filteredImages.map((image, index) => {
+												return (
+													<img
+														className={classes.projectImage}
+														alt={image.title}
+														src={image.url}
+														key={index}
+													/>
+												);
+											})}
+										</Slider>
+										<Buttons id={activeSlide} />
+									</Grid>
+								) : null}
+								{category === "Diseño" ? (
+									<Grid>
+										<Slider
+											{...settings}
+											className={classes.projectImageCarousel}
+										>
 											<img
 												className={classes.projectImage}
-												alt={image.title}
-												src={image.url}
-												key={index}
+												src="/static/images/projects/huddle-landing.avif"
+												alt="Huddle landing"
 											/>
-										);
-									})}
-								</Slider>
-								<Buttons id={activeSlide} />
+											<img
+												className={classes.projectImage}
+												src="/static/images/projects/profile-card.avif"
+												alt="Profile card"
+											/>
+											<img
+												className={classes.projectImage}
+												src="/static/images/projects/testimonial-grid.avif"
+												alt="Testimonial grid"
+											/>
+											<img
+												className={classes.projectImage}
+												src="/static/images/projects/fylo-landing.avif"
+												alt="Fylo Landing"
+											/>
+										</Slider>
+										<Buttons id={activeSlide} />
+									</Grid>
+								) : null}
+								{category === "API" ? (
+									<Grid>
+										<Slider
+											{...settings}
+											className={classes.projectImageCarousel}
+										>
+											<img
+												className={classes.projectImage}
+												src="/static/images/projects/github-profile-finder.avif"
+												alt="GithubPF"
+											/>
+										</Slider>
+										<Buttons id={4} />
+									</Grid>
+								) : null}
+								{category === "React" ? (
+									<Grid>
+										<Slider
+											{...settings}
+											className={classes.projectImageCarousel}
+										>
+											<img
+												className={classes.projectImage}
+												src="/static/images/projects/react-pokeballs.avif"
+												alt="React pokeballs"
+											/>
+										</Slider>
+										<Buttons id={5} />
+									</Grid>
+								) : null}
 							</Grid>
 						)}
 					</Grid>
