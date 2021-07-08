@@ -15,17 +15,19 @@ import { ReactComponent as Book } from "../../assets/images/icons/book.svg";
 
 const useStyles = makeStyles((theme) => ({
 	section_container: {
-		left: "12%",
+		left: "10%",
 		paddingLeft: "5%",
 		position: "absolute",
-		top: "23%",
-		width: "70%",
+		top: "20%",
+		width: "80%",
+		height: "35%",
 	},
 	media: {
 		borderRadius: "8px",
 		boxShadow: "1px 1px 20px #100f10",
-		marginRight: "5px",
-		height: "180px",
+		marginTop: "-25px",
+		marginLeft: "-15px",
+		height: "190px",
 		width: "190px",
 		[theme.breakpoints.down("md")]: {
 			width: "145px",
@@ -41,20 +43,24 @@ const useStyles = makeStyles((theme) => ({
 			marginTop: "-5px",
 		},
 	},
+	description_container: {
+		width: "100%",
+		height: "100%",
+	},
 	text_container: {
-		marginLeft: "10px",
+		margin: "0 20px 0 15px",
 		position: "relative",
 		width: "100%",
+		height: "80%",
 		[theme.breakpoints.down("xs")]: {
 			marginLeft: "0px",
 		},
 	},
 	my_description: {
-		width: "100%",
-		marginTop: "-55px",
+		width: "95%",
 		marginLeft: "10px",
-		fontSize: "1.5rem",
-		lineHeight: "1.2",
+		fontSize: "1.25rem",
+		lineHeight: "1.6",
 		[theme.breakpoints.down("md")]: {
 			marginTop: "-5px",
 			fontSize: "1.35rem",
@@ -76,10 +82,10 @@ const useStyles = makeStyles((theme) => ({
 		color: MyTheme.palette.primary.dark,
 	},
 	properties_container: {
-		left: "5%",
+		marginLeft: "100px",
+		marginTop: "-15px",
 		position: "relative",
 		width: "100%",
-		marginTop: "15px",
 		[theme.breakpoints.down("md")]: {
 			marginTop: "20px",
 		},
@@ -93,10 +99,8 @@ const useStyles = makeStyles((theme) => ({
 	},
 
 	property_text: {
-		fontSize: "1.15rem",
-		[theme.breakpoints.down("md")]: {
-			fontSize: "1rem",
-		},
+		marginLeft: "10px",
+		fontSize: "1rem",
 		[theme.breakpoints.down("sm")]: {
 			fontSize: "0.6rem",
 			marginTop: "10px",
@@ -161,15 +165,24 @@ function About(props) {
 								image={ProfilePicture}
 							/>
 						</Grid>
-						<Grid item sm container direction="row">
+						<Grid
+						className={classes.description_container}
+							item
+							sm
+							container
+							direction="row"
+						>
 							<Grid className={classes.text_container}>
 								<Typography
 									className={`${classes.my_description} ${classes.my_descriptionLight}`}
 									style={MyTheme.typographyKarla}
 								>
-									Me apasiona el desarrollo front-end, por lo que me capacito
-									para aprender sobre nuevas tecnologías, que me permitan crecer
-									tanto a nivel personal, como profesional.
+									Hola me llamo Gabriel Fierro y me apasiona el desarrollo web
+									front-end. Me gusta leer, ver videos, buscar recursos para
+									aprender cosas nuevas todos los días. Además quería contarles
+									que para desarrollar mi Portfolio aprendí React y MaterialUI
+									principalmente. Más adelante, quiero aprender NodeJS para
+									mostrar contenido de forma dinámica en los proyectos.{" "}
 								</Typography>
 							</Grid>
 							<Grid className={classes.properties_container} container>
@@ -216,7 +229,7 @@ function About(props) {
 							</Typography>
 						</Grid>
 						<Grid container direction="row">
-							<LogoContainer />
+							<LogoContainer darkMode={darkMode} />
 						</Grid>
 					</Grid>
 				</Grid>
@@ -236,15 +249,30 @@ function About(props) {
 								image={ProfilePicture}
 							/>
 						</Grid>
-						<Grid item sm container direction="row">
-							<Grid className={classes.text_container}>
+						<Grid
+							className={classes.description_container}
+							item
+							sm
+							container
+							direction="row"
+						>
+							<Grid
+								container
+								item
+								xs
+								sm={12}
+								className={classes.text_container}
+							>
 								<Typography
 									className={`${classes.my_description} ${classes.my_descriptionDark}`}
 									style={MyTheme.typographyKarla}
 								>
-									Me apasiona el desarrollo front-end, por lo que me capacito
-									para aprender sobre nuevas tecnologías, que me permitan crecer
-									tanto a nivel personal, como profesional.
+									Hola me llamo Gabriel Fierro y me apasiona el desarrollo web
+									front-end. Me gusta leer, ver videos, buscar recursos para
+									aprender cosas nuevas todos los días. Además quería contarles
+									que para desarrollar mi Portfolio aprendí React y MaterialUI
+									principalmente. Más adelante, quiero aprender NodeJS para
+									mostrar contenido de forma dinámica en los proyectos.{" "}
 								</Typography>
 							</Grid>
 							<Grid className={classes.properties_container} container>
