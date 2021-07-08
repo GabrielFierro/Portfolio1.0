@@ -198,49 +198,56 @@ const useStyles = makeStyles((theme) => ({
 	projectImage: {
 		border: "3px solid #100f10",
 		borderRadius: "6px",
-		marginTop: "15px",
+		marginTop: "10px",
 		objectFit: "cover",
 		width: "100%",
 	},
 	projectImageCarousel: {
-		margin: "15px 0 0 115px",
+		margin: "10px 0 0 135px",
 		objectFit: "cover",
-		width: "65%",
+		width: "57%",
+		[theme.breakpoints.down("900")]: {
+			width: "60%",
+		},
+		[theme.breakpoints.down("850")]: {
+			margin: "10px 0 0 115px",
+			width: "65%",
+		},
 		[theme.breakpoints.down("800")]: {
-			margin: "15px 0 0 70px",
-			width: "75%",
+			margin: "10px 0 0 90px",
+			width: "70%",
 		},
 		[theme.breakpoints.down("700")]: {
-			margin: "15px 0 0 35px",
-			width: "85%",
+			margin: "10px 0 0 35px",
+			width: "75%",
 		},
 	},
 	projectImageExtraSmall: {
-		margin: "10px 0 0 50px",
+		margin: "5px 0 0 50px",
 		objectFit: "cover",
-		width: "75%",
+		width: "65%",
 		[theme.breakpoints.down("550")]: {
-			margin: "15px 0 0 30px",
-			width: "80%",
+			margin: "5px 0 0 45px",
+			width: "72%",
 		},
 		[theme.breakpoints.down("500")]: {
-			margin: "15px 0 0 25px",
-			width: "85%",
+			margin: "5px 0 0 35px",
+			width: "80%",
 		},
 		[theme.breakpoints.down("450")]: {
-			margin: "15px 0 0 20px",
+			margin: "5px 0 0 20px",
 			width: "90%",
 		},
 		[theme.breakpoints.down("400")]: {
-			margin: "15px 0 0 5px",
+			margin: "5px 0 0 5px",
 			width: "100%",
 		},
 		[theme.breakpoints.down("375")]: {
-			margin: "15px 0 0 0",
+			margin: "10px 0 0 0",
 			width: "105%",
 		},
 		[theme.breakpoints.down("350")]: {
-			margin: "15px 0 0 -15px",
+			margin: "10px 0 0 -15px",
 			width: "115%",
 		},
 	},
@@ -248,7 +255,7 @@ const useStyles = makeStyles((theme) => ({
 		border: "3px solid #100f10",
 		borderRadius: "6px",
 		width: "100%",
-		marginTop: "15px",
+		marginTop: "10px",
 	},
 	button_primary: {
 		boxShadow: "1px 1px 8px #100f10",
@@ -661,8 +668,10 @@ function Project(props) {
 					<Grid className="App">
 						{isMobileExtraSmall ? (
 							<Grid>
+								{/** Display the project images for extra small devices */}
 								{display || category === "Todos" ? (
 									<Grid>
+										{/** Display all the projects */}
 										<Slider
 											{...settings}
 											className={classes.projectImageExtraSmall}
@@ -683,6 +692,7 @@ function Project(props) {
 								) : null}
 								{category === "Diseño" ? (
 									<Grid>
+										{/** Display the projects images for the design category */}
 										<Slider
 											{...settings}
 											className={classes.projectImageExtraSmall}
@@ -713,6 +723,7 @@ function Project(props) {
 								) : null}
 								{category === "API" ? (
 									<Grid>
+										{/** Display the projects images for the API category */}
 										<Slider
 											{...settings}
 											className={classes.projectImageExtraSmall}
@@ -728,6 +739,7 @@ function Project(props) {
 								) : null}
 								{category === "React" ? (
 									<Grid>
+										{/** Display the projects images for the React category */}
 										<Slider
 											{...settings}
 											className={classes.projectImageExtraSmall}
@@ -746,6 +758,7 @@ function Project(props) {
 							<Grid>
 								{display || category === "Todos" ? (
 									<Grid>
+										{/** Display all the projects on small devices */}
 										<Slider
 											{...settings}
 											className={classes.projectImageCarousel}
@@ -766,6 +779,7 @@ function Project(props) {
 								) : null}
 								{category === "Diseño" ? (
 									<Grid>
+										{/** Display the projects images for the design category */}
 										<Slider
 											{...settings}
 											className={classes.projectImageCarousel}
@@ -796,6 +810,7 @@ function Project(props) {
 								) : null}
 								{category === "API" ? (
 									<Grid>
+										{/** Display the projects images for the API category */}
 										<Slider
 											{...settings}
 											className={classes.projectImageCarousel}
@@ -811,6 +826,7 @@ function Project(props) {
 								) : null}
 								{category === "React" ? (
 									<Grid>
+										{/** Display the projects images for the React category */}
 										<Slider
 											{...settings}
 											className={classes.projectImageCarousel}
@@ -831,6 +847,7 @@ function Project(props) {
 					<Grid className={classes.root}>
 						{display || category === "Todos" ? (
 							<Grid className={classes.buttonB}>
+								{/** Display the projects images for all the categories and by default display all the categories with the category all button selected */}
 								<CardImage
 									category={category}
 									demo="https://gabrielfierro.github.io/Huddle-landing-page/"
@@ -883,6 +900,7 @@ function Project(props) {
 						) : null}
 						{category === "Diseño" && (
 							<Grid className={classes.buttonB}>
+								{/** When the user click on the button Diseño display the project images for the design category */}
 								<CardImage
 									category={category}
 									demo="https://gabrielfierro.github.io/Huddle-landing-page/"
@@ -919,6 +937,7 @@ function Project(props) {
 						)}
 						{category === "API" && (
 							<Grid className={classes.buttonB}>
+								{/** When the user click on the button API display the project images for the API category */}
 								<CardImage
 									category={category}
 									demo="https://github-profile-finder-gabrielfierro.vercel.app/"
@@ -931,6 +950,7 @@ function Project(props) {
 						)}
 						{category === "React" && (
 							<Grid className={classes.buttonB}>
+								{/** When the user click on the button React display the project images for the React category */}
 								<CardImage
 									category={category}
 									demo="https://gabrielfierro.github.io/React-Pokeball/"
