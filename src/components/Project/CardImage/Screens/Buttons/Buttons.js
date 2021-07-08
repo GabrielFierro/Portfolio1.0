@@ -5,8 +5,16 @@ import MyTheme from "../../../../../MyTheme";
 const useStyles = makeStyles((theme) => ({
 	button_primary: {
 		boxShadow: "1px 1px 8px #100f10",
-		margin: "0 10px 0 15px",
-		width: "34%",
+		margin: "0 15px 0 25px",
+		width: "30%",
+		[theme.breakpoints.down(800)]: {
+			margin: "0 15px 0 25px",
+			width: "35%",
+		},
+		[theme.breakpoints.down(600)]: {
+			margin: "0 10px 0 15px",
+			width: "34%",
+		},
 		[theme.breakpoints.down(430)]: {
 			width: "40%",
 			margin: "0 5px 0 10px",
@@ -27,8 +35,18 @@ const useStyles = makeStyles((theme) => ({
 		},
 	},
 	button_image: {
-		margin: "35px 0 0 50px",
-		width: "95%",
+		margin: "33px 0 0 175px",
+		width: "60%",
+		[theme.breakpoints.down(800)]: {
+			width: "95%",
+			margin: "45px 0 0 50px",
+		},
+		[theme.breakpoints.down(700)]: {
+			margin: "45px 0 0 35px",
+		},
+		[theme.breakpoints.down(600)]: {
+			margin: "35px 0 0 35px",
+		},
 		[theme.breakpoints.down(550)]: {
 			margin: "40px 0 0 40px",
 		},
@@ -88,7 +106,6 @@ function Buttons(props) {
 			className={classes.button_image}
 			item
 			xs={12}
-			sm={6}
 		>
 			<Button
 				className={classes.button_primary}
