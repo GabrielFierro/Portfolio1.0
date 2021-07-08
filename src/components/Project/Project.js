@@ -203,7 +203,6 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 	},
 	projectImageCarousel: {
-		border: "4px solid #100f10",
 		margin: "15px 0 0 115px",
 		objectFit: "cover",
 		width: "65%",
@@ -744,18 +743,21 @@ function Project(props) {
 								) : null}
 							</Grid>
 						) : (
-							<Slider {...settings} className={classes.projectImageCarousel}>
-								{filteredImages.map((image, index) => {
-									return (
-										<img
-											className={classes.projectImage}
-											alt={image.title}
-											src={image.url}
-											key={index}
-										/>
-									);
-								})}
-							</Slider>
+							<Grid>
+								<Slider {...settings} className={classes.projectImageCarousel}>
+									{filteredImages.map((image, index) => {
+										return (
+											<img
+												className={classes.projectImage}
+												alt={image.title}
+												src={image.url}
+												key={index}
+											/>
+										);
+									})}
+								</Slider>
+								<Buttons id={activeSlide} />
+							</Grid>
 						)}
 					</Grid>
 				) : (
