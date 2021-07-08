@@ -33,31 +33,45 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down(475)]: {
 			fontSize: "0.85rem",
 		},
+		[theme.breakpoints.down(400)]: {
+			fontSize: "0.75rem",
+		},
 	},
 	button_image: {
-		margin: "33px 0 0 175px",
-		width: "60%",
+		margin: "33px 0 0 155px",
+		width: "65%",
 		[theme.breakpoints.down(800)]: {
-			width: "95%",
-			margin: "45px 0 0 50px",
+			margin: "35px 0 0 135px",
+			width: "60%",
+		},
+		[theme.breakpoints.down(750)]: {
+			margin: "45px 0 0 125px",
 		},
 		[theme.breakpoints.down(700)]: {
-			margin: "45px 0 0 35px",
+			margin: "40px 0 0 60px",
+			width: "70%",
 		},
 		[theme.breakpoints.down(600)]: {
-			margin: "35px 0 0 35px",
+			margin: "35px 0 0 55px",
+			width: "80%",
 		},
 		[theme.breakpoints.down(550)]: {
-			margin: "40px 0 0 40px",
+			margin: "30px 0 0 55px",
+			width: "85%",
+		},
+		[theme.breakpoints.down(500)]: {
+			width: "95%",
+			margin: "35px 0 0 45px",
 		},
 		[theme.breakpoints.down(475)]: {
-			margin: "40px 0 0 35px",
+			margin: "35px 0 0 35px",
 		},
 		[theme.breakpoints.down(425)]: {
-			margin: "40px 0 0 20px",
+			margin: "35px 0 0 20px",
 		},
 		[theme.breakpoints.down(350)]: {
-			margin: "40px 0 0 10px",
+			margin: "35px 0 0 5px",
+			width: "105%",
 		},
 	},
 }));
