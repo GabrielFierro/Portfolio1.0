@@ -1,16 +1,34 @@
 /* TwitterIcon.js */
 import "../../Contact.css";
 import { Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+	icon: {
+		width: "55px",
+		height: "55px",
+		[theme.breakpoints.down("sm")]: {
+			height: "50px",
+			width: "50px",
+		},
+		[theme.breakpoints.down("xs")]: {
+			height: "45px",
+			width: "45px",
+		},
+	},
+}));
 
 function GitHubIcon(props) {
+	const classes = useStyles();
 	const darkMode = props.darkMode;
 
 	return (
 		<Grid class="icon-hover">
 			{darkMode ? (
 				<svg
-					width="50"
-					height="50"
+					className={classes.icon}
+					width="55"
+					height="55"
 					viewBox="0 0 50 50"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +43,9 @@ function GitHubIcon(props) {
 				</svg>
 			) : (
 				<svg
-					width="50"
-					height="50"
+				className={classes.icon}
+					width="55"
+					height="55"
 					viewBox="0 0 50 50"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"

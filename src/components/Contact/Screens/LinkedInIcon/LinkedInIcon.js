@@ -1,14 +1,32 @@
 /* TwitterIcon.js */
 import "../../Contact.css";
 import { Grid } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+	icon: {
+		width: "55px",
+		height: "55px",
+		[theme.breakpoints.down("sm")]: {
+			height: "50px",
+			width: "50px",
+		},
+		[theme.breakpoints.down("xs")]: {
+			height: "45px",
+			width: "45px",
+		},
+	},
+}));
 
 function LinkedInIcon(props) {
+	const classes = useStyles();
 	const darkMode = props.darkMode;
 
 	return (
 		<Grid class="icon-hover">
 			{darkMode ? (
 				<svg
+					className={classes.icon}
 					width="55"
 					height="55"
 					viewBox="0 0 55 55"
@@ -53,6 +71,7 @@ function LinkedInIcon(props) {
 				</svg>
 			) : (
 				<svg
+					className={classes.icon}
 					width="55"
 					height="55"
 					viewBox="0 0 55 55"
