@@ -122,11 +122,9 @@ const useStyles = makeStyles((theme) => ({
 		padding: "2px",
 		width: "99%",
 		[theme.breakpoints.down("md")]: {
-			border: "2px solid tomato",
 			marginTop: "-25px",
 		},
 		[theme.breakpoints.down("sm")]: {
-			border: "2px solid cyan",
 			padding: "0",
 		},
 	},
@@ -144,6 +142,7 @@ const useStyles = makeStyles((theme) => ({
 			margin: "0 0 0.5em 1.2em",
 		},
 		[theme.breakpoints.down("sm")]: {
+			width: "93%",
 			marginLeft: "1em",
 		},
 		[theme.breakpoints.down("xs")]: {
