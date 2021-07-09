@@ -166,7 +166,7 @@ function About(props) {
 							/>
 						</Grid>
 						<Grid
-						className={classes.description_container}
+							className={classes.description_container}
 							item
 							sm
 							container
@@ -182,7 +182,7 @@ function About(props) {
 									aprender cosas nuevas todos los días. Además quería contarles
 									que para desarrollar mi Portfolio aprendí React y MaterialUI
 									principalmente. Más adelante, quiero aprender NodeJS para
-									mostrar contenido de forma dinámica en los proyectos.{" "}
+									mostrar contenido de forma dinámica en mis proyectos.{" "}
 								</Typography>
 							</Grid>
 							<Grid className={classes.properties_container} container>
@@ -272,7 +272,7 @@ function About(props) {
 									aprender cosas nuevas todos los días. Además quería contarles
 									que para desarrollar mi Portfolio aprendí React y MaterialUI
 									principalmente. Más adelante, quiero aprender NodeJS para
-									mostrar contenido de forma dinámica en los proyectos.{" "}
+									mostrar contenido de forma dinámica en mis proyectos.{" "}
 								</Typography>
 							</Grid>
 							<Grid className={classes.properties_container} container>
