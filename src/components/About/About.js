@@ -24,23 +24,30 @@ const useStyles = makeStyles((theme) => ({
 	},
 	media: {
 		borderRadius: "8px",
-		boxShadow: "1px 1px 20px #100f10",
-		marginTop: "-25px",
+		boxShadow: "3px 3px 15px #100f10",
+		marginTop: "-10px",
 		marginLeft: "-15px",
-		height: "190px",
-		width: "190px",
+		height: "215px",
+		width: "200px",
 		[theme.breakpoints.down("md")]: {
 			width: "145px",
 			height: "150px",
 			marginLeft: "-10px",
+			marginTop: "-50px",
 		},
 		[theme.breakpoints.down("sm")]: {
-			width: "90px",
-			height: "95px",
+			width: "115px",
+			height: "120px",
 			marginTop: "-90px",
 		},
 		[theme.breakpoints.down("xs")]: {
-			marginTop: "-5px",
+			marginTop: "-10px",
+			width: "85px",
+			height: "85px",
+		},
+		[theme.breakpoints.down(400)]: {
+			width: "75px",
+			height: "75px",
 		},
 	},
 	description_container: {
@@ -48,12 +55,34 @@ const useStyles = makeStyles((theme) => ({
 		height: "100%",
 	},
 	text_container: {
-		margin: "0 20px 0 15px",
+		margin: "0 20px 0 10px",
 		position: "relative",
 		width: "100%",
 		height: "80%",
+		[theme.breakpoints.down(1020)]: {
+			margin: "-10px 20px 30px 0",
+		},
+		[theme.breakpoints.down("sm")]: {
+			margin: "-15px 35px 30px 15px",
+		},
+		[theme.breakpoints.down(850)]: {
+			margin: "-15px 20px 30px 10px",
+		},
+		[theme.breakpoints.down(810)]: {
+			margin: "-15px 10px 30px 5px",
+		},
+		[theme.breakpoints.down(670)]: {
+			margin: "-15px 5px 55px 5px",
+		},
+		[theme.breakpoints.down(630)]: {
+			margin: "-20px 0 75px 0",
+		},
 		[theme.breakpoints.down("xs")]: {
-			marginLeft: "0px",
+			backgroundColor: "pink",
+			margin: "0 0 10px -5px",
+		},
+		[theme.breakpoints.down(400)]: {
+			margin: "0 0 10px -5px",
 		},
 	},
 	my_description: {
@@ -62,17 +91,26 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: "1.25rem",
 		lineHeight: "1.6",
 		[theme.breakpoints.down("md")]: {
-			marginTop: "-5px",
-			fontSize: "1.35rem",
+			marginTop: "10px",
+			fontSize: "1.15rem",
 		},
 		[theme.breakpoints.down("sm")]: {
-			fontSize: "1.20rem",
+			fontSize: "1.05rem",
 			marginRight: "15px",
 		},
 		[theme.breakpoints.down("xs")]: {
 			fontSize: "0.9rem",
 			marginTop: "10px",
 			marginLeft: "0px",
+		},
+		[theme.breakpoints.down(470)]: {
+			fontSize: "0.85rem",
+		},
+		[theme.breakpoints.down(400)]: {
+			fontSize: "0.8rem",
+		},
+		[theme.breakpoints.down(350)]: {
+			fontSize: "0.75rem",
 		},
 	},
 	my_descriptionLight: {
@@ -82,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
 		color: MyTheme.palette.primary.dark,
 	},
 	properties_container: {
-		marginLeft: "100px",
+		marginLeft: "50px",
 		marginTop: "-15px",
 		position: "relative",
 		width: "100%",
@@ -90,20 +128,33 @@ const useStyles = makeStyles((theme) => ({
 			marginTop: "20px",
 		},
 		[theme.breakpoints.down("sm")]: {
-			marginTop: "25px",
-			marginLeft: "-10px",
+			margin: "15px 0 0 20px",
+		},
+		[theme.breakpoints.down(850)]: {
+			margin: "5px 0 0 20px",
+		},
+		[theme.breakpoints.down(800)]: {
+			margin: "30px 0 0 20px",
+		},
+		[theme.breakpoints.down(720)]: {
+			margin: "55px 0 0 20px",
 		},
 		[theme.breakpoints.down("xs")]: {
-			marginTop: "5px",
+			margin: "20px 0 -10px 0",
+		},
+		[theme.breakpoints.down(400)]: {
+			margin: "50px 0 -10px 0",
 		},
 	},
-
 	property_text: {
 		marginLeft: "10px",
 		fontSize: "1rem",
 		[theme.breakpoints.down("sm")]: {
-			fontSize: "0.6rem",
-			marginTop: "10px",
+			fontSize: "0.75rem",
+			marginTop: "5px",
+		},
+		[theme.breakpoints.down("xs")]: {
+			fontSize: "0.7rem",
 		},
 	},
 	property_text_light: {
@@ -118,8 +169,17 @@ const useStyles = makeStyles((theme) => ({
 		top: "55%",
 		width: "70%",
 		height: "35%",
-		marginTop: "5px",
+		marginTop: "25px",
 		fontSize: "2.25rem",
+		[theme.breakpoints.down(800)]: {
+			marginTop: "45px",
+		},
+		[theme.breakpoints.down("xs")]: {
+			marginTop: "40px",
+		},
+		[theme.breakpoints.down(400)]: {
+			marginTop: "40px",
+		},
 	},
 	skills_text_light: {
 		color: MyTheme.palette.primary.main,
@@ -132,12 +192,17 @@ const useStyles = makeStyles((theme) => ({
 		marginTop: "20px",
 		marginBottom: "15px",
 		[theme.breakpoints.down("sm")]: {
-			fontSize: "2.5rem",
-			marginTop: "40px",
+			fontSize: "2.25rem",
+			marginTop: "45px",
+		},
+		[theme.breakpoints.down(700)]: {
+			fontSize: "1.75rem",
+			marginTop: "75px",
+			marginBottom: "10px",
 		},
 		[theme.breakpoints.down("xs")]: {
 			fontSize: "1.25rem",
-			marginTop: "110px",
+			marginTop: "100px",
 		},
 	},
 }));
