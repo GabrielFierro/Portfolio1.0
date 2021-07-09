@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 		width: "46%",
 		[theme.breakpoints.down("md")]: {
 			width: "94%",
-			marginLeft: "1.2em",
+			margin: "0.5em 0.7em 0.5em 1.2em",
 		},
 		[theme.breakpoints.down("sm")]: {
 			width: "93%",
@@ -57,9 +57,8 @@ const useStyles = makeStyles((theme) => ({
 		width: "46%",
 		margin: "0.7em 0.5em 1em 0.2em",
 		[theme.breakpoints.down("md")]: {
+			margin: "0 0.7em 0.5em 1.2em",
 			width: "94%",
-			marginLeft: "1.2em",
-			marginTop: "0px",
 		},
 		[theme.breakpoints.down("sm")]: {
 			width: "93%",
@@ -123,9 +122,11 @@ const useStyles = makeStyles((theme) => ({
 		padding: "2px",
 		width: "99%",
 		[theme.breakpoints.down("md")]: {
+			border: "2px solid tomato",
 			marginTop: "-25px",
 		},
 		[theme.breakpoints.down("sm")]: {
+			border: "2px solid cyan",
 			padding: "0",
 		},
 	},
@@ -136,13 +137,11 @@ const useStyles = makeStyles((theme) => ({
 		backgroundColor: "#2a2a2a",
 	},
 	textFieldInput: {
-		marginBottom: "1em",
+		margin: "0 0 1em 1.2rem",
 		border: "1px solid #100f10",
-		marginRight: "0",
 		width: "94%",
-		marginLeft: "1.2em",
 		[theme.breakpoints.down("md")]: {
-			marginLeft: "1.2em",
+			margin: "0 0 0.5em 1.2em",
 		},
 		[theme.breakpoints.down("sm")]: {
 			marginLeft: "1em",
@@ -155,7 +154,7 @@ const useStyles = makeStyles((theme) => ({
 		border: "0",
 	},
 	skills_text: {
-		marginTop: "10px",
+		marginTop: "15px",
 		fontSize: "3rem",
 		display: "flex",
 		alignItems: "center",
@@ -174,6 +173,9 @@ const useStyles = makeStyles((theme) => ({
 	},
 	skills_text_light: {
 		color: MyTheme.palette.primary.main,
+	},
+	skills_text_dark: {
+		color: MyTheme.palette.primary.dark,
 	},
 	send_button: {
 		backgroundColor: "#37b9f1",
@@ -390,7 +392,7 @@ function Contact(props) {
 			) : (
 				<Grid className={classes.section} container direction="column">
 					<Typography
-						className={`${classes.skills_text} ${classes.skills_text_light}`}
+						className={`${classes.skills_text} ${classes.skills_text_dark}`}
 						style={MyTheme.typographyRubik}
 					>
 						Contacto
