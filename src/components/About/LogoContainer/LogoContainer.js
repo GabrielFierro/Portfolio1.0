@@ -1,26 +1,37 @@
 import React from "react";
-import Box from "@material-ui/core/Box";
-import HtmlLogo from "../../../assets/images/icons/html-logo.svg";
-import CssLogo from "../../../assets/images/icons/css-logo.svg";
+import { Box, makeStyles } from "@material-ui/core/";
+/* Imports the logos */
 import TailwindLogo from "../../../assets/images/icons/tailwind-logo.svg";
 import BootstrapLogo from "../../../assets/images/icons/bootstrap-logo.svg";
 import PythonLogo from "../../../assets/images/icons/python-logo.svg";
 import ReactLogo from "../../../assets/images/icons/react-icon.svg";
 import JavascriptLogo from "../../../assets/images/icons/javascript-logo.svg";
 import GitLogo from "../../../assets/images/icons/git-icon.svg";
+/* Import the Logo component with the HTML and CSS components */
 import Logo from "../Logo/Logo";
+import HtmlLogo from "../Logo/HTML";
+import CSSLogo from "../Logo/CSS";
 
-function LogoContainer() {
+const useStyles = makeStyles((theme) => ({
+	box: {
+		width: "100%",
+	},
+}));
+
+function LogoContainer(props) {
+	const classes = useStyles();
+	const darkMode = props.darkMode;
+
 	return (
 		<Box
+			className={classes.box}
 			display="flex"
 			direction="row"
 			justifyContent="center"
 			alignItems="center"
-			style={{ width: "100%" }}
 		>
-			<Logo alt="Html logo" src={HtmlLogo}></Logo>
-			<Logo alt="Css logo" src={CssLogo}></Logo>
+			<HtmlLogo darkMode={darkMode} />
+			<CSSLogo darkMode={darkMode} />
 			<Logo alt="Tailwind logo" src={TailwindLogo}></Logo>
 			<Logo alt="Bootstrap logo" src={BootstrapLogo}></Logo>
 			<Logo alt="Python logo" src={PythonLogo}></Logo>
