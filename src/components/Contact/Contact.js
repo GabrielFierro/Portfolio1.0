@@ -197,7 +197,12 @@ const useStyles = makeStyles((theme) => ({
 			width: "25%",
 		},
 		[theme.breakpoints.down("xs")]: {
-			width: "30%",
+			marginLeft: "10px",
+			width: "40%",
+			fontSize: "16px",
+		},
+		[theme.breakpoints.down(350)]: {
+			fontSize: "14px",
 		},
 	},
 	cancel_button: {
@@ -220,7 +225,12 @@ const useStyles = makeStyles((theme) => ({
 			width: "25%",
 		},
 		[theme.breakpoints.down("xs")]: {
-			width: "35%",
+			width: "40%",
+			fontSize: "16px",
+		},
+		[theme.breakpoints.down(350)]: {
+			marginLeft: "10px",
+			fontSize: "14px",
 		},
 	},
 	textField: {
