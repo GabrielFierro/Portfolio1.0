@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
 			width: "25px",
 		},
 		[theme.breakpoints.between("320", "375")]: {
-			height: "20px",
-			width: "20px",
+			height: "30px",
+			width: "30px",
 			marginTop: "5px",
 		},
 	},

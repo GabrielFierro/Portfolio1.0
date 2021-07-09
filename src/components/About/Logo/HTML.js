@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
 			width: "25px",
 		},
 		[theme.breakpoints.between("320", "375")]: {
-			height: "20px",
-			width: "20px",
+			height: "30px",
+			width: "30px",
 			marginTop: "5px",
 		},
 	},
@@ -41,7 +41,7 @@ function HTML(props) {
 					className={classes.icon}
 					width="90"
 					height="90"
-					viewBox="0 0 85 85"
+					viewBox="0 0 86 85"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
@@ -68,6 +68,7 @@ function HTML(props) {
 				</svg>
 			) : (
 				<svg
+					className={classes.icon}
 					width="85"
 					height="85"
 					viewBox="0 0 85 85"
