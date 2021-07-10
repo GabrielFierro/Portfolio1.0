@@ -261,7 +261,6 @@ const useStyles = makeStyles((theme) => ({
 
 function Contact(props) {
 	const classes = useStyles();
-	const preventDefault = (event) => event.preventDefault();
 	const darkMode = props.darkMode;
 	const isMobile = props.isMobile;
 
