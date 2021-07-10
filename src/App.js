@@ -1,20 +1,21 @@
+/* React imports */
 import { React, useState } from "react";
-import { createMuiTheme } from "@material-ui/core";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
-import Experience from "./components/Experience/Experience";
-import Home from "./components/Home/Home";
-import Project from "./components/Project/Project";
-import "./index.css";
-
-/* Navbar.js */
-import { Link, NavLink } from "react-router-dom";
+/* ReactRouter import */
+import {
+	Link,
+	NavLink,
+	BrowserRouter as Router,
+	Switch,
+	Route,
+} from "react-router-dom";
+/* MaterialUI imports*/
 import {
 	AppBar,
+	createMuiTheme,
 	IconButton,
 	Grid,
 	makeStyles,
+	MaterialSwitch,
 	Menu,
 	MenuItem,
 	ThemeProvider,
@@ -23,10 +24,18 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@material-ui/core";
-import MaterialSwitch from "@material-ui/core/Switch";
+/* Components sections imports */
+import About from "./components/About/About";
+import Contact from "./components/Contact/Contact";
+import Experience from "./components/Experience/Experience";
+import Home from "./components/Home/Home";
+import Project from "./components/Project/Project";
+/* import the css code */
+import "./index.css";
+/* import the theme file */
 import MyTheme from "./MyTheme";
+/* import the menu icon from a relative directory */
 import { ReactComponent as MenuIcon } from "./assets/images/icons/menu.svg";
-
 /* Background */
 import Background from "./components/Background/Background";
 
