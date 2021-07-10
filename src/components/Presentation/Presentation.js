@@ -12,8 +12,7 @@ const useStyles = makeStyles((theme) => ({
 		width: "50%",
 		left: "0%",
 		[theme.breakpoints.down("xs")]: {
-			left: "15%",
-			width: "70%",
+			width: "80%",
 		},
 	},
 	cardDark: {
@@ -23,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
 		width: "50%",
 		left: "50%",
 		[theme.breakpoints.down("xs")]: {
-			left: "15%",
-			width: "70%",
+			left: "20%",
+			width: "80%",
 		},
 	},
 	title: {
