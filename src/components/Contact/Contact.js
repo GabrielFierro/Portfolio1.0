@@ -6,7 +6,7 @@ import MyTheme from "../../MyTheme";
 import {
 	Box,
 	Grid,
-	Link,
+	IconButton,
 	TextField,
 	Typography,
 	ThemeProvider,
@@ -30,6 +30,10 @@ const useStyles = makeStyles((theme) => ({
 		position: "relative",
 		width: "100%",
 		height: "60px",
+		[theme.breakpoints.down("xs")]: {
+			width: "110%",
+			marginLeft: "-5px",
+		},
 	},
 	iconContainerLight: {
 		backgroundColor: MyTheme.palette.primary.main,
@@ -76,7 +80,7 @@ const useStyles = makeStyles((theme) => ({
 	iconSpace: {
 		width: "55px",
 		height: "50px",
-		marginLeft: "30px",
+		marginLeft: "20px",
 		marginTop: "3px",
 		[theme.breakpoints.down("sm")]: {
 			width: "45px",
@@ -89,6 +93,13 @@ const useStyles = makeStyles((theme) => ({
 			marginLeft: "20px",
 		},
 	},
+	iconMargin: {
+		marginLeft: "-12px",
+		marginTop: "-13px",
+		[theme.breakpoints.down("xs")]: {
+			marginTop: "-10px",
+		},
+	},
 	icon: {
 		width: "50px",
 		height: "50px",
@@ -96,18 +107,18 @@ const useStyles = makeStyles((theme) => ({
 			boxShadow: "3px 3px 10px #37b9f1",
 		},
 		[theme.breakpoints.down("sm")]: {
+			backgroundColor: "tomato",
 			marginTop: "5px",
 			width: "45px",
 			height: "45px",
 			marginLeft: "25px",
 		},
 		[theme.breakpoints.down("xs")]: {
-			width: "40px",
-			height: "40px",
 			marginLeft: "20px",
 		},
 	},
 	linkIcon: {
+		cursor: "pointer",
 		width: "50px",
 		height: "50px",
 		marginTop: "4px",
@@ -115,6 +126,9 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.down("sm")]: {
 			marginLeft: "20px",
 			marginTop: "4px",
+		},
+		[theme.breakpoints.down("xs")]: {
+			marginLeft: "10px",
 		},
 	},
 	form: {
@@ -126,6 +140,10 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("sm")]: {
 			padding: "0",
+		},
+		[theme.breakpoints.down("xs")]: {
+			width: "108%",
+			marginLeft: "-5px",
 		},
 	},
 	formLight: {
@@ -222,7 +240,7 @@ const useStyles = makeStyles((theme) => ({
 			width: "20%",
 		},
 		[theme.breakpoints.down("sm")]: {
-			width: "25%",
+			width: "30%",
 		},
 		[theme.breakpoints.down("xs")]: {
 			width: "40%",
@@ -245,6 +263,12 @@ function Contact(props) {
 	const classes = useStyles();
 	const preventDefault = (event) => event.preventDefault();
 	const darkMode = props.darkMode;
+	const isMobile = props.isMobile;
+
+	function openInNewTab(url) {
+		const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+		if (newWindow) newWindow.opener = null;
+	}
 
 	function sendMessage(e) {
 		e.preventDefault();
@@ -283,33 +307,46 @@ function Contact(props) {
 						direction="column"
 						className={`${classes.iconContainer} ${classes.iconContainerDark}`}
 					>
-						<Grid container className={classes.linkIcon}>
-							<LinkIcon darkMode={darkMode} />
-						</Grid>
+						{!isMobile ? (
+							<Grid container className={classes.linkIcon}>
+								<LinkIcon darkMode={darkMode} />
+							</Grid>
+						) : null}
 						<Grid container>
 							<Grid container className={classes.iconSpace}>
-								<Link
-									href="https://www.linkedin.com/in/gabriel-fierro-2020/"
-									onClick={preventDefault}
+								<IconButton
+									className={classes.iconMargin}
+									aria-label="linkedin.com"
+									onClick={() =>
+										openInNewTab(
+											"https://www.linkedin.com/in/gabriel-fierro-2020/"
+										)
+									}
 								>
 									<LinkedInIcon darkMode={darkMode} className={classes.icon} />
-								</Link>
+								</IconButton>
 							</Grid>
 							<Grid container className={classes.iconSpace}>
-								<Link
-									href="https://github.com/GabrielFierro/"
-									onClick={preventDefault}
+								<IconButton
+									className={classes.iconMargin}
+									aria-label="github.com"
+									onClick={() =>
+										openInNewTab("https://github.com/GabrielFierro/")
+									}
 								>
 									<GitHubIcon darkMode={darkMode} className={classes.icon} />
-								</Link>
+								</IconButton>
 							</Grid>
 							<Grid container className={classes.iconSpace}>
-								<Link
-									href="https://twitter.com/f_gabriel01"
-									onClick={preventDefault}
+								<IconButton
+									className={classes.iconMargin}
+									aria-label="twitter.com"
+									onClick={() =>
+										openInNewTab("https://twitter.com/f_gabriel01")
+									}
 								>
 									<TwitterIcon darkMode={darkMode} className={classes.icon} />
-								</Link>
+								</IconButton>
 							</Grid>
 						</Grid>
 					</Grid>
@@ -317,8 +354,6 @@ function Contact(props) {
 						className={`${classes.form} ${classes.formDark}`}
 						container
 						direction="column"
-						alignItems="center"
-						justify="center"
 						onSubmit={sendMessage}
 					>
 						<TextField
@@ -411,33 +446,46 @@ function Contact(props) {
 						direction="column"
 						className={`${classes.iconContainer} ${classes.iconContainerLight}`}
 					>
-						<Grid container className={classes.linkIcon}>
-							<LinkIcon />
-						</Grid>
+						{!isMobile ? (
+							<Grid container className={classes.linkIcon}>
+								<LinkIcon darkMode={darkMode} />
+							</Grid>
+						) : null}
 						<Grid container>
 							<Grid container className={classes.iconSpace}>
-								<Link
-									href="https://www.linkedin.com/in/gabriel-fierro-2020/"
-									onClick={preventDefault}
+								<IconButton
+									className={classes.iconMargin}
+									aria-label="linkedin.com"
+									onClick={() =>
+										openInNewTab(
+											"https://www.linkedin.com/in/gabriel-fierro-2020/"
+										)
+									}
 								>
 									<LinkedInIcon className={classes.icon} />
-								</Link>
+								</IconButton>
 							</Grid>
 							<Grid container className={classes.iconSpace}>
-								<Link
-									href="https://github.com/GabrielFierro/"
-									onClick={preventDefault}
+								<IconButton
+									className={classes.iconMargin}
+									aria-label="github.com"
+									onClick={() =>
+										openInNewTab("https://github.com/GabrielFierro/")
+									}
 								>
 									<GitHubIcon className={classes.icon} />
-								</Link>
+								</IconButton>
 							</Grid>
 							<Grid container className={classes.iconSpace}>
-								<Link
-									href="https://twitter.com/f_gabriel01"
-									onClick={preventDefault}
+								<IconButton
+									className={classes.iconMargin}
+									aria-label="twitter.com"
+									onClick={() =>
+										openInNewTab("https://twitter.com/f_gabriel01")
+									}
 								>
 									<TwitterIcon className={classes.icon} />
-								</Link>
+								</IconButton>
 							</Grid>
 						</Grid>
 					</Grid>
@@ -445,8 +493,6 @@ function Contact(props) {
 						className={`${classes.form} ${classes.formLight}`}
 						container
 						direction="column"
-						alignItems="center"
-						justify="center"
 						onSubmit={sendMessage}
 					>
 						<TextField
@@ -467,7 +513,7 @@ function Contact(props) {
 							id="custom-surname-field"
 							placeholder="Apellido"
 							minLength="2"
-							maxlength="30"
+							maxLength="30"
 							required
 							size="small"
 							style={{ border: "1px solid #100f10" }}
@@ -480,7 +526,7 @@ function Contact(props) {
 							id="custom-email-field"
 							placeholder="Email"
 							minLength="12"
-							maxlength="50"
+							maxLength="50"
 							required
 							size="small"
 							type="email"
