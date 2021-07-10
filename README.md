@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Portfolio ⚡️ ![GitHub license](https://img.shields.io/github/license/GabrielFierro/Portfolio?color=blue)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Welcome to my Portfolio!
 
-## Available Scripts
+<h2 align="center">
+  <img src="https://github.com/GabrielFierro/Portfolio/blob/master/src/assets/images/preview/Gabriel-Fierro.gif" alt="Portfolio" width="600px" />
+  <br>
+</h2>
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+⚡️ UI Design create by myself\
+⚡️ Styled with MaterialUI v4.11.3 + Custom CSS\
+⚡️ Fully Responsive\
+⚡️ Valid HTML5 & CSS3\
+⚡️ Well organized documentation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started 🚀
 
-### `npm test`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites 📋
 
-### `npm run build`
+You'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [NPM](http://npmjs.com)) installed on your computer.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+node@v14.15.0 or higher
+npm@7.16.0 or higher
+git@2.29.1 or higher
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## How To Use 🔧
 
-### `npm run eject`
+From your command line, first clone Portfolio:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+# Clone this repository
+$ git clone https://github.com/GabrielFierro/Portfolio.git
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Go into the repository
+$ cd Portfolio
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Remove current origin repository
+$ git remote remove origin
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Then you can install the dependencies either using NPM or Yarn:
 
-## Learn More
+Using NPM:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+# Install dependencies
+$ npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Start development server
+$ npm start
+```
 
-### Code Splitting
+Using Yarn:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+# Install dependencies
+$ yarn
 
-### Analyzing the Bundle Size
+# Start development server
+$ yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**NOTE**:
+If your run into issues installing the dependencies with NPM, use this command:
 
-### Making a Progressive Web App
+```bash
+# Install dependencies with all permissions
+$ sudo npm install --unsafe-perm=true --allow-root
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Once your server has started, go to this url `http://localhost:3000/` and you will see the website running on a Development Server:
 
-### Advanced Configuration
+## Technologies used 🛠️
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- [Material UI](https://getbootstrap.com/docs/4.3/getting-started/introduction/) - Front-end component library
+- [React Slick](https://react-slick.neostack.com/) - React library to make a Carousel
+- [ReactRouter](https://reactrouter.com/) - React Router to add navigational components
+- [Figma](https://www.figma.com/) - Figma to design the webpage
 
-### Deployment
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Gabriel Fierro** - [https://github.com/GabrielFierro](https://github.com/GabrielFierro)
 
-### `npm run build` fails to minify
+## License 📄
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License - see the [MIT-LICENSE.txt](https://github.com/GabrielFierro/Portfolio/blob/master/MIT-LICENSE.txt) file for details
