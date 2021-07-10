@@ -15,7 +15,6 @@ import {
 	IconButton,
 	Grid,
 	makeStyles,
-	MaterialSwitch,
 	Menu,
 	MenuItem,
 	ThemeProvider,
@@ -24,6 +23,7 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@material-ui/core";
+import MaterialSwitch from "@material-ui/core/Switch";
 /* Components sections imports */
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
@@ -93,6 +93,10 @@ const useStyles = makeStyles((theme) => ({
 	checked: {},
 	track: {
 		backgroundColor: "#f7f7fe",
+	},
+	logo_name: {
+		marginLeft: "-55px",
+		marginTop: "5px",
 	},
 }));
 
@@ -208,6 +212,13 @@ function App() {
 											justify="center"
 											style={{ marginLeft: "100px" }}
 										>
+											<NavLink exact to="/">
+												<img
+													className={classes.logo_name}
+													src="/logo_name.png"
+													alt="Logo"
+												/>
+											</NavLink>
 											<NavLink exact to="/">
 												Home
 											</NavLink>
