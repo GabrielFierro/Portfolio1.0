@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("xs")]: {
 			height: "45px",
-			width: "45px",
+			width: "40px",
 		},
 	},
 }));
@@ -43,7 +43,7 @@ function GitHubIcon(props) {
 				</svg>
 			) : (
 				<svg
-				className={classes.icon}
+					className={classes.icon}
 					width="55"
 					height="55"
 					viewBox="0 0 50 50"

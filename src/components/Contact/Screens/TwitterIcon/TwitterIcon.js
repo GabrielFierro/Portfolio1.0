@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("xs")]: {
 			height: "45px",
-			width: "45px",
+			width: "40px",
 		},
 	},
 }));
