@@ -1,9 +1,10 @@
 /* TwitterIcon.js */
 import { Grid } from "@material-ui/core";
+import "../../../Project.css";
 
 function GitHubIcon() {
 	return (
-		<Grid>
+		<Grid class="icon-hover">
 			<svg
 				width="40"
 				height="40"
