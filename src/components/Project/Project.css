@@ -24,3 +24,7 @@
 .slides .slick-next {
 	right: 1%;
 }
+
+.icon-hover:hover path {
+	stroke: #37b9f1;
+}
