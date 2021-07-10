@@ -248,7 +248,7 @@ function App() {
 					<Project darkMode={darkMode} />
 				</Route>
 				<Route exact path="/contact">
-					<Contact darkMode={darkMode} />
+					<Contact darkMode={darkMode} isMobile={isMobile} />
 				</Route>
 			</Switch>
 			<Background darkMode={darkMode} />
