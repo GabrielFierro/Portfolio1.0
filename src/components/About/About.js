@@ -78,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
 			margin: "-20px 0 75px 0",
 		},
 		[theme.breakpoints.down("xs")]: {
-			backgroundColor: "pink",
 			margin: "0 0 10px -5px",
 		},
 		[theme.breakpoints.down(400)]: {
