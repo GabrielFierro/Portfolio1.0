@@ -420,7 +420,7 @@ function Project(props) {
 		speed: 500,
 		slidesToShow: 1,
 		arrows: true,
-		swipeToSlide: true,
+		swipeToSlide: false,
 		centerMode: true,
 		dots: true,
 		adaptiveHeight: true,
