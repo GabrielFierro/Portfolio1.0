@@ -1,7 +1,6 @@
 /* import from MateriaulUI */
 import { makeStyles } from "@material-ui/core";
 /* Background.js */
-import "./Background.css";
 import BackgroundLight from "../../assets/images/background/city-light-desktop.jpg";
 import BackgroundDark from "../../assets/images/background/city-dark-desktop.jpg";
 
