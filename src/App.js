@@ -259,7 +259,7 @@ function App() {
 					<Contact darkMode={darkMode} isMobile={isMobile} />
 				</Route>
 			</Switch>
-			<Background darkMode={darkMode} />
+			<Background darkMode={darkMode} isMobile={isMobile} />
 		</Router>
 	);
 }
