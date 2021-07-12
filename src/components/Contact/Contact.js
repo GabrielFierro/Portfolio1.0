@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 		height: "60px",
 		[theme.breakpoints.down("xs")]: {
 			width: "110%",
+			height: "50px",
 			marginLeft: "-5px",
 		},
 	},
@@ -97,7 +98,7 @@ const useStyles = makeStyles((theme) => ({
 		marginLeft: "-12px",
 		marginTop: "-13px",
 		[theme.breakpoints.down("xs")]: {
-			marginTop: "-10px",
+			marginTop: "-15px",
 		},
 	},
 	icon: {
@@ -115,6 +116,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("xs")]: {
 			marginLeft: "20px",
+			marginTop: "-15px",
 		},
 	},
 	linkIcon: {
@@ -165,6 +167,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("xs")]: {
 			marginLeft: "0.5em",
+			height: "100%",
 		},
 	},
 	textFieldInputDark: {
@@ -185,7 +188,7 @@ const useStyles = makeStyles((theme) => ({
 		},
 		[theme.breakpoints.down("xs")]: {
 			fontSize: "2rem",
-			marginTop: "20px",
+			marginTop: "10px",
 		},
 	},
 	skills_text_light: {
