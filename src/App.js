@@ -59,18 +59,6 @@ const useStyles = makeStyles((theme) => ({
 	title: {
 		flexGrow: 1,
 	},
-	backgroundContainer: {
-		height: "100vh",
-		objectFit: "contain",
-		width: "100%",
-	},
-	background: {
-		height: "100vh",
-		objectFit: "cover",
-		position: "absolute",
-		width: "100%",
-		zIndex: -1,
-	},
 	switch: {
 		marginLeft: "100px",
 		[theme.breakpoints.down("sm")]: {
@@ -110,7 +98,7 @@ function App() {
 		setAnchor(event.currentTarget);
 	};
 
-	const [darkMode, setDarkMode] = useState(false);
+	const [darkMode, setDarkMode] = useState(false); // state to manage the dark mode
 
 	const lightTheme = createMuiTheme({
 		palette: {
