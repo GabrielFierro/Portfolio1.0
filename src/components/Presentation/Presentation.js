@@ -7,23 +7,25 @@ import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles((theme) => ({
 	cardLight: {
 		backgroundColor: MyTheme.palette.primary.main,
-		height: "100%",
+		height: "100vh",
 		position: "absolute",
 		width: "50%",
 		left: "0%",
 		[theme.breakpoints.down("xs")]: {
 			width: "80%",
+			height: "100%",
 		},
 	},
 	cardDark: {
 		backgroundColor: MyTheme.palette.primary.dark,
-		height: "100%",
+		height: "100vh",
 		position: "absolute",
 		width: "50%",
 		left: "50%",
 		[theme.breakpoints.down("xs")]: {
 			left: "20%",
 			width: "80%",
+			height: "100%",
 		},
 	},
 	title: {
