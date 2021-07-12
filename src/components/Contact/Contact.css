@@ -57,7 +57,10 @@
 	opacity: 1;
 }
 
-#outlined-basic::placeholder {
+#outlined-basic::placeholder,
+#outlined-basic1::placeholder,
+#outlined-basic2::placeholder,
+#outlined-basic3::placeholder {
 	color: #f7f7fe;
 	font-weight: 700;
 	font-family: "Rubik";

@@ -372,7 +372,7 @@ function Contact(props) {
 							style={MyTheme.typographyRubik}
 						/>
 						<TextField
-							id="outlined-basic"
+							id="outlined-basic1"
 							placeholder="Apellido"
 							minLength="2"
 							maxlength="30"
@@ -388,7 +388,7 @@ function Contact(props) {
 							style={MyTheme.typographyRubik}
 						/>
 						<TextField
-							id="outlined-basic"
+							id="outlined-basic2"
 							placeholder="Email"
 							minLength="12"
 							maxlength="50"
@@ -404,7 +404,7 @@ function Contact(props) {
 							style={MyTheme.typographyRubik}
 						/>
 						<TextField
-							id="outlined-basic"
+							id="outlined-basic3"
 							placeholder="Mensaje"
 							minLength="10"
 							required
