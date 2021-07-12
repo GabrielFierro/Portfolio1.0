@@ -7,11 +7,11 @@ import BackgroundDark from "../../assets/images/background/city-dark-desktop.jpg
 const useStyles = makeStyles((theme) => ({
 	container: {
 		height: "100vh",
-		objectFit: "contain",
+		objectFit: "cover",
 		width: "100%",
 	},
 	background: {
-		height: "100vh",
+		height: "100%",
 		objectFit: "cover",
 		position: "relative",
 		width: "100%",
