@@ -13,6 +13,8 @@ const useStyles = makeStyles((theme) => ({
 		width: "100%",
 	},
 	background: {
+		backgroundSize: "cover",
+		backgroundAttachment: "fixed",
 		height: "100vh",
 		objectFit: "cover",
 		position: "relative",
