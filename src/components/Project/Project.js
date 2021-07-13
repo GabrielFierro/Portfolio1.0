@@ -480,7 +480,7 @@ function Project(props) {
 											{/* If the dark mode value is true, display the buttons with the styles for the dark mode */}
 											{darkMode ? (
 												<Button
-													className={`${classes.button} ${classes.button_dark}`}
+													className={`${classes.button} ${classes.buttonDark}`}
 													onClick={() => {
 														setCategory(category);
 														setDisplay(false);
@@ -500,7 +500,7 @@ function Project(props) {
 												</Button>
 											) : (
 												<Button
-													className={`${classes.button} ${classes.button_light}`}
+													className={`${classes.button} ${classes.buttonLight}`}
 													onClick={() => {
 														setCategory(category);
 														setDisplay(false);
