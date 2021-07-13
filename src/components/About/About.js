@@ -1,4 +1,5 @@
 /* About.js */
+/* imports for the MaterialUI library*/
 import {
 	CardMedia,
 	Grid,
@@ -6,10 +7,14 @@ import {
 	ThemeProvider,
 	Typography,
 } from "@material-ui/core";
-import MyTheme from "../../MyTheme";
+/* import the Card and the LogoContainer components*/
 import Card from "../Card/Card";
 import LogoContainer from "./LogoContainer/LogoContainer";
+/* import the profile picture*/
 import ProfilePicture from "../../assets/images/profile/gabifierro.jpg";
+/* import the theme */
+import MyTheme from "../../MyTheme";
+/* import the icons like a ReactComponent */
 import { ReactComponent as Location } from "../../assets/images/icons/location.svg";
 import { ReactComponent as Book } from "../../assets/images/icons/book.svg";
 
