@@ -90,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
 	const classes = useStyles();
+	/* These states and values define the hamburger menu on small devices */
 	const [anchor, setAnchor] = useState(null);
 	const open = Boolean(anchor);
 	const theme = useTheme();
