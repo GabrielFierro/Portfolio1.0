@@ -1,6 +1,6 @@
 /* import from MateriaulUI */
 import { makeStyles } from "@material-ui/core";
-/* Background.js */
+/* import the images background for large and extra small devices */
 import BackgroundLight from "../../assets/images/background/city-light-desktop.jpg";
 import BackgroundDark from "../../assets/images/background/city-dark-desktop.jpg";
 import BackgroundLightMobile from "../../assets/images/background/city-light-mobile.jpg";
@@ -33,8 +33,12 @@ function Background(props) {
 
 	return (
 		<article>
+			{/* if the isMobile value is true, display the background image for mobile devices */}
+			{/* else if the isMobile value is false, display the background image for large devices */}
 			{isMobile ? (
 				<section className={classes.container}>
+					{/* if the darkMode value is true, display the background image of night */}
+					{/* else if the darkMode value is false, display the background image of day */}
 					{darkMode ? (
 						<img
 							alt="City background"
