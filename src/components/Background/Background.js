@@ -1,10 +1,10 @@
-/* import from MateriaulUI */
-import { makeStyles } from "@material-ui/core";
 /* import the images background for large and extra small devices */
 import BackgroundLight from "../../assets/images/background/city-light-desktop.jpg";
 import BackgroundDark from "../../assets/images/background/city-dark-desktop.jpg";
 import BackgroundLightMobile from "../../assets/images/background/city-light-mobile.jpg";
 import BackgroundDarkMobile from "../../assets/images/background/city-dark-mobile.jpg";
+/* import from MateriaulUI */
+import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
 	container: {
