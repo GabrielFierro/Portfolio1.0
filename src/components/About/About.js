@@ -243,10 +243,10 @@ function About(props) {
 								>
 									Hola me llamo Gabriel Fierro y me apasiona el desarrollo web
 									front-end. Me gusta leer, ver videos, buscar recursos para
-									aprender cosas nuevas todos los días. Además quería contarles
-									que para desarrollar mi Portfolio aprendí React y MaterialUI
-									principalmente. Más adelante, quiero aprender NodeJS para
-									mostrar contenido de forma dinámica en mis proyectos.{" "}
+									aprender cosas nuevas todos los días, a su vez, quería
+									contarles que más adelante quiero aprender NodeJS para mostrar
+									contenido de forma dinámica en mis proyectos. Para el
+									desarrollo de mi Portfolio aprendí React y MaterialUI.
 								</Typography>
 							</Grid>
 							<Grid className={classes.properties_container} container>
@@ -333,10 +333,10 @@ function About(props) {
 								>
 									Hola me llamo Gabriel Fierro y me apasiona el desarrollo web
 									front-end. Me gusta leer, ver videos, buscar recursos para
-									aprender cosas nuevas todos los días. Además quería contarles
-									que para desarrollar mi Portfolio aprendí React y MaterialUI
-									principalmente. Más adelante, quiero aprender NodeJS para
-									mostrar contenido de forma dinámica en mis proyectos.{" "}
+									aprender cosas nuevas todos los días, a su vez, quería
+									contarles que más adelante quiero aprender NodeJS para mostrar
+									contenido de forma dinámica en mis proyectos. Para el
+									desarrollo de mi Portfolio aprendí React y MaterialUI.
 								</Typography>
 							</Grid>
 							<Grid className={classes.properties_container} container>
