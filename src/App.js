@@ -128,11 +128,14 @@ function App() {
 				<AppBar position="fixed">
 					<nav>
 						<Toolbar>
+							{/* Depends of the darkMode value the component will have a light or dark theme */}
 							<ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
 								<Typography
 									className={classes.typography}
 									style={MyTheme.typographyRubik}
 								>
+									{/* if the isMobile value is true display the hamburger menu with its sections inside */}
+									{/* else if isMobile is false display the sections name with its links to the specific route */}
 									{isMobile ? (
 										<>
 											<IconButton
@@ -243,6 +246,7 @@ function App() {
 					</nav>
 				</AppBar>
 			</Grid>
+			{/* In this section manage the route to the differents sections and add the prop darkMode to every component */}
 			<Switch>
 				<Route exact path="/">
 					<Home darkMode={darkMode} />
