@@ -13,7 +13,7 @@
 
 ## Features
 
-⚡️ UI Design create by myself\
+⚡️ UI Design create by myself. Here's the link to the design: [Figma design](https://www.figma.com/file/30eis2XYvr46S6Q97MgVj4/Portfolio-desktop?node-id=0%3A1)\
 ⚡️ Styled with MaterialUI v4.11.3 + Custom CSS\
 ⚡️ Fully Responsive\
 ⚡️ Valid HTML5 & CSS3\
