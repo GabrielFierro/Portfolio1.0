@@ -208,6 +208,8 @@ function Experience(props) {
 		<ThemeProvider theme={MyTheme}>
 			<Card darkMode={darkMode} />
 			<Grid>
+				{/* if the darkMode value is true display the text with the withe color */}
+				{/* else if the darkMode value is false display the text with the black color */}
 				{darkMode ? (
 					<Grid>
 						<Grid item xs={12} className={classes.description_container}>
@@ -307,6 +309,7 @@ function Experience(props) {
 						</Grid>
 					</Grid>
 				)}
+				{/* In this section the component have the project image and the buttons to the demo and to the repository */}
 				<Grid item xs={6} className={classes.right_container}>
 					<Grid container>
 						<Grid className={classes.project_image}>
@@ -330,6 +333,7 @@ function Experience(props) {
 							item
 							xs={12}
 						>
+							{/* Then the buttons to the demo and to the repository */}
 							<Grid className={classes.button_image} item xs={6} sm={5}>
 								<Button
 									className={classes.button_primary}
