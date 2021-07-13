@@ -1,8 +1,15 @@
 /* Contact.js */
-import emailjs from "emailjs-com";
-import "./Contact.css";
+/* imports the Card and the icons components */
 import Card from "../Card/Card";
+import GitHubIcon from "./Screens/GitHubIcon/GitHubIcon";
+import LinkedInIcon from "./Screens/LinkedInIcon/LinkedInIcon";
+import TwitterIcon from "./Screens/TwitterIcon/TwitterIcon";
+import LinkIcon from "./Screens/LinkIcon/LinkIcon";
+/* import the css code from a relative route */
+import "./Contact.css";
+/* import the theme */
 import MyTheme from "../../MyTheme";
+/* imports for the MaterialUI library */
 import {
 	Box,
 	Grid,
@@ -12,10 +19,8 @@ import {
 	ThemeProvider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import GitHubIcon from "./Screens/GitHubIcon/GitHubIcon";
-import LinkedInIcon from "./Screens/LinkedInIcon/LinkedInIcon";
-import TwitterIcon from "./Screens/TwitterIcon/TwitterIcon";
-import LinkIcon from "./Screens/LinkIcon/LinkIcon";
+/* import for the EmailJS library */
+import emailjs from "emailjs-com";
 
 const useStyles = makeStyles((theme) => ({
 	section: {
