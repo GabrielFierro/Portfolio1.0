@@ -1,6 +1,15 @@
 /* Project.js */
+/* import the useState Hook from React */
 import { useState } from "react";
-import Slider from "react-slick";
+/* import the Card, CardImage and Buttons components */
+import Card from "../Card/Card";
+import CardImage from "./CardImage/CardImage";
+import Buttons from "./CardImage/Screens/Buttons/Buttons";
+/* import the css code for the project component */
+import "./Project.css";
+/* import the theme */
+import MyTheme from "../../MyTheme";
+/* imports for the MaterialUI library */
 import {
 	Box,
 	Button,
@@ -11,13 +20,11 @@ import {
 	useMediaQuery,
 	useTheme,
 } from "@material-ui/core";
+/* import the Slider component from the react-slick library */
+import Slider from "react-slick";
+/* imports the css codes from the react-slick library */
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./Project.css";
-import MyTheme from "../../MyTheme";
-import Card from "../Card/Card";
-import CardImage from "./CardImage/CardImage";
-import Buttons from "./CardImage/Screens/Buttons/Buttons";
 
 const images = [
 	{
