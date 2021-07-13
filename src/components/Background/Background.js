@@ -20,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
 		position: "relative",
 		width: "100%",
 		zIndex: "-1",
+		[theme.breakpoints.down("xs")]: {
+			height: "100%",
+		},
 	},
 }));
 
