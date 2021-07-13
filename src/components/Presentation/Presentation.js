@@ -1,8 +1,8 @@
-import MyTheme from "../../MyTheme";
-import { ThemeProvider } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
+/* imports for the MaterialUI library */
+import { Grid, ThemeProvider, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+/* import my theme */
+import MyTheme from "../../MyTheme";
 
 const useStyles = makeStyles((theme) => ({
 	cardLight: {
@@ -96,6 +96,8 @@ function Presentation(props) {
 	return (
 		<article>
 			<ThemeProvider theme={MyTheme}>
+				{/* if the darkMode value is true, display the card to the right with a dark background */}
+				{/* else if the darkMode value is false, display the card to the left with a white background */}
 				{darkMode ? (
 					<Grid
 						container
