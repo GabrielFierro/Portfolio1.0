@@ -1,4 +1,12 @@
 /* Experience.js */
+/* import the Card component */
+import Card from "../Card/Card";
+/* import the image about the project like a Component */
+import Magenta from "../../assets/images/magenta/magenta.avif";
+import MagentaMobile from "../../assets/images/magenta/magenta_mobile.avif";
+/* import the theme */
+import MyTheme from "../../MyTheme";
+/* import for the MaterialUI library */
 import {
 	Box,
 	Button,
@@ -7,10 +15,6 @@ import {
 	Typography,
 	ThemeProvider,
 } from "@material-ui/core";
-import Card from "../Card/Card";
-import MyTheme from "../../MyTheme";
-import Magenta from "../../assets/images/magenta/magenta.avif";
-import MagentaMobile from "../../assets/images/magenta/magenta_mobile.avif";
 
 const useStyles = makeStyles((theme) => ({
 	title: {
