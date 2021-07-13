@@ -278,6 +278,7 @@ function Contact(props) {
 	}
 
 	function sendMessage(e) {
+		/* prevent reload page and then send the email with the values from the inputs and works with asynchronous */
 		e.preventDefault();
 
 		emailjs
@@ -314,11 +315,13 @@ function Contact(props) {
 						direction="column"
 						className={`${classes.iconContainer} ${classes.iconContainerDark}`}
 					>
+						{/* in this section if the dispositive isn't mobile, display the LinkIcon component */}
 						{!isMobile ? (
 							<Grid container className={classes.linkIcon}>
 								<LinkIcon darkMode={darkMode} />
 							</Grid>
 						) : null}
+						{/* Here in the next section, I display the LinkedIn, GitHub and Twitter icons for all devices */}
 						<Grid container>
 							<Grid container className={classes.iconSpace}>
 								<IconButton
@@ -357,6 +360,7 @@ function Contact(props) {
 							</Grid>
 						</Grid>
 					</Grid>
+					{/* Then display the form component with a input for the name, surname, email and a message */}
 					<form
 						className={`${classes.form} ${classes.formDark}`}
 						container
@@ -424,6 +428,7 @@ function Contact(props) {
 								className: classes.input,
 							}}
 						/>
+						{/* Here are the buttons to send or reset the information of the form */}
 						<Box className={classes.button_container}>
 							<input
 								type="submit"
@@ -496,6 +501,7 @@ function Contact(props) {
 							</Grid>
 						</Grid>
 					</Grid>
+					{/* Then display the form component with a input for the name, surname, email and a message */}
 					<form
 						className={`${classes.form} ${classes.formLight}`}
 						container
