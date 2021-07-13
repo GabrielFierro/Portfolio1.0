@@ -26,6 +26,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+/* array with the information about the project images */
 const images = [
 	{
 		category: "Todos",
@@ -391,6 +392,7 @@ function Project(props) {
 	};
 
 	function SampleNextArrow(props) {
+		// this function define the behavior of the next arrow 
 		const { className, style, onClick } = props;
 		return (
 			<Grid
@@ -406,6 +408,7 @@ function Project(props) {
 	}
 
 	function SamplePrevArrow(props) {
+		// this function define the behavior of the next arrow
 		const { className, style, onClick } = props;
 		return (
 			<Grid
@@ -420,6 +423,7 @@ function Project(props) {
 		);
 	}
 
+	// Define the settings for the carousels
 	const settings = {
 		className: "slides",
 		fade: true,
