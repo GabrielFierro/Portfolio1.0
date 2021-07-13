@@ -32,9 +32,9 @@ function Background(props) {
 	const classes = useStyles();
 
 	return (
-		<div>
+		<article>
 			{isMobile ? (
-				<div className={classes.container}>
+				<section className={classes.container}>
 					{darkMode ? (
 						<img
 							alt="City background"
@@ -48,9 +48,9 @@ function Background(props) {
 							src={BackgroundLightMobile}
 						/>
 					)}
-				</div>
+				</section>
 			) : (
-				<div className={classes.container}>
+				<section className={classes.container}>
 					{darkMode ? (
 						<img
 							alt="City background"
@@ -64,9 +64,9 @@ function Background(props) {
 							src={BackgroundLight}
 						/>
 					)}
-				</div>
+				</section>
 			)}
-		</div>
+		</article>
 	);
 }
 
